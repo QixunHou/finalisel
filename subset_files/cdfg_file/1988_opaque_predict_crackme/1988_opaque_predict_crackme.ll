@@ -1,0 +1,435 @@
+; ModuleID = '../.././c_source_file/1988_opaque_predict_crackme.c'
+source_filename = "../.././c_source_file/1988_opaque_predict_crackme.c"
+target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+@.str.2 = private unnamed_addr constant [18 x i8] c"%d %d %d %d %d %d\00", align 1
+@str = private unnamed_addr constant [4 x i8] c"bad\00", align 1
+@str.3 = private unnamed_addr constant [5 x i8] c"good\00", align 1
+
+; Function Attrs: nofree nounwind uwtable
+define dso_local void @crackme(i32 %0, i32 %1, i32 %2, i32 %3, i32 %4, i32 %5) local_unnamed_addr #0 {
+  %7 = or i32 %1, %0
+  %8 = xor i32 %0, -1
+  %9 = xor i32 %8, %2
+  %10 = and i32 %9, %7
+  %11 = or i32 %4, %3
+  %12 = xor i32 %5, %3
+  %13 = xor i32 %12, -1
+  %14 = and i32 %11, %13
+  %15 = add i32 %14, %10
+  %16 = xor i32 %1, -1
+  %17 = and i32 %16, %2
+  %18 = and i32 %17, %0
+  %19 = xor i32 %2, -1
+  %20 = and i32 %19, %1
+  %21 = or i32 %20, %0
+  %22 = xor i32 %18, %21
+  %23 = or i32 %9, %1
+  %24 = shl i32 %23, 1
+  %25 = xor i32 %0, 2147483647
+  %26 = or i32 %25, %2
+  %27 = xor i32 %25, %1
+  %28 = and i32 %26, %27
+  %29 = shl i32 %28, 1
+  %30 = and i32 %2, %1
+  %31 = and i32 %30, %0
+  %32 = xor i32 %2, %1
+  %33 = and i32 %32, %8
+  %34 = or i32 %31, %33
+  %35 = or i32 %2, %1
+  %36 = xor i32 %35, -1
+  %37 = and i32 %36, %8
+  %38 = and i32 %20, %8
+  %39 = and i32 %36, %0
+  %40 = and i32 %20, %0
+  %41 = and i32 %30, %8
+  %42 = xor i32 %4, -1
+  %43 = or i32 %5, %4
+  %44 = xor i32 %43, %3
+  %45 = xor i32 %3, -1
+  %46 = or i32 %45, %4
+  %47 = xor i32 %5, %4
+  %48 = and i32 %47, %46
+  %49 = xor i32 %5, -1
+  %50 = or i32 %49, %3
+  %51 = xor i32 %50, %4
+  %52 = and i32 %49, %4
+  %53 = xor i32 %52, %50
+  %54 = or i32 %5, %3
+  %55 = xor i32 %54, -1
+  %56 = xor i32 %55, %4
+  %57 = and i32 %50, %42
+  %58 = and i32 %47, %11
+  %59 = and i32 %5, %4
+  %60 = xor i32 %59, %54
+  %61 = shl i32 %60, 1
+  %62 = and i32 %5, %3
+  %63 = and i32 %62, %42
+  %64 = and i32 %12, %4
+  %65 = xor i32 %64, -1
+  %66 = xor i32 %63, %65
+  %67 = xor i32 %4, %3
+  %68 = xor i32 %67, -1
+  %69 = xor i32 %47, -1
+  %70 = and i32 %69, %68
+  %71 = and i32 %4, %3
+  %72 = or i32 %47, %71
+  %73 = and i32 %49, %3
+  %74 = or i32 %59, %73
+  %75 = and i32 %45, %4
+  %76 = or i32 %75, %13
+  %77 = xor i32 %73, -1
+  %78 = xor i32 %59, %77
+  %79 = xor i32 %75, -1
+  %80 = and i32 %49, %79
+  %81 = or i32 %62, %42
+  %82 = shl i32 %81, 1
+  %83 = or i32 %13, %4
+  %84 = xor i32 %46, -1
+  %85 = or i32 %12, %84
+  %86 = shl i32 %85, 1
+  %87 = or i32 %49, %84
+  %88 = or i32 %59, %45
+  %89 = or i32 %59, %84
+  %90 = xor i32 %71, -1
+  %91 = and i32 %13, %90
+  %92 = and i32 %45, %5
+  %93 = and i32 %92, %4
+  %94 = or i32 %45, %5
+  %95 = and i32 %94, %42
+  %96 = xor i32 %95, -1
+  %97 = xor i32 %93, %96
+  %98 = or i32 %52, %45
+  %99 = shl i32 %98, 1
+  %100 = or i32 %12, %71
+  %101 = xor i32 %11, -1
+  %102 = or i32 %101, %5
+  %103 = or i32 %12, %42
+  %104 = and i32 %67, %49
+  %105 = and i32 %54, %4
+  %106 = and i32 %49, %90
+  %107 = shl i32 %106, 1
+  %108 = xor i32 %54, %4
+  %109 = or i32 %71, %55
+  %110 = xor i32 %11, %5
+  %111 = and i32 %47, %90
+  %112 = xor i32 %62, %4
+  %113 = and i32 %77, %4
+  %114 = or i32 %49, %4
+  %115 = and i32 %114, %45
+  %116 = shl i32 %115, 1
+  %117 = and i32 %43, %68
+  %118 = or i32 %69, %84
+  %119 = xor i32 %75, %77
+  %120 = xor i32 %77, %4
+  %121 = shl i32 %120, 1
+  %122 = and i32 %46, %69
+  %123 = shl i32 %122, 1
+  %124 = or i32 %49, %101
+  %125 = or i32 %77, %4
+  %126 = or i32 %73, %42
+  %127 = and i32 %47, %67
+  %128 = or i32 %73, %4
+  %129 = xor i32 %12, %4
+  %130 = and i32 %49, %68
+  %131 = xor i32 %94, %4
+  %132 = or i32 %93, %131
+  %133 = or i32 %59, %55
+  %134 = or i32 %12, %4
+  %135 = xor i32 %93, %134
+  %136 = or i32 %71, %49
+  %137 = and i32 %46, %13
+  %138 = or i32 %93, %95
+  %139 = xor i32 %50, -1
+  %140 = or i32 %139, %4
+  %141 = or i32 %75, %69
+  %142 = xor i32 %62, -1
+  %143 = or i32 %50, %42
+  %144 = shl i32 %143, 1
+  %145 = or i32 %77, %42
+  %146 = shl i32 %145, 1
+  %147 = and i32 %92, %42
+  %148 = xor i32 %147, %103
+  %149 = xor i32 %103, -1
+  %150 = or i32 %147, %149
+  %151 = xor i32 %43, %71
+  %152 = and i32 %90, %5
+  %153 = and i32 %47, %79
+  %154 = xor i32 %52, -1
+  %155 = add i32 %52, 1
+  %156 = xor i32 %90, %5
+  %157 = or i32 %13, %42
+  %158 = shl i32 %77, 1
+  %159 = and i32 %11, %69
+  %160 = and i32 %62, %4
+  %161 = xor i32 %160, %83
+  %162 = or i32 %63, %64
+  %163 = or i32 %142, %42
+  %164 = or i32 %71, %5
+  %165 = or i32 %139, %42
+  %166 = shl i32 %165, 1
+  %167 = xor i32 %114, -1
+  %168 = or i32 %167, %3
+  %169 = or i32 %73, %75
+  %170 = and i32 %154, %3
+  %171 = shl i32 %170, 1
+  %172 = xor i32 %50, %71
+  %173 = or i32 %160, %108
+  %174 = shl i32 %173, 1
+  %175 = and i32 %67, %69
+  %176 = or i32 %63, %105
+  %177 = or i32 %71, %139
+  %178 = xor i32 %52, %142
+  %179 = or i32 %47, %68
+  %180 = or i32 %167, %68
+  %181 = shl i32 %90, 1
+  %182 = and i32 %12, %46
+  %183 = and i32 %154, %68
+  %184 = shl i32 %50, 1
+  %185 = and i32 %69, %3
+  %186 = and i32 %11, %49
+  %187 = or i32 %52, %3
+  %188 = xor i32 %46, %5
+  %189 = xor i32 %59, -1
+  %190 = xor i32 %189, %3
+  %191 = or i32 %49, %68
+  %192 = xor i32 %59, %11
+  %193 = shl i32 %192, 1
+  %194 = and i32 %67, %154
+  %195 = xor i32 %134, -1
+  %196 = or i32 %93, %195
+  %197 = and i32 %79, %5
+  %198 = xor i32 %160, %129
+  %199 = xor i32 %84, %5
+  %200 = and i32 %189, %3
+  %201 = or i32 %59, %68
+  %202 = and i32 %94, %4
+  %203 = or i32 %147, %202
+  %204 = or i32 %59, %101
+  %205 = xor i32 %202, -1
+  %206 = xor i32 %147, %205
+  %207 = and i32 %47, %45
+  %208 = or i32 %69, %101
+  %209 = and i32 %55, %42
+  %210 = and i32 %73, %42
+  %211 = and i32 %55, %4
+  %212 = and i32 %73, %4
+  %213 = and i32 %139, %42
+  %214 = and i32 %139, %4
+  %215 = add i32 %42, %45
+  %216 = add i32 %215, %41
+  %217 = add i32 %216, %84
+  %218 = add i32 %217, %75
+  %219 = add i32 %218, %197
+  %220 = add i32 %219, %164
+  %221 = add i32 %220, %142
+  %222 = add i32 %221, %124
+  %223 = add i32 %222, %87
+  %224 = add i32 %223, %190
+  %225 = add i32 %224, %169
+  %226 = add i32 %225, %111
+  %227 = add i32 %226, %91
+  %228 = add i32 %227, %203
+  %229 = shl i32 %228, 1
+  %230 = add i32 %17, %38
+  %231 = add i32 %230, %214
+  %232 = add i32 %231, %160
+  %233 = add i32 %232, %213
+  %234 = mul i32 %233, 3
+  %235 = add i32 %52, %37
+  %236 = add i32 %235, %159
+  %237 = add i32 %236, %210
+  %238 = shl i32 %237, 2
+  %239 = sub i32 %31, %182
+  %240 = add i32 %239, %63
+  %241 = mul i32 %240, 5
+  %242 = add i32 %39, %3
+  %243 = sub i32 %40, %242
+  %244 = sub i32 %243, %24
+  %245 = add i32 %244, %22
+  %246 = sub i32 %245, %29
+  %247 = sub i32 %246, %34
+  %248 = sub i32 %247, %67
+  %249 = add i32 %248, %71
+  %250 = add i32 %249, %80
+  %251 = add i32 %250, %12
+  %252 = add i32 %251, %102
+  %253 = add i32 %252, %104
+  %254 = sub i32 %253, %110
+  %255 = sub i32 %254, %59
+  %256 = add i32 %255, %130
+  %257 = sub i32 %256, %136
+  %258 = sub i32 %257, %152
+  %259 = add i32 %258, %155
+  %260 = add i32 %259, %156
+  %261 = add i32 %260, %55
+  %262 = add i32 %261, %114
+  %263 = sub i32 %262, %181
+  %264 = sub i32 %263, %186
+  %265 = sub i32 %264, %188
+  %266 = sub i32 %265, %191
+  %267 = add i32 %266, %199
+  %268 = add i32 %267, %73
+  %269 = sub i32 %268, %44
+  %270 = sub i32 %269, %48
+  %271 = sub i32 %270, %51
+  %272 = add i32 %271, %53
+  %273 = add i32 %272, %56
+  %274 = add i32 %273, %57
+  %275 = sub i32 %274, %58
+  %276 = add i32 %275, %70
+  %277 = add i32 %276, %72
+  %278 = sub i32 %277, %74
+  %279 = sub i32 %278, %76
+  %280 = add i32 %279, %78
+  %281 = sub i32 %280, %83
+  %282 = sub i32 %281, %88
+  %283 = sub i32 %282, %89
+  %284 = add i32 %283, %100
+  %285 = add i32 %284, %103
+  %286 = add i32 %285, %105
+  %287 = sub i32 %286, %107
+  %288 = add i32 %287, %108
+  %289 = sub i32 %288, %109
+  %290 = sub i32 %289, %112
+  %291 = add i32 %290, %113
+  %292 = add i32 %291, %117
+  %293 = add i32 %292, %118
+  %294 = add i32 %293, %119
+  %295 = add i32 %294, %125
+  %296 = add i32 %295, %126
+  %297 = sub i32 %296, %127
+  %298 = sub i32 %297, %128
+  %299 = sub i32 %298, %129
+  %300 = add i32 %299, %133
+  %301 = add i32 %300, %137
+  %302 = sub i32 %301, %140
+  %303 = sub i32 %302, %141
+  %304 = add i32 %303, %151
+  %305 = add i32 %304, %153
+  %306 = add i32 %305, %157
+  %307 = sub i32 %306, %158
+  %308 = sub i32 %307, %163
+  %309 = add i32 %308, %168
+  %310 = add i32 %309, %172
+  %311 = add i32 %310, %175
+  %312 = add i32 %311, %177
+  %313 = add i32 %312, %178
+  %314 = add i32 %313, %179
+  %315 = sub i32 %314, %180
+  %316 = add i32 %315, %183
+  %317 = sub i32 %316, %184
+  %318 = add i32 %317, %134
+  %319 = sub i32 %318, %185
+  %320 = add i32 %319, %187
+  %321 = add i32 %320, %194
+  %322 = sub i32 %321, %200
+  %323 = sub i32 %322, %201
+  %324 = sub i32 %323, %204
+  %325 = sub i32 %324, %207
+  %326 = sub i32 %325, %208
+  %327 = sub i32 %326, %209
+  %328 = add i32 %327, %211
+  %329 = add i32 %328, %212
+  %330 = sub i32 %329, %61
+  %331 = sub i32 %330, %66
+  %332 = sub i32 %331, %82
+  %333 = sub i32 %332, %86
+  %334 = add i32 %333, %97
+  %335 = sub i32 %334, %99
+  %336 = sub i32 %335, %116
+  %337 = sub i32 %336, %121
+  %338 = sub i32 %337, %123
+  %339 = add i32 %338, %132
+  %340 = sub i32 %339, %135
+  %341 = add i32 %340, %138
+  %342 = sub i32 %341, %144
+  %343 = sub i32 %342, %146
+  %344 = sub i32 %343, %148
+  %345 = sub i32 %344, %150
+  %346 = add i32 %345, %161
+  %347 = add i32 %346, %162
+  %348 = sub i32 %347, %166
+  %349 = sub i32 %348, %171
+  %350 = sub i32 %349, %176
+  %351 = sub i32 %350, %193
+  %352 = add i32 %351, %196
+  %353 = add i32 %352, %198
+  %354 = add i32 %353, %206
+  %355 = sub i32 %354, %174
+  %356 = add i32 %355, %241
+  %357 = add i32 %356, %238
+  %358 = add i32 %357, %234
+  %359 = add i32 %358, %229
+  %360 = icmp eq i32 %15, %359
+  %361 = select i1 %360, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @str.3, i64 0, i64 0), i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str, i64 0, i64 0)
+  %362 = tail call i32 @puts(i8* nonnull dereferenceable(1) %361)
+  ret void
+}
+
+; Function Attrs: nounwind uwtable
+define dso_local i32 @main() local_unnamed_addr #1 {
+  %1 = alloca i32, align 4
+  %2 = alloca i32, align 4
+  %3 = alloca i32, align 4
+  %4 = alloca i32, align 4
+  %5 = alloca i32, align 4
+  %6 = alloca i32, align 4
+  %7 = bitcast i32* %1 to i8*
+  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %7) #5
+  %8 = bitcast i32* %2 to i8*
+  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %8) #5
+  %9 = bitcast i32* %3 to i8*
+  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %9) #5
+  %10 = bitcast i32* %4 to i8*
+  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %10) #5
+  %11 = bitcast i32* %5 to i8*
+  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %11) #5
+  %12 = bitcast i32* %6 to i8*
+  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %12) #5
+  %13 = call i32 (i8*, ...) @__isoc99_scanf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.2, i64 0, i64 0), i32* nonnull %1, i32* nonnull %2, i32* nonnull %3, i32* nonnull %4, i32* nonnull %5, i32* nonnull %6)
+  %14 = load i32, i32* %1, align 4, !tbaa !2
+  %15 = load i32, i32* %2, align 4, !tbaa !2
+  %16 = load i32, i32* %3, align 4, !tbaa !2
+  %17 = load i32, i32* %4, align 4, !tbaa !2
+  %18 = load i32, i32* %5, align 4, !tbaa !2
+  %19 = load i32, i32* %6, align 4, !tbaa !2
+  call void @crackme(i32 %14, i32 %15, i32 %16, i32 %17, i32 %18, i32 %19)
+  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %12) #5
+  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %11) #5
+  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %10) #5
+  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %9) #5
+  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %8) #5
+  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %7) #5
+  ret i32 0
+}
+
+; Function Attrs: argmemonly nounwind willreturn
+declare void @llvm.lifetime.start.p0i8(i64 immarg, i8* nocapture) #2
+
+; Function Attrs: nofree nounwind
+declare dso_local i32 @__isoc99_scanf(i8* nocapture readonly, ...) local_unnamed_addr #3
+
+; Function Attrs: argmemonly nounwind willreturn
+declare void @llvm.lifetime.end.p0i8(i64 immarg, i8* nocapture) #2
+
+; Function Attrs: nofree nounwind
+declare i32 @puts(i8* nocapture readonly) local_unnamed_addr #4
+
+attributes #0 = { nofree nounwind uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "frame-pointer"="none" "less-precise-fpmad"="false" "min-legal-vector-width"="0" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { nounwind uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "frame-pointer"="none" "less-precise-fpmad"="false" "min-legal-vector-width"="0" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #2 = { argmemonly nounwind willreturn }
+attributes #3 = { nofree nounwind "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "frame-pointer"="none" "less-precise-fpmad"="false" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #4 = { nofree nounwind }
+attributes #5 = { nounwind }
+
+!llvm.module.flags = !{!0}
+!llvm.ident = !{!1}
+
+!0 = !{i32 1, !"wchar_size", i32 4}
+!1 = !{!"Ubuntu clang version 10.0.1-++20200708122807+ef32c611aa2-1~exp1~20200707223407.61 "}
+!2 = !{!3, !3, i64 0}
+!3 = !{!"int", !4, i64 0}
+!4 = !{!"omnipotent char", !5, i64 0}
+!5 = !{!"Simple C/C++ TBAA"}

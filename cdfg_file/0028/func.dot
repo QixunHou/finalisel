@@ -1,0 +1,34 @@
+digraph "CDFG for'func' function" {
+	Node0x5558b6e7be80[shape=record, label="  %add = fadd float %a, %b"];
+	Node0x5558b6e7bf10[shape=record, label="  %add1 = fadd float %add, %c"];
+	Node0x5558b6e7ca10[shape=record, label="  %div = fmul float %add1, 5.000000e-01"];
+	Node0x5558b6e7ca80[shape=record, label="  %sub = fsub float %div, %a"];
+	Node0x5558b6e7cb10[shape=record, label="  %mul = fmul float %div, %sub"];
+	Node0x5558b6e7cba0[shape=record, label="  %sub2 = fsub float %div, %b"];
+	Node0x5558b6e7cc30[shape=record, label="  %mul3 = fmul float %sub2, %mul"];
+	Node0x5558b6e7ccc0[shape=record, label="  %sub4 = fsub float %div, %c"];
+	Node0x5558b6e7cd50[shape=record, label="  %mul5 = fmul float %sub4, %mul3"];
+	Node0x5558b6e7be08[shape=record, label="  ret float %mul5"];
+	Node0x5558b6e7be80 -> Node0x5558b6e7bf10
+	Node0x5558b6e7bf10 -> Node0x5558b6e7ca10
+	Node0x5558b6e7ca10 -> Node0x5558b6e7ca80
+	Node0x5558b6e7ca80 -> Node0x5558b6e7cb10
+	Node0x5558b6e7cb10 -> Node0x5558b6e7cba0
+	Node0x5558b6e7cba0 -> Node0x5558b6e7cc30
+	Node0x5558b6e7cc30 -> Node0x5558b6e7ccc0
+	Node0x5558b6e7ccc0 -> Node0x5558b6e7cd50
+	Node0x5558b6e7cd50 -> Node0x5558b6e7be08
+edge [color=red]
+	Node0x5558b6e7be80 -> Node0x5558b6e7bf10
+	Node0x5558b6e7bf10 -> Node0x5558b6e7ca10
+	Node0x5558b6e7ca10 -> Node0x5558b6e7ca80
+	Node0x5558b6e7ca10 -> Node0x5558b6e7cb10
+	Node0x5558b6e7ca80 -> Node0x5558b6e7cb10
+	Node0x5558b6e7ca10 -> Node0x5558b6e7cba0
+	Node0x5558b6e7cba0 -> Node0x5558b6e7cc30
+	Node0x5558b6e7cb10 -> Node0x5558b6e7cc30
+	Node0x5558b6e7ca10 -> Node0x5558b6e7ccc0
+	Node0x5558b6e7ccc0 -> Node0x5558b6e7cd50
+	Node0x5558b6e7cc30 -> Node0x5558b6e7cd50
+	Node0x5558b6e7cd50 -> Node0x5558b6e7be08
+}

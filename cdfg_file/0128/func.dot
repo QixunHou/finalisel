@@ -1,0 +1,44 @@
+digraph "CDFG for'func' function" {
+	Node0x564a18be2ba8[shape=record, label="  %num = alloca i32, align 4"];
+	Node0x564a18be3268[shape=record, label="  %0 = bitcast i32* %num to i8*"];
+	Node0x564a18be36c8[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %0) #3"];
+	Node0x564a18be3ae0[shape=record, label="  %puts = tail call i32 @puts(i8* getelementptr inbounds ([50 x i8], [50 x i8]* @str, i64 0, i64 0))"];
+	Node0x564a18be3c98[shape=record, label="  br label %while.body"];
+	Node0x564a18be3de0[shape=record, label="  %call1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([25 x i8], [25 x i8]* @.str.1, i64 0, i64 0))"];
+	Node0x564a18be4048[shape=record, label="  %call2 = call i32 (i8*, ...) @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str.2, i64 0, i64 0), i32* nonnull %num)"];
+	Node0x564a18be4108[shape=record, label="  %1 = load i32, i32* %num, align 4, !tbaa !2"];
+	Node0x564a18be5050[shape=record, label="  %mul = mul nsw i32 %1, %1"];
+	Node0x564a18be5178[shape=record, label="  %call3 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str.3, i64 0, i64 0), i32 %mul)"];
+	Node0x564a18be5238[shape=record, label="  %2 = load i32, i32* %num, align 4, !tbaa !2"];
+	Node0x564a18be5920[shape=record, label="  %cmp = icmp slt i32 %2, 50"];
+	Node0x564a18b78588[shape=record, label="  br i1 %cmp, label %while.end, label %while.body"];
+	Node0x564a18be5c08[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %0) #3"];
+	Node0x564a18be5cb0[shape=record, label="  ret void"];
+	Node0x564a18be2ba8 -> Node0x564a18be3268
+	Node0x564a18be3268 -> Node0x564a18be36c8
+	Node0x564a18be36c8 -> Node0x564a18be3ae0
+	Node0x564a18be3ae0 -> Node0x564a18be3c98
+	Node0x564a18be3c98 -> Node0x564a18be3de0
+	Node0x564a18be3de0 -> Node0x564a18be4048
+	Node0x564a18be4048 -> Node0x564a18be4108
+	Node0x564a18be4108 -> Node0x564a18be5050
+	Node0x564a18be5050 -> Node0x564a18be5178
+	Node0x564a18be5178 -> Node0x564a18be5238
+	Node0x564a18be5238 -> Node0x564a18be5920
+	Node0x564a18be5920 -> Node0x564a18b78588
+	Node0x564a18b78588 -> Node0x564a18be5c08
+	Node0x564a18b78588 -> Node0x564a18be3de0
+	Node0x564a18be5c08 -> Node0x564a18be5cb0
+edge [color=red]
+	Node0x564a18be2ba8 -> Node0x564a18be3268
+	Node0x564a18be3268 -> Node0x564a18be36c8
+	Node0x564a18be2ba8 -> Node0x564a18be4048
+	Node0x564a18be2ba8 -> Node0x564a18be4108
+	Node0x564a18be4108 -> Node0x564a18be5050
+	Node0x564a18be4108 -> Node0x564a18be5050
+	Node0x564a18be5050 -> Node0x564a18be5178
+	Node0x564a18be2ba8 -> Node0x564a18be5238
+	Node0x564a18be5238 -> Node0x564a18be5920
+	Node0x564a18be5920 -> Node0x564a18b78588
+	Node0x564a18be3268 -> Node0x564a18be5c08
+}

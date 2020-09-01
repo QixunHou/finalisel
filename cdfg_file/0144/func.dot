@@ -1,0 +1,64 @@
+digraph "CDFG for'func' function" {
+	Node0x560214cdb038[shape=record, label="  %str1 = alloca [20 x i8*], align 16"];
+	Node0x560214cdb6f8[shape=record, label="  %str2 = alloca [20 x i8*], align 16"];
+	Node0x560214cdb778[shape=record, label="  %str3 = alloca [20 x i8*], align 16"];
+	Node0x560214cdb7f8[shape=record, label="  %0 = bitcast [20 x i8*]* %str1 to i8*"];
+	Node0x560214cdbc58[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 160, i8* nonnull %0) #3"];
+	Node0x560214cdbd38[shape=record, label="  %1 = bitcast [20 x i8*]* %str2 to i8*"];
+	Node0x560214cdbe38[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 160, i8* nonnull %1) #3"];
+	Node0x560214cdbef8[shape=record, label="  %2 = bitcast [20 x i8*]* %str3 to i8*"];
+	Node0x560214cdbfb8[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 160, i8* nonnull %2) #3"];
+	Node0x560214cdc380[shape=record, label="  %puts = tail call i32 @puts(i8* getelementptr inbounds ([27 x i8], [27 x i8]* @str, i64 0, i64 0))"];
+	Node0x560214cdc468[shape=record, label="  %arraydecay = getelementptr inbounds [20 x i8*], [20 x i8*]* %str1, i64 0, i64 0"];
+	Node0x560214cdc698[shape=record, label="  %call1 = call i32 (i8*, ...) @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str.1, i64 0, i64 0), i8** nonnull %arraydecay)"];
+	Node0x560214cdc788[shape=record, label="  %arraydecay2 = getelementptr inbounds [20 x i8*], [20 x i8*]* %str2, i64 0, i64 0"];
+	Node0x560214cdc878[shape=record, label="  %call3 = call i32 (i8*, ...) @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str.1, i64 0, i64 0), i8** nonnull %arraydecay2)"];
+	Node0x560214cdc968[shape=record, label="  %arraydecay4 = getelementptr inbounds [20 x i8*], [20 x i8*]* %str3, i64 0, i64 0"];
+	Node0x560214cdca58[shape=record, label="  %call5 = call i32 (i8*, ...) @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str.1, i64 0, i64 0), i8** nonnull %arraydecay4)"];
+	Node0x560214cdcbd0[shape=record, label="  %puts11 = call i32 @puts(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @str.4, i64 0, i64 0))"];
+	Node0x560214cdce78[shape=record, label="  %call10 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.3, i64 0, i64 0), i8** nonnull %arraydecay, i8** nonnull %arraydecay2, i8** nonnull %arraydecay4)"];
+	Node0x560214cdd278[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 160, i8* nonnull %2) #3"];
+	Node0x560214cdd3d8[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 160, i8* nonnull %1) #3"];
+	Node0x560214cdd4e8[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 160, i8* nonnull %0) #3"];
+	Node0x560214cdd590[shape=record, label="  ret void"];
+	Node0x560214cdb038 -> Node0x560214cdb6f8
+	Node0x560214cdb6f8 -> Node0x560214cdb778
+	Node0x560214cdb778 -> Node0x560214cdb7f8
+	Node0x560214cdb7f8 -> Node0x560214cdbc58
+	Node0x560214cdbc58 -> Node0x560214cdbd38
+	Node0x560214cdbd38 -> Node0x560214cdbe38
+	Node0x560214cdbe38 -> Node0x560214cdbef8
+	Node0x560214cdbef8 -> Node0x560214cdbfb8
+	Node0x560214cdbfb8 -> Node0x560214cdc380
+	Node0x560214cdc380 -> Node0x560214cdc468
+	Node0x560214cdc468 -> Node0x560214cdc698
+	Node0x560214cdc698 -> Node0x560214cdc788
+	Node0x560214cdc788 -> Node0x560214cdc878
+	Node0x560214cdc878 -> Node0x560214cdc968
+	Node0x560214cdc968 -> Node0x560214cdca58
+	Node0x560214cdca58 -> Node0x560214cdcbd0
+	Node0x560214cdcbd0 -> Node0x560214cdce78
+	Node0x560214cdce78 -> Node0x560214cdd278
+	Node0x560214cdd278 -> Node0x560214cdd3d8
+	Node0x560214cdd3d8 -> Node0x560214cdd4e8
+	Node0x560214cdd4e8 -> Node0x560214cdd590
+edge [color=red]
+	Node0x560214cdb038 -> Node0x560214cdb7f8
+	Node0x560214cdb7f8 -> Node0x560214cdbc58
+	Node0x560214cdb6f8 -> Node0x560214cdbd38
+	Node0x560214cdbd38 -> Node0x560214cdbe38
+	Node0x560214cdb778 -> Node0x560214cdbef8
+	Node0x560214cdbef8 -> Node0x560214cdbfb8
+	Node0x560214cdb038 -> Node0x560214cdc468
+	Node0x560214cdc468 -> Node0x560214cdc698
+	Node0x560214cdb6f8 -> Node0x560214cdc788
+	Node0x560214cdc788 -> Node0x560214cdc878
+	Node0x560214cdb778 -> Node0x560214cdc968
+	Node0x560214cdc968 -> Node0x560214cdca58
+	Node0x560214cdc468 -> Node0x560214cdce78
+	Node0x560214cdc788 -> Node0x560214cdce78
+	Node0x560214cdc968 -> Node0x560214cdce78
+	Node0x560214cdbef8 -> Node0x560214cdd278
+	Node0x560214cdbd38 -> Node0x560214cdd3d8
+	Node0x560214cdb7f8 -> Node0x560214cdd4e8
+}

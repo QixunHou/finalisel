@@ -1,0 +1,80 @@
+digraph "CDFG for'main' function" {
+	Node0x55b829468608[shape=record, label="  %num = alloca i32, align 4"];
+	Node0x55b829468688[shape=record, label="  %0 = bitcast i32* %num to i8*"];
+	Node0x55b8294688c8[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %0) #4"];
+	Node0x55b829468c90[shape=record, label="  %puts = tail call i32 @puts(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @str, i64 0, i64 0))"];
+	Node0x55b829468f68[shape=record, label="  %call1 = call i32 (i8*, ...) @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str.1, i64 0, i64 0), i32* nonnull %num)"];
+	Node0x55b829469028[shape=record, label="  %1 = load i32, i32* %num, align 4, !tbaa !2"];
+	Node0x55b82946a000[shape=record, label="  %temp.010.i = srem i32 %1, 10"];
+	Node0x55b82946a0a0[shape=record, label="  %cmp11.i = icmp ne i32 %temp.010.i, 5"];
+	Node0x55b82946a110[shape=record, label="  %cmp112.i = icmp sgt i32 %1, 10"];
+	Node0x55b82946a1b0[shape=record, label="  %2 = and i1 %cmp112.i, %cmp11.i"];
+	Node0x55b82946a428[shape=record, label="  br i1 %2, label %while.body.i, label %func.exit"];
+	Node0x55b82946a4a8[shape=record, label="  %num.addr.013.i = phi i32 [ %div9.i, %while.body.i ], [ %1, %entry ]"];
+	Node0x55b82946a5a0[shape=record, label="  %div9.i = udiv i32 %num.addr.013.i, 10"];
+	Node0x55b82946a610[shape=record, label="  %temp.0.i = urem i32 %div9.i, 10"];
+	Node0x55b82946a680[shape=record, label="  %cmp.i = icmp ne i32 %temp.0.i, 5"];
+	Node0x55b82946a8b0[shape=record, label="  %cmp1.i = icmp ugt i32 %num.addr.013.i, 109"];
+	Node0x55b82946a940[shape=record, label="  %3 = and i1 %cmp1.i, %cmp.i"];
+	Node0x55b82946a9c8[shape=record, label="  br i1 %3, label %while.body.i, label %func.exit"];
+	Node0x55b82946aa18[shape=record, label="  %cmp.lcssa.i = phi i1 [ %cmp11.i, %entry ], [ %cmp.i, %while.body.i ]"];
+	Node0x55b82946ac08[shape=record, label="  br i1 %cmp.lcssa.i, label %if.else, label %if.then"];
+	Node0x55b82946ad20[shape=record, label="  %puts6 = call i32 @puts(i8* getelementptr inbounds ([5 x i8], [5 x i8]* @str.5, i64 0, i64 0))"];
+	Node0x55b82946ae48[shape=record, label="  br label %if.end"];
+	Node0x55b82946af60[shape=record, label="  %puts5 = call i32 @puts(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @str.4, i64 0, i64 0))"];
+	Node0x55b82946a398[shape=record, label="  br label %if.end"];
+	Node0x55b82946b108[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %0) #4"];
+	Node0x55b82946b1b0[shape=record, label="  ret void"];
+	Node0x55b829468608 -> Node0x55b829468688
+	Node0x55b829468688 -> Node0x55b8294688c8
+	Node0x55b8294688c8 -> Node0x55b829468c90
+	Node0x55b829468c90 -> Node0x55b829468f68
+	Node0x55b829468f68 -> Node0x55b829469028
+	Node0x55b829469028 -> Node0x55b82946a000
+	Node0x55b82946a000 -> Node0x55b82946a0a0
+	Node0x55b82946a0a0 -> Node0x55b82946a110
+	Node0x55b82946a110 -> Node0x55b82946a1b0
+	Node0x55b82946a1b0 -> Node0x55b82946a428
+	Node0x55b82946a428 -> Node0x55b82946a4a8
+	Node0x55b82946a428 -> Node0x55b82946aa18
+	Node0x55b82946a4a8 -> Node0x55b82946a5a0
+	Node0x55b82946a5a0 -> Node0x55b82946a610
+	Node0x55b82946a610 -> Node0x55b82946a680
+	Node0x55b82946a680 -> Node0x55b82946a8b0
+	Node0x55b82946a8b0 -> Node0x55b82946a940
+	Node0x55b82946a940 -> Node0x55b82946a9c8
+	Node0x55b82946a9c8 -> Node0x55b82946a4a8
+	Node0x55b82946a9c8 -> Node0x55b82946aa18
+	Node0x55b82946aa18 -> Node0x55b82946ac08
+	Node0x55b82946ac08 -> Node0x55b82946af60
+	Node0x55b82946ac08 -> Node0x55b82946ad20
+	Node0x55b82946ad20 -> Node0x55b82946ae48
+	Node0x55b82946ae48 -> Node0x55b82946b108
+	Node0x55b82946af60 -> Node0x55b82946a398
+	Node0x55b82946a398 -> Node0x55b82946b108
+	Node0x55b82946b108 -> Node0x55b82946b1b0
+edge [color=red]
+	Node0x55b829468608 -> Node0x55b829468688
+	Node0x55b829468688 -> Node0x55b8294688c8
+	Node0x55b829468608 -> Node0x55b829468f68
+	Node0x55b829468608 -> Node0x55b829469028
+	Node0x55b829469028 -> Node0x55b82946a000
+	Node0x55b82946a000 -> Node0x55b82946a0a0
+	Node0x55b829469028 -> Node0x55b82946a110
+	Node0x55b82946a110 -> Node0x55b82946a1b0
+	Node0x55b82946a0a0 -> Node0x55b82946a1b0
+	Node0x55b82946a1b0 -> Node0x55b82946a428
+	Node0x55b82946a5a0 -> Node0x55b82946a4a8
+	Node0x55b829469028 -> Node0x55b82946a4a8
+	Node0x55b82946a4a8 -> Node0x55b82946a5a0
+	Node0x55b82946a5a0 -> Node0x55b82946a610
+	Node0x55b82946a610 -> Node0x55b82946a680
+	Node0x55b82946a4a8 -> Node0x55b82946a8b0
+	Node0x55b82946a8b0 -> Node0x55b82946a940
+	Node0x55b82946a680 -> Node0x55b82946a940
+	Node0x55b82946a940 -> Node0x55b82946a9c8
+	Node0x55b82946a0a0 -> Node0x55b82946aa18
+	Node0x55b82946a680 -> Node0x55b82946aa18
+	Node0x55b82946aa18 -> Node0x55b82946ac08
+	Node0x55b829468688 -> Node0x55b82946b108
+}

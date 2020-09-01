@@ -1,0 +1,20 @@
+digraph "CDFG for'func' function" {
+	Node0x557557b271a8[shape=record, label="  %0 = load i32, i32* %a, align 4, !tbaa !2"];
+	Node0x557557b28710[shape=record, label="  %arrayidx1 = getelementptr inbounds i32, i32* %a, i64 1"];
+	Node0x557557b287a8[shape=record, label="  %1 = load i32, i32* %arrayidx1, align 4, !tbaa !2"];
+	Node0x557557b28e50[shape=record, label="  store i32 %1, i32* %a, align 4, !tbaa !2"];
+	Node0x557557b28ed0[shape=record, label="  store i32 %0, i32* %arrayidx1, align 4, !tbaa !2"];
+	Node0x557557b29348[shape=record, label="  ret i32 undef"];
+	Node0x557557b271a8 -> Node0x557557b28710
+	Node0x557557b28710 -> Node0x557557b287a8
+	Node0x557557b287a8 -> Node0x557557b28e50
+	Node0x557557b28e50 -> Node0x557557b28ed0
+	Node0x557557b28ed0 -> Node0x557557b29348
+edge [color=red]
+	Node0x557557b27010 -> Node0x557557b271a8
+	Node0x557557b28710 -> Node0x557557b287a8
+	Node0x557557b287a8 -> Node0x557557b28e50
+	Node0x557557b28e50 -> Node0x557557b27010
+	Node0x557557b271a8 -> Node0x557557b28ed0
+	Node0x557557b28ed0 -> Node0x557557b28710
+}

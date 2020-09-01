@@ -1,0 +1,166 @@
+digraph "CDFG for'func' function" {
+	Node0x55f3c70a5338[shape=record, label="  br label %while.cond"];
+	Node0x55f3c70a54c8[shape=record, label="  %str.addr.0 = phi i8* [ %str, %entry ], [ %incdec.ptr, %while.body ]"];
+	Node0x55f3c70a55a8[shape=record, label="  %0 = load i8, i8* %str.addr.0, align 1, !tbaa !2"];
+	Node0x55f3c70a6dd8[shape=record, label="  switch i8 %0, label %if.end11 [
+    i8 32, label %while.body
+    i8 45, label %if.then
+    i8 43, label %if.then9
+  ]"];
+	Node0x55f3c70a6f50[shape=record, label="  %incdec.ptr = getelementptr inbounds i8, i8* %str.addr.0, i64 1"];
+	Node0x55f3c70a5258[shape=record, label="  br label %while.cond"];
+	Node0x55f3c70a6fd0[shape=record, label="  %incdec.ptr5 = getelementptr inbounds i8, i8* %str.addr.0, i64 1"];
+	Node0x55f3c70a6c78[shape=record, label="  br label %if.end11"];
+	Node0x55f3c70a7050[shape=record, label="  %incdec.ptr10 = getelementptr inbounds i8, i8* %str.addr.0, i64 1"];
+	Node0x55f3c70a6d88[shape=record, label="  br label %if.end11"];
+	Node0x55f3c70a70d8[shape=record, label="  %str.addr.1 = phi i8* [ %incdec.ptr5, %if.then ], [ %incdec.ptr10, %if.then9 ], [ %str.addr.0, %while.cond ]"];
+	Node0x55f3c70a7228[shape=record, label="  %flag.0 = phi i32 [ -1, %if.then ], [ 1, %if.then9 ], [ 1, %while.cond ]"];
+	Node0x55f3c70a6538[shape=record, label="  %1 = load i8, i8* %str.addr.1, align 1, !tbaa !2"];
+	Node0x55f3c70a7b30[shape=record, label="  %cmp14141145 = icmp eq i8 %1, 0"];
+	Node0x55f3c702ddb8[shape=record, label="  br i1 %cmp14141145, label %while.end65, label %while.cond12.outer.split.lr.ph"];
+	Node0x55f3c70a7e38[shape=record, label="  %2 = phi i8 [ %8, %if.then37 ], [ %1, %if.end11 ]"];
+	Node0x55f3c70a7fa8[shape=record, label="  %3 = phi i64 [ %7, %if.then37 ], [ 0, %if.end11 ]"];
+	Node0x55f3c70a80a8[shape=record, label="  %flag_num.0.ph.ph147 = phi i32 [ 1, %if.then37 ], [ 0, %if.end11 ]"];
+	Node0x55f3c70a8208[shape=record, label="  %result.0.ph.ph146 = phi i32 [ %sub, %if.then37 ], [ 0, %if.end11 ]"];
+	Node0x55f3c70a8438[shape=record, label="  br label %while.cond12.outer.split"];
+	Node0x55f3c70a8518[shape=record, label="  %4 = phi i8 [ %2, %while.cond12.outer.split.lr.ph ], [ %6, %if.then24 ]"];
+	Node0x55f3c70a8638[shape=record, label="  %flag_num.0.ph143 = phi i32 [ %flag_num.0.ph.ph147, %while.cond12.outer.split.lr.ph ], [ 0, %if.then24 ]"];
+	Node0x55f3c70a8768[shape=record, label="  %indvars.iv142 = phi i64 [ %3, %while.cond12.outer.split.lr.ph ], [ %indvars.iv.next, %if.then24 ]"];
+	Node0x55f3c70a8860[shape=record, label="  %cmp20 = icmp eq i8 %4, 32"];
+	Node0x55f3c70a8930[shape=record, label="  %cmp22 = icmp eq i32 %flag_num.0.ph143, 0"];
+	Node0x55f3c70a8ce0[shape=record, label="  %or.cond = and i1 %cmp22, %cmp20"];
+	Node0x55f3c7039228[shape=record, label="  br i1 %or.cond, label %if.then24, label %while.cond12.outer.split.split"];
+	Node0x55f3c70a8e60[shape=record, label="  %.off.le = add i8 %4, -48"];
+	Node0x55f3c70a8ef0[shape=record, label="  %5 = icmp ult i8 %.off.le, 10"];
+	Node0x55f3c7039348[shape=record, label="  br i1 %5, label %if.then37, label %while.end65"];
+	Node0x55f3c70a8f60[shape=record, label="  %indvars.iv.next = add i64 %indvars.iv142, 1"];
+	Node0x55f3c70a8fd0[shape=record, label="  %arrayidx = getelementptr inbounds i8, i8* %str.addr.1, i64 %indvars.iv.next"];
+	Node0x55f3c70a8718[shape=record, label="  %6 = load i8, i8* %arrayidx, align 1, !tbaa !2"];
+	Node0x55f3c70a9050[shape=record, label="  %cmp14 = icmp eq i8 %6, 0"];
+	Node0x55f3c7039468[shape=record, label="  br i1 %cmp14, label %while.end65, label %while.cond12.outer.split"];
+	Node0x55f3c70a7cf8[shape=record, label="  %conv13.le = sext i8 %4 to i32"];
+	Node0x55f3c70a90e0[shape=record, label="  %mul = mul nsw i32 %result.0.ph.ph146, 10"];
+	Node0x55f3c70a9170[shape=record, label="  %add = add i32 %mul, -48"];
+	Node0x55f3c70a9200[shape=record, label="  %sub = add i32 %add, %conv13.le"];
+	Node0x55f3c70a9270[shape=record, label="  %inc41 = shl i64 %indvars.iv142, 32"];
+	Node0x55f3c70a9330[shape=record, label="  %sext = add i64 %inc41, 4294967296"];
+	Node0x55f3c70a93c0[shape=record, label="  %7 = ashr exact i64 %sext, 32"];
+	Node0x55f3c70a9430[shape=record, label="  %arrayidx140 = getelementptr inbounds i8, i8* %str.addr.1, i64 %7"];
+	Node0x55f3c70a81b8[shape=record, label="  %8 = load i8, i8* %arrayidx140, align 1, !tbaa !2"];
+	Node0x55f3c70a94b0[shape=record, label="  %cmp14141 = icmp eq i8 %8, 0"];
+	Node0x55f3c70a9598[shape=record, label="  br i1 %cmp14141, label %while.end65, label %while.cond12.outer.split.lr.ph"];
+	Node0x55f3c70a85b8[shape=record, label="  %result.0.ph.ph137 = phi i32 [ 0, %if.end11 ], [ %result.0.ph.ph146, %if.then24 ], [ %sub, %if.then37 ], [ %result.0.ph.ph146, %while.cond12.outer.split.split ]"];
+	Node0x55f3c70a9700[shape=record, label="  %mul66 = mul nsw i32 %result.0.ph.ph137, %flag.0"];
+	Node0x55f3c70a5478[shape=record, label="  ret i32 %mul66"];
+	Node0x55f3c70a5338 -> Node0x55f3c70a54c8
+	Node0x55f3c70a54c8 -> Node0x55f3c70a55a8
+	Node0x55f3c70a55a8 -> Node0x55f3c70a6dd8
+	Node0x55f3c70a6dd8 -> Node0x55f3c70a70d8
+	Node0x55f3c70a6dd8 -> Node0x55f3c70a6f50
+	Node0x55f3c70a6dd8 -> Node0x55f3c70a6fd0
+	Node0x55f3c70a6dd8 -> Node0x55f3c70a7050
+	Node0x55f3c70a6f50 -> Node0x55f3c70a5258
+	Node0x55f3c70a5258 -> Node0x55f3c70a54c8
+	Node0x55f3c70a6fd0 -> Node0x55f3c70a6c78
+	Node0x55f3c70a6c78 -> Node0x55f3c70a70d8
+	Node0x55f3c70a7050 -> Node0x55f3c70a6d88
+	Node0x55f3c70a6d88 -> Node0x55f3c70a70d8
+	Node0x55f3c70a70d8 -> Node0x55f3c70a7228
+	Node0x55f3c70a7228 -> Node0x55f3c70a6538
+	Node0x55f3c70a6538 -> Node0x55f3c70a7b30
+	Node0x55f3c70a7b30 -> Node0x55f3c702ddb8
+	Node0x55f3c702ddb8 -> Node0x55f3c70a85b8
+	Node0x55f3c702ddb8 -> Node0x55f3c70a7e38
+	Node0x55f3c70a7e38 -> Node0x55f3c70a7fa8
+	Node0x55f3c70a7fa8 -> Node0x55f3c70a80a8
+	Node0x55f3c70a80a8 -> Node0x55f3c70a8208
+	Node0x55f3c70a8208 -> Node0x55f3c70a8438
+	Node0x55f3c70a8438 -> Node0x55f3c70a8518
+	Node0x55f3c70a8518 -> Node0x55f3c70a8638
+	Node0x55f3c70a8638 -> Node0x55f3c70a8768
+	Node0x55f3c70a8768 -> Node0x55f3c70a8860
+	Node0x55f3c70a8860 -> Node0x55f3c70a8930
+	Node0x55f3c70a8930 -> Node0x55f3c70a8ce0
+	Node0x55f3c70a8ce0 -> Node0x55f3c7039228
+	Node0x55f3c7039228 -> Node0x55f3c70a8f60
+	Node0x55f3c7039228 -> Node0x55f3c70a8e60
+	Node0x55f3c70a8e60 -> Node0x55f3c70a8ef0
+	Node0x55f3c70a8ef0 -> Node0x55f3c7039348
+	Node0x55f3c7039348 -> Node0x55f3c70a7cf8
+	Node0x55f3c7039348 -> Node0x55f3c70a85b8
+	Node0x55f3c70a8f60 -> Node0x55f3c70a8fd0
+	Node0x55f3c70a8fd0 -> Node0x55f3c70a8718
+	Node0x55f3c70a8718 -> Node0x55f3c70a9050
+	Node0x55f3c70a9050 -> Node0x55f3c7039468
+	Node0x55f3c7039468 -> Node0x55f3c70a85b8
+	Node0x55f3c7039468 -> Node0x55f3c70a8518
+	Node0x55f3c70a7cf8 -> Node0x55f3c70a90e0
+	Node0x55f3c70a90e0 -> Node0x55f3c70a9170
+	Node0x55f3c70a9170 -> Node0x55f3c70a9200
+	Node0x55f3c70a9200 -> Node0x55f3c70a9270
+	Node0x55f3c70a9270 -> Node0x55f3c70a9330
+	Node0x55f3c70a9330 -> Node0x55f3c70a93c0
+	Node0x55f3c70a93c0 -> Node0x55f3c70a9430
+	Node0x55f3c70a9430 -> Node0x55f3c70a81b8
+	Node0x55f3c70a81b8 -> Node0x55f3c70a94b0
+	Node0x55f3c70a94b0 -> Node0x55f3c70a9598
+	Node0x55f3c70a9598 -> Node0x55f3c70a85b8
+	Node0x55f3c70a9598 -> Node0x55f3c70a7e38
+	Node0x55f3c70a85b8 -> Node0x55f3c70a9700
+	Node0x55f3c70a9700 -> Node0x55f3c70a5478
+edge [color=red]
+	Node0x55f3c70a6f50 -> Node0x55f3c70a54c8
+	Node0x55f3c70a54c8 -> Node0x55f3c70a55a8
+	Node0x55f3c70a55a8 -> Node0x55f3c70a6dd8
+	Node0x55f3c70a54c8 -> Node0x55f3c70a6f50
+	Node0x55f3c70a54c8 -> Node0x55f3c70a6fd0
+	Node0x55f3c70a54c8 -> Node0x55f3c70a7050
+	Node0x55f3c70a6fd0 -> Node0x55f3c70a70d8
+	Node0x55f3c70a7050 -> Node0x55f3c70a70d8
+	Node0x55f3c70a54c8 -> Node0x55f3c70a70d8
+	Node0x55f3c70a70d8 -> Node0x55f3c70a6538
+	Node0x55f3c70a6538 -> Node0x55f3c70a7b30
+	Node0x55f3c70a7b30 -> Node0x55f3c702ddb8
+	Node0x55f3c70a81b8 -> Node0x55f3c70a7e38
+	Node0x55f3c70a6538 -> Node0x55f3c70a7e38
+	Node0x55f3c70a93c0 -> Node0x55f3c70a7fa8
+	Node0x55f3c70a9200 -> Node0x55f3c70a8208
+	Node0x55f3c70a7e38 -> Node0x55f3c70a8518
+	Node0x55f3c70a8718 -> Node0x55f3c70a8518
+	Node0x55f3c70a80a8 -> Node0x55f3c70a8638
+	Node0x55f3c70a7fa8 -> Node0x55f3c70a8768
+	Node0x55f3c70a8f60 -> Node0x55f3c70a8768
+	Node0x55f3c70a8518 -> Node0x55f3c70a8860
+	Node0x55f3c70a8638 -> Node0x55f3c70a8930
+	Node0x55f3c70a8930 -> Node0x55f3c70a8ce0
+	Node0x55f3c70a8860 -> Node0x55f3c70a8ce0
+	Node0x55f3c70a8ce0 -> Node0x55f3c7039228
+	Node0x55f3c70a8518 -> Node0x55f3c70a8e60
+	Node0x55f3c70a8e60 -> Node0x55f3c70a8ef0
+	Node0x55f3c70a8ef0 -> Node0x55f3c7039348
+	Node0x55f3c70a8768 -> Node0x55f3c70a8f60
+	Node0x55f3c70a70d8 -> Node0x55f3c70a8fd0
+	Node0x55f3c70a8f60 -> Node0x55f3c70a8fd0
+	Node0x55f3c70a8fd0 -> Node0x55f3c70a8718
+	Node0x55f3c70a8718 -> Node0x55f3c70a9050
+	Node0x55f3c70a9050 -> Node0x55f3c7039468
+	Node0x55f3c70a8518 -> Node0x55f3c70a7cf8
+	Node0x55f3c70a8208 -> Node0x55f3c70a90e0
+	Node0x55f3c70a90e0 -> Node0x55f3c70a9170
+	Node0x55f3c70a9170 -> Node0x55f3c70a9200
+	Node0x55f3c70a7cf8 -> Node0x55f3c70a9200
+	Node0x55f3c70a8768 -> Node0x55f3c70a9270
+	Node0x55f3c70a9270 -> Node0x55f3c70a9330
+	Node0x55f3c70a9330 -> Node0x55f3c70a93c0
+	Node0x55f3c70a70d8 -> Node0x55f3c70a9430
+	Node0x55f3c70a93c0 -> Node0x55f3c70a9430
+	Node0x55f3c70a9430 -> Node0x55f3c70a81b8
+	Node0x55f3c70a81b8 -> Node0x55f3c70a94b0
+	Node0x55f3c70a94b0 -> Node0x55f3c70a9598
+	Node0x55f3c70a8208 -> Node0x55f3c70a85b8
+	Node0x55f3c70a9200 -> Node0x55f3c70a85b8
+	Node0x55f3c70a8208 -> Node0x55f3c70a85b8
+	Node0x55f3c70a85b8 -> Node0x55f3c70a9700
+	Node0x55f3c70a7228 -> Node0x55f3c70a9700
+	Node0x55f3c70a9700 -> Node0x55f3c70a5478
+}

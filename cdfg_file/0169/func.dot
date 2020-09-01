@@ -1,0 +1,13 @@
+digraph "CDFG for'func' function" {
+	Node0x559cd615c530[shape=record, label="  %cmp = icmp ugt i32* %a, %b"];
+	Node0x559cd60e6c98[shape=record, label="  %cond = select i1 %cmp, i32* %a, i32* %b"];
+	Node0x559cd615c4b8[shape=record, label="  %0 = load i32, i32* %cond, align 4, !tbaa !2"];
+	Node0x559cd615d478[shape=record, label="  ret i32 %0"];
+	Node0x559cd615c530 -> Node0x559cd60e6c98
+	Node0x559cd60e6c98 -> Node0x559cd615c4b8
+	Node0x559cd615c4b8 -> Node0x559cd615d478
+edge [color=red]
+	Node0x559cd615c530 -> Node0x559cd60e6c98
+	Node0x559cd60e6c98 -> Node0x559cd615c4b8
+	Node0x559cd615c4b8 -> Node0x559cd615d478
+}

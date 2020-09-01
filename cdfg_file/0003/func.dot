@@ -1,0 +1,39 @@
+digraph "CDFG for'func' function" {
+	Node0x55b2fa940130[shape=record, label="  %cmp4 = icmp slt i32 %n, 2"];
+	Node0x55b2fa8c9c98[shape=record, label="  br i1 %cmp4, label %if.end, label %if.else.preheader"];
+	Node0x55b2fa9402a8[shape=record, label="  %0 = sext i32 %n to i64"];
+	Node0x55b2fa940428[shape=record, label="  br label %if.else"];
+	Node0x55b2fa940478[shape=record, label="  %indvars.iv = phi i64 [ %0, %if.else.preheader ], [ %indvars.iv.next, %if.else ]"];
+	Node0x55b2fa940658[shape=record, label="  %accumulator.tr5 = phi i64 [ 1, %if.else.preheader ], [ %mul, %if.else ]"];
+	Node0x55b2fa940750[shape=record, label="  %indvars.iv.next = add nsw i64 %indvars.iv, -1"];
+	Node0x55b2fa9407c0[shape=record, label="  %mul = mul nsw i64 %accumulator.tr5, %indvars.iv"];
+	Node0x55b2fa940830[shape=record, label="  %cmp = icmp slt i64 %indvars.iv, 3"];
+	Node0x55b2fa8c9db8[shape=record, label="  br i1 %cmp, label %if.end, label %if.else"];
+	Node0x55b2fa940898[shape=record, label="  %accumulator.tr.lcssa = phi i64 [ 1, %entry ], [ %mul, %if.else ]"];
+	Node0x55b2fa93fa78[shape=record, label="  ret i64 %accumulator.tr.lcssa"];
+	Node0x55b2fa940130 -> Node0x55b2fa8c9c98
+	Node0x55b2fa8c9c98 -> Node0x55b2fa940898
+	Node0x55b2fa8c9c98 -> Node0x55b2fa9402a8
+	Node0x55b2fa9402a8 -> Node0x55b2fa940428
+	Node0x55b2fa940428 -> Node0x55b2fa940478
+	Node0x55b2fa940478 -> Node0x55b2fa940658
+	Node0x55b2fa940658 -> Node0x55b2fa940750
+	Node0x55b2fa940750 -> Node0x55b2fa9407c0
+	Node0x55b2fa9407c0 -> Node0x55b2fa940830
+	Node0x55b2fa940830 -> Node0x55b2fa8c9db8
+	Node0x55b2fa8c9db8 -> Node0x55b2fa940898
+	Node0x55b2fa8c9db8 -> Node0x55b2fa940478
+	Node0x55b2fa940898 -> Node0x55b2fa93fa78
+edge [color=red]
+	Node0x55b2fa940130 -> Node0x55b2fa8c9c98
+	Node0x55b2fa9402a8 -> Node0x55b2fa940478
+	Node0x55b2fa940750 -> Node0x55b2fa940478
+	Node0x55b2fa9407c0 -> Node0x55b2fa940658
+	Node0x55b2fa940478 -> Node0x55b2fa940750
+	Node0x55b2fa940658 -> Node0x55b2fa9407c0
+	Node0x55b2fa940478 -> Node0x55b2fa9407c0
+	Node0x55b2fa940478 -> Node0x55b2fa940830
+	Node0x55b2fa940830 -> Node0x55b2fa8c9db8
+	Node0x55b2fa9407c0 -> Node0x55b2fa940898
+	Node0x55b2fa940898 -> Node0x55b2fa93fa78
+}

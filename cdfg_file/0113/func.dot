@@ -1,0 +1,142 @@
+digraph "CDFG for'func' function" {
+	Node0x556446045938[shape=record, label="  %n = alloca i32, align 4"];
+	Node0x556446045ff8[shape=record, label="  %0 = bitcast i32* %n to i8*"];
+	Node0x556446046458[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %0) #3"];
+	Node0x5564460468b8[shape=record, label="  %call = call i32 (i8*, ...) @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str, i64 0, i64 0), i32* nonnull %n)"];
+	Node0x556446046978[shape=record, label="  %1 = load i32, i32* %n, align 4, !tbaa !2"];
+	Node0x5564460478f0[shape=record, label="  %cmp47 = icmp sgt i32 %1, 0"];
+	Node0x556445fdb348[shape=record, label="  br i1 %cmp47, label %for.body, label %for.cond.cleanup"];
+	Node0x556446047c58[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %0) #3"];
+	Node0x556446047d18[shape=record, label="  ret i32 0"];
+	Node0x556446047e78[shape=record, label="  %indvars.iv = phi i32 [ %indvars.iv.next, %for.cond.cleanup17 ], [ 1, %entry ]"];
+	Node0x556446047fe8[shape=record, label="  %2 = phi i32 [ %5, %for.cond.cleanup17 ], [ %1, %entry ]"];
+	Node0x556446048148[shape=record, label="  %i.048 = phi i32 [ %inc25, %for.cond.cleanup17 ], [ 0, %entry ]"];
+	Node0x556446048230[shape=record, label="  %sub = sub nsw i32 %2, %i.048"];
+	Node0x5564460482c0[shape=record, label="  %cmp241 = icmp sgt i32 %sub, 0"];
+	Node0x556445fdb588[shape=record, label="  br i1 %cmp241, label %for.body4, label %for.body9.preheader"];
+	Node0x556446048708[shape=record, label="  br label %for.body9"];
+	Node0x556446048758[shape=record, label="  %j.042 = phi i32 [ %dec, %for.body4 ], [ %sub, %for.body ]"];
+	Node0x5564460489b0[shape=record, label="  %putchar40 = call i32 @putchar(i32 32)"];
+	Node0x556446048ae0[shape=record, label="  %dec = add nsw i32 %j.042, -1"];
+	Node0x556446048b50[shape=record, label="  %cmp2 = icmp sgt i32 %dec, 0"];
+	Node0x556446048c28[shape=record, label="  br i1 %cmp2, label %for.body4, label %for.body9.preheader"];
+	Node0x556446048388[shape=record, label="  %3 = load i32, i32* %n, align 4, !tbaa !2"];
+	Node0x556446049320[shape=record, label="  %4 = xor i32 %i.048, -1"];
+	Node0x5564460493e0[shape=record, label="  %sub1544 = add i32 %3, %4"];
+	Node0x556446049450[shape=record, label="  %cmp1645 = icmp sgt i32 %sub1544, 0"];
+	Node0x556446049608[shape=record, label="  br i1 %cmp1645, label %for.body18, label %for.cond.cleanup17"];
+	Node0x556446049678[shape=record, label="  %k.043 = phi i32 [ %inc, %for.body9 ], [ 0, %for.body9.preheader ]"];
+	Node0x556446049780[shape=record, label="  %putchar39 = call i32 @putchar(i32 65)"];
+	Node0x556446049850[shape=record, label="  %inc = add nuw nsw i32 %k.043, 1"];
+	Node0x556446049be0[shape=record, label="  %exitcond = icmp eq i32 %inc, %indvars.iv"];
+	Node0x556446049cc8[shape=record, label="  br i1 %exitcond, label %for.cond13.preheader, label %for.body9"];
+	Node0x556446049d40[shape=record, label="  %putchar = call i32 @putchar(i32 10)"];
+	Node0x556446049e10[shape=record, label="  %inc25 = add nuw nsw i32 %i.048, 1"];
+	Node0x556446048098[shape=record, label="  %5 = load i32, i32* %n, align 4, !tbaa !2"];
+	Node0x556446049e80[shape=record, label="  %cmp = icmp sgt i32 %5, %inc25"];
+	Node0x556446049ef0[shape=record, label="  %indvars.iv.next = add nuw i32 %indvars.iv, 1"];
+	Node0x556446049f78[shape=record, label="  br i1 %cmp, label %for.body, label %for.cond.cleanup"];
+	Node0x556446049fe8[shape=record, label="  %q.046 = phi i32 [ %inc21, %for.body18 ], [ 0, %for.cond13.preheader ]"];
+	Node0x55644604a0f0[shape=record, label="  %putchar38 = call i32 @putchar(i32 66)"];
+	Node0x55644604a1c0[shape=record, label="  %inc21 = add nuw nsw i32 %q.046, 1"];
+	Node0x556446049518[shape=record, label="  %6 = load i32, i32* %n, align 4, !tbaa !2"];
+	Node0x55644604a230[shape=record, label="  %sub15 = add i32 %6, %4"];
+	Node0x55644604a2a0[shape=record, label="  %cmp16 = icmp slt i32 %inc21, %sub15"];
+	Node0x55644604a348[shape=record, label="  br i1 %cmp16, label %for.body18, label %for.cond.cleanup17"];
+	Node0x556446045938 -> Node0x556446045ff8
+	Node0x556446045ff8 -> Node0x556446046458
+	Node0x556446046458 -> Node0x5564460468b8
+	Node0x5564460468b8 -> Node0x556446046978
+	Node0x556446046978 -> Node0x5564460478f0
+	Node0x5564460478f0 -> Node0x556445fdb348
+	Node0x556445fdb348 -> Node0x556446047e78
+	Node0x556445fdb348 -> Node0x556446047c58
+	Node0x556446047c58 -> Node0x556446047d18
+	Node0x556446047e78 -> Node0x556446047fe8
+	Node0x556446047fe8 -> Node0x556446048148
+	Node0x556446048148 -> Node0x556446048230
+	Node0x556446048230 -> Node0x5564460482c0
+	Node0x5564460482c0 -> Node0x556445fdb588
+	Node0x556445fdb588 -> Node0x556446048758
+	Node0x556445fdb588 -> Node0x556446048708
+	Node0x556446048708 -> Node0x556446049678
+	Node0x556446048758 -> Node0x5564460489b0
+	Node0x5564460489b0 -> Node0x556446048ae0
+	Node0x556446048ae0 -> Node0x556446048b50
+	Node0x556446048b50 -> Node0x556446048c28
+	Node0x556446048c28 -> Node0x556446048758
+	Node0x556446048c28 -> Node0x556446048708
+	Node0x556446048388 -> Node0x556446049320
+	Node0x556446049320 -> Node0x5564460493e0
+	Node0x5564460493e0 -> Node0x556446049450
+	Node0x556446049450 -> Node0x556446049608
+	Node0x556446049608 -> Node0x556446049fe8
+	Node0x556446049608 -> Node0x556446049d40
+	Node0x556446049678 -> Node0x556446049780
+	Node0x556446049780 -> Node0x556446049850
+	Node0x556446049850 -> Node0x556446049be0
+	Node0x556446049be0 -> Node0x556446049cc8
+	Node0x556446049cc8 -> Node0x556446048388
+	Node0x556446049cc8 -> Node0x556446049678
+	Node0x556446049d40 -> Node0x556446049e10
+	Node0x556446049e10 -> Node0x556446048098
+	Node0x556446048098 -> Node0x556446049e80
+	Node0x556446049e80 -> Node0x556446049ef0
+	Node0x556446049ef0 -> Node0x556446049f78
+	Node0x556446049f78 -> Node0x556446047e78
+	Node0x556446049f78 -> Node0x556446047c58
+	Node0x556446049fe8 -> Node0x55644604a0f0
+	Node0x55644604a0f0 -> Node0x55644604a1c0
+	Node0x55644604a1c0 -> Node0x556446049518
+	Node0x556446049518 -> Node0x55644604a230
+	Node0x55644604a230 -> Node0x55644604a2a0
+	Node0x55644604a2a0 -> Node0x55644604a348
+	Node0x55644604a348 -> Node0x556446049fe8
+	Node0x55644604a348 -> Node0x556446049d40
+edge [color=red]
+	Node0x556446045938 -> Node0x556446045ff8
+	Node0x556446045ff8 -> Node0x556446046458
+	Node0x556446045938 -> Node0x5564460468b8
+	Node0x556446045938 -> Node0x556446046978
+	Node0x556446046978 -> Node0x5564460478f0
+	Node0x5564460478f0 -> Node0x556445fdb348
+	Node0x556446045ff8 -> Node0x556446047c58
+	Node0x556446049ef0 -> Node0x556446047e78
+	Node0x556446048098 -> Node0x556446047fe8
+	Node0x556446046978 -> Node0x556446047fe8
+	Node0x556446049e10 -> Node0x556446048148
+	Node0x556446047fe8 -> Node0x556446048230
+	Node0x556446048148 -> Node0x556446048230
+	Node0x556446048230 -> Node0x5564460482c0
+	Node0x5564460482c0 -> Node0x556445fdb588
+	Node0x556446048ae0 -> Node0x556446048758
+	Node0x556446048230 -> Node0x556446048758
+	Node0x556446048758 -> Node0x556446048ae0
+	Node0x556446048ae0 -> Node0x556446048b50
+	Node0x556446048b50 -> Node0x556446048c28
+	Node0x556446045938 -> Node0x556446048388
+	Node0x556446048148 -> Node0x556446049320
+	Node0x556446048388 -> Node0x5564460493e0
+	Node0x556446049320 -> Node0x5564460493e0
+	Node0x5564460493e0 -> Node0x556446049450
+	Node0x556446049450 -> Node0x556446049608
+	Node0x556446049850 -> Node0x556446049678
+	Node0x556446049678 -> Node0x556446049850
+	Node0x556446049850 -> Node0x556446049be0
+	Node0x556446047e78 -> Node0x556446049be0
+	Node0x556446049be0 -> Node0x556446049cc8
+	Node0x556446048148 -> Node0x556446049e10
+	Node0x556446045938 -> Node0x556446048098
+	Node0x556446048098 -> Node0x556446049e80
+	Node0x556446049e10 -> Node0x556446049e80
+	Node0x556446047e78 -> Node0x556446049ef0
+	Node0x556446049e80 -> Node0x556446049f78
+	Node0x55644604a1c0 -> Node0x556446049fe8
+	Node0x556446049fe8 -> Node0x55644604a1c0
+	Node0x556446045938 -> Node0x556446049518
+	Node0x556446049518 -> Node0x55644604a230
+	Node0x556446049320 -> Node0x55644604a230
+	Node0x55644604a1c0 -> Node0x55644604a2a0
+	Node0x55644604a230 -> Node0x55644604a2a0
+	Node0x55644604a2a0 -> Node0x55644604a348
+}

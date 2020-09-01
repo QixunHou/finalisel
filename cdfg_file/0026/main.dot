@@ -1,0 +1,47 @@
+digraph "CDFG for'main' function" {
+	Node0x55e237602d18[shape=record, label="  %anInteger.i = alloca i32, align 4"];
+	Node0x55e237602ac8[shape=record, label="  %0 = bitcast i32* %anInteger.i to i8*"];
+	Node0x55e2376043b8[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %0) #3"];
+	Node0x55e237604490[shape=record, label="  store i32 0, i32* %anInteger.i, align 4, !tbaa !2"];
+	Node0x55e237604510[shape=record, label="  %call.i = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([35 x i8], [35 x i8]* @.str, i64 0, i64 0)) #3"];
+	Node0x55e237604618[shape=record, label="  %call1.i = call i32 (i8*, ...) @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str.1, i64 0, i64 0), i32* nonnull %anInteger.i) #3"];
+	Node0x55e2376046f8[shape=record, label="  %1 = load i32, i32* %anInteger.i, align 4, !tbaa !2"];
+	Node0x55e237604790[shape=record, label="  %call2.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([46 x i8], [46 x i8]* @.str.2, i64 0, i64 0)) #3"];
+	Node0x55e2376048a0[shape=record, label="  %call3.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([39 x i8], [39 x i8]* @.str.3, i64 0, i64 0)) #3"];
+	Node0x55e237604990[shape=record, label="  %conv.i = shl i32 %1, 24"];
+	Node0x55e237604a20[shape=record, label="  %sext.i = add i32 %conv.i, 805306368"];
+	Node0x55e237604ab0[shape=record, label="  %conv4.i = ashr exact i32 %sext.i, 24"];
+	Node0x55e237604b40[shape=record, label="  store i32 %conv4.i, i32* %anInteger.i, align 4, !tbaa !2"];
+	Node0x55e237604bf8[shape=record, label="  %call5.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @.str.4, i64 0, i64 0), i32 %conv4.i) #3"];
+	Node0x55e237604d68[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %0) #3"];
+	Node0x55e237604e28[shape=record, label="  ret i32 0"];
+	Node0x55e237602d18 -> Node0x55e237602ac8
+	Node0x55e237602ac8 -> Node0x55e2376043b8
+	Node0x55e2376043b8 -> Node0x55e237604490
+	Node0x55e237604490 -> Node0x55e237604510
+	Node0x55e237604510 -> Node0x55e237604618
+	Node0x55e237604618 -> Node0x55e2376046f8
+	Node0x55e2376046f8 -> Node0x55e237604790
+	Node0x55e237604790 -> Node0x55e2376048a0
+	Node0x55e2376048a0 -> Node0x55e237604990
+	Node0x55e237604990 -> Node0x55e237604a20
+	Node0x55e237604a20 -> Node0x55e237604ab0
+	Node0x55e237604ab0 -> Node0x55e237604b40
+	Node0x55e237604b40 -> Node0x55e237604bf8
+	Node0x55e237604bf8 -> Node0x55e237604d68
+	Node0x55e237604d68 -> Node0x55e237604e28
+edge [color=red]
+	Node0x55e237602d18 -> Node0x55e237602ac8
+	Node0x55e237602ac8 -> Node0x55e2376043b8
+	Node0x55e2376013d0 -> Node0x55e237604490
+	Node0x55e237604490 -> Node0x55e237602d18
+	Node0x55e237602d18 -> Node0x55e237604618
+	Node0x55e237602d18 -> Node0x55e2376046f8
+	Node0x55e2376046f8 -> Node0x55e237604990
+	Node0x55e237604990 -> Node0x55e237604a20
+	Node0x55e237604a20 -> Node0x55e237604ab0
+	Node0x55e237604ab0 -> Node0x55e237604b40
+	Node0x55e237604b40 -> Node0x55e237602d18
+	Node0x55e237604ab0 -> Node0x55e237604bf8
+	Node0x55e237602ac8 -> Node0x55e237604d68
+}

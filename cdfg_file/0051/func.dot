@@ -1,0 +1,109 @@
+digraph "CDFG for'func' function" {
+	Node0x5570b2a9e670[shape=record, label="  %call = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([25 x i8], [25 x i8]* @.str, i64 0, i64 0))"];
+	Node0x5570b2a9e828[shape=record, label="  br label %for.body"];
+	Node0x5570b2a9e9c8[shape=record, label="  %n.038 = phi i32 [ 100, %entry ], [ %inc, %for.inc ]"];
+	Node0x5570b2a9ea98[shape=record, label="  %div.lhs.trunc = trunc i32 %n.038 to i16"];
+	Node0x5570b2a9eb70[shape=record, label="  %div34 = udiv i16 %div.lhs.trunc, 100"];
+	Node0x5570b2a9ebe8[shape=record, label="  %div.zext = zext i16 %div34 to i32"];
+	Node0x5570b2a9ecc0[shape=record, label="  %div135 = udiv i16 %div.lhs.trunc, 10"];
+	Node0x5570b2a9ed38[shape=record, label="  %div1.zext = trunc i16 %div135 to i8"];
+	Node0x5570b2a9ee10[shape=record, label="  %rem36 = urem i8 %div1.zext, 10"];
+	Node0x5570b2a9ee88[shape=record, label="  %rem.zext = zext i8 %rem36 to i32"];
+	Node0x5570b2a9ef30[shape=record, label="  %rem237 = urem i16 %div.lhs.trunc, 10"];
+	Node0x5570b2a9f148[shape=record, label="  %rem2.zext = zext i16 %rem237 to i32"];
+	Node0x5570b2a9f1f0[shape=record, label="  %mul = mul nuw nsw i32 %div.zext, 100"];
+	Node0x5570b2a9f2b0[shape=record, label="  %mul3 = mul nuw nsw i32 %rem.zext, 10"];
+	Node0x5570b2a9f340[shape=record, label="  %add = add nuw nsw i32 %mul, %rem2.zext"];
+	Node0x5570b2a9f3d0[shape=record, label="  %add4 = add nuw nsw i32 %add, %mul3"];
+	Node0x5570b2a9f460[shape=record, label="  %mul5 = mul nuw nsw i32 %div.zext, %div.zext"];
+	Node0x5570b2a9f4f0[shape=record, label="  %mul6 = mul nuw nsw i32 %mul5, %div.zext"];
+	Node0x5570b2a9f580[shape=record, label="  %mul7 = mul nuw nsw i32 %rem.zext, %rem.zext"];
+	Node0x5570b2a9f610[shape=record, label="  %mul8 = mul nuw nsw i32 %mul7, %rem.zext"];
+	Node0x5570b2a9f6a0[shape=record, label="  %mul10 = mul nuw nsw i32 %rem2.zext, %rem2.zext"];
+	Node0x5570b2a9f730[shape=record, label="  %mul11 = mul nuw nsw i32 %mul10, %rem2.zext"];
+	Node0x5570b2a9f7c0[shape=record, label="  %add9 = add nuw nsw i32 %mul11, %mul6"];
+	Node0x5570b2a9fb70[shape=record, label="  %add12 = add nuw i32 %add9, %mul8"];
+	Node0x5570b2a9fc00[shape=record, label="  %cmp13 = icmp eq i32 %add4, %add12"];
+	Node0x5570b2a27db8[shape=record, label="  br i1 %cmp13, label %if.then, label %for.inc"];
+	Node0x5570b2a9fe18[shape=record, label="  %call14 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0), i32 %n.038)"];
+	Node0x5570b2a9fce8[shape=record, label="  br label %for.inc"];
+	Node0x5570b2a9ff20[shape=record, label="  %inc = add nuw nsw i32 %n.038, 1"];
+	Node0x5570b2a9ff90[shape=record, label="  %exitcond = icmp eq i32 %inc, 1000"];
+	Node0x5570b2a33228[shape=record, label="  br i1 %exitcond, label %for.end, label %for.body"];
+	Node0x5570b2aa00f0[shape=record, label="  %putchar = tail call i32 @putchar(i32 10)"];
+	Node0x5570b2aa01b0[shape=record, label="  ret void"];
+	Node0x5570b2a9e670 -> Node0x5570b2a9e828
+	Node0x5570b2a9e828 -> Node0x5570b2a9e9c8
+	Node0x5570b2a9e9c8 -> Node0x5570b2a9ea98
+	Node0x5570b2a9ea98 -> Node0x5570b2a9eb70
+	Node0x5570b2a9eb70 -> Node0x5570b2a9ebe8
+	Node0x5570b2a9ebe8 -> Node0x5570b2a9ecc0
+	Node0x5570b2a9ecc0 -> Node0x5570b2a9ed38
+	Node0x5570b2a9ed38 -> Node0x5570b2a9ee10
+	Node0x5570b2a9ee10 -> Node0x5570b2a9ee88
+	Node0x5570b2a9ee88 -> Node0x5570b2a9ef30
+	Node0x5570b2a9ef30 -> Node0x5570b2a9f148
+	Node0x5570b2a9f148 -> Node0x5570b2a9f1f0
+	Node0x5570b2a9f1f0 -> Node0x5570b2a9f2b0
+	Node0x5570b2a9f2b0 -> Node0x5570b2a9f340
+	Node0x5570b2a9f340 -> Node0x5570b2a9f3d0
+	Node0x5570b2a9f3d0 -> Node0x5570b2a9f460
+	Node0x5570b2a9f460 -> Node0x5570b2a9f4f0
+	Node0x5570b2a9f4f0 -> Node0x5570b2a9f580
+	Node0x5570b2a9f580 -> Node0x5570b2a9f610
+	Node0x5570b2a9f610 -> Node0x5570b2a9f6a0
+	Node0x5570b2a9f6a0 -> Node0x5570b2a9f730
+	Node0x5570b2a9f730 -> Node0x5570b2a9f7c0
+	Node0x5570b2a9f7c0 -> Node0x5570b2a9fb70
+	Node0x5570b2a9fb70 -> Node0x5570b2a9fc00
+	Node0x5570b2a9fc00 -> Node0x5570b2a27db8
+	Node0x5570b2a27db8 -> Node0x5570b2a9fe18
+	Node0x5570b2a27db8 -> Node0x5570b2a9ff20
+	Node0x5570b2a9fe18 -> Node0x5570b2a9fce8
+	Node0x5570b2a9fce8 -> Node0x5570b2a9ff20
+	Node0x5570b2a9ff20 -> Node0x5570b2a9ff90
+	Node0x5570b2a9ff90 -> Node0x5570b2a33228
+	Node0x5570b2a33228 -> Node0x5570b2aa00f0
+	Node0x5570b2a33228 -> Node0x5570b2a9e9c8
+	Node0x5570b2aa00f0 -> Node0x5570b2aa01b0
+edge [color=red]
+	Node0x5570b2a9ff20 -> Node0x5570b2a9e9c8
+	Node0x5570b2a9e9c8 -> Node0x5570b2a9ea98
+	Node0x5570b2a9ea98 -> Node0x5570b2a9eb70
+	Node0x5570b2a9eb70 -> Node0x5570b2a9ebe8
+	Node0x5570b2a9ea98 -> Node0x5570b2a9ecc0
+	Node0x5570b2a9ecc0 -> Node0x5570b2a9ed38
+	Node0x5570b2a9ed38 -> Node0x5570b2a9ee10
+	Node0x5570b2a9ee10 -> Node0x5570b2a9ee88
+	Node0x5570b2a9ea98 -> Node0x5570b2a9ef30
+	Node0x5570b2a9ef30 -> Node0x5570b2a9f148
+	Node0x5570b2a9ebe8 -> Node0x5570b2a9f1f0
+	Node0x5570b2a9ee88 -> Node0x5570b2a9f2b0
+	Node0x5570b2a9f1f0 -> Node0x5570b2a9f340
+	Node0x5570b2a9f148 -> Node0x5570b2a9f340
+	Node0x5570b2a9f340 -> Node0x5570b2a9f3d0
+	Node0x5570b2a9f2b0 -> Node0x5570b2a9f3d0
+	Node0x5570b2a9ebe8 -> Node0x5570b2a9f460
+	Node0x5570b2a9ebe8 -> Node0x5570b2a9f460
+	Node0x5570b2a9f460 -> Node0x5570b2a9f4f0
+	Node0x5570b2a9ebe8 -> Node0x5570b2a9f4f0
+	Node0x5570b2a9ee88 -> Node0x5570b2a9f580
+	Node0x5570b2a9ee88 -> Node0x5570b2a9f580
+	Node0x5570b2a9f580 -> Node0x5570b2a9f610
+	Node0x5570b2a9ee88 -> Node0x5570b2a9f610
+	Node0x5570b2a9f148 -> Node0x5570b2a9f6a0
+	Node0x5570b2a9f148 -> Node0x5570b2a9f6a0
+	Node0x5570b2a9f6a0 -> Node0x5570b2a9f730
+	Node0x5570b2a9f148 -> Node0x5570b2a9f730
+	Node0x5570b2a9f730 -> Node0x5570b2a9f7c0
+	Node0x5570b2a9f4f0 -> Node0x5570b2a9f7c0
+	Node0x5570b2a9f7c0 -> Node0x5570b2a9fb70
+	Node0x5570b2a9f610 -> Node0x5570b2a9fb70
+	Node0x5570b2a9f3d0 -> Node0x5570b2a9fc00
+	Node0x5570b2a9fb70 -> Node0x5570b2a9fc00
+	Node0x5570b2a9fc00 -> Node0x5570b2a27db8
+	Node0x5570b2a9e9c8 -> Node0x5570b2a9fe18
+	Node0x5570b2a9e9c8 -> Node0x5570b2a9ff20
+	Node0x5570b2a9ff20 -> Node0x5570b2a9ff90
+	Node0x5570b2a9ff90 -> Node0x5570b2a33228
+}

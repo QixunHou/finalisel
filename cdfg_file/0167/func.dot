@@ -1,0 +1,57 @@
+digraph "CDFG for'func' function" {
+	Node0x5618df76df10[shape=record, label="  %puts = tail call i32 @puts(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @str, i64 0, i64 0))"];
+	Node0x5618df76e0a0[shape=record, label="  %puts20 = tail call i32 @puts(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @str.10, i64 0, i64 0))"];
+	Node0x5618df76e210[shape=record, label="  %puts21 = tail call i32 @puts(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @str.8, i64 0, i64 0))"];
+	Node0x5618df76e380[shape=record, label="  %puts22 = tail call i32 @puts(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.9, i64 0, i64 0))"];
+	Node0x5618df76e470[shape=record, label="  %puts23 = tail call i32 @puts(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @str.10, i64 0, i64 0))"];
+	Node0x5618df76e620[shape=record, label="  %putchar = tail call i32 @putchar(i32 10)"];
+	Node0x5618df76e740[shape=record, label="  %cmp29 = icmp sgt i32 %n, 0"];
+	Node0x5618df703228[shape=record, label="  br i1 %cmp29, label %for.body10.preheader, label %for.cond.cleanup"];
+	Node0x5618df76ea00[shape=record, label="  ret void"];
+	Node0x5618df76eaf8[shape=record, label="  %j.030 = phi i32 [ %dec, %for.cond.cleanup9 ], [ %n, %entry ]"];
+	Node0x5618df76eda0[shape=record, label="  %putchar24 = tail call i32 @putchar(i32 32)"];
+	Node0x5618df76ef68[shape=record, label="  br label %for.body10"];
+	Node0x5618df76f010[shape=record, label="  %putchar25 = tail call i32 @putchar(i32 10)"];
+	Node0x5618df76f110[shape=record, label="  %dec = add nsw i32 %j.030, -1"];
+	Node0x5618df76f180[shape=record, label="  %cmp = icmp sgt i32 %dec, 0"];
+	Node0x5618df703348[shape=record, label="  br i1 %cmp, label %for.body10.preheader, label %for.cond.cleanup"];
+	Node0x5618df76f1f8[shape=record, label="  %i.028 = phi i32 [ %inc, %for.body10 ], [ 0, %for.body10.preheader ]"];
+	Node0x5618df76f300[shape=record, label="  %putchar26 = tail call i32 @putchar(i32 42)"];
+	Node0x5618df76f400[shape=record, label="  %inc = add nuw nsw i32 %i.028, 1"];
+	Node0x5618df76f470[shape=record, label="  %exitcond = icmp eq i32 %inc, %j.030"];
+	Node0x5618df703468[shape=record, label="  br i1 %exitcond, label %for.cond.cleanup9, label %for.body10"];
+	Node0x5618df76df10 -> Node0x5618df76e0a0
+	Node0x5618df76e0a0 -> Node0x5618df76e210
+	Node0x5618df76e210 -> Node0x5618df76e380
+	Node0x5618df76e380 -> Node0x5618df76e470
+	Node0x5618df76e470 -> Node0x5618df76e620
+	Node0x5618df76e620 -> Node0x5618df76e740
+	Node0x5618df76e740 -> Node0x5618df703228
+	Node0x5618df703228 -> Node0x5618df76eaf8
+	Node0x5618df703228 -> Node0x5618df76ea00
+	Node0x5618df76eaf8 -> Node0x5618df76eda0
+	Node0x5618df76eda0 -> Node0x5618df76ef68
+	Node0x5618df76ef68 -> Node0x5618df76f1f8
+	Node0x5618df76f010 -> Node0x5618df76f110
+	Node0x5618df76f110 -> Node0x5618df76f180
+	Node0x5618df76f180 -> Node0x5618df703348
+	Node0x5618df703348 -> Node0x5618df76eaf8
+	Node0x5618df703348 -> Node0x5618df76ea00
+	Node0x5618df76f1f8 -> Node0x5618df76f300
+	Node0x5618df76f300 -> Node0x5618df76f400
+	Node0x5618df76f400 -> Node0x5618df76f470
+	Node0x5618df76f470 -> Node0x5618df703468
+	Node0x5618df703468 -> Node0x5618df76f010
+	Node0x5618df703468 -> Node0x5618df76f1f8
+edge [color=red]
+	Node0x5618df76e740 -> Node0x5618df703228
+	Node0x5618df76f110 -> Node0x5618df76eaf8
+	Node0x5618df76eaf8 -> Node0x5618df76f110
+	Node0x5618df76f110 -> Node0x5618df76f180
+	Node0x5618df76f180 -> Node0x5618df703348
+	Node0x5618df76f400 -> Node0x5618df76f1f8
+	Node0x5618df76f1f8 -> Node0x5618df76f400
+	Node0x5618df76f400 -> Node0x5618df76f470
+	Node0x5618df76eaf8 -> Node0x5618df76f470
+	Node0x5618df76f470 -> Node0x5618df703468
+}

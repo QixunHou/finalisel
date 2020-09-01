@@ -1,0 +1,77 @@
+digraph "CDFG for'func' function" {
+	Node0x55ddfaeafb08[shape=record, label="  %a = alloca i32, align 4"];
+	Node0x55ddfaeb01c8[shape=record, label="  %0 = bitcast i32* %a to i8*"];
+	Node0x55ddfaeb0628[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %0) #3"];
+	Node0x55ddfaeb0a88[shape=record, label="  %call = call i32 (i8*, ...) @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str, i64 0, i64 0), i32* nonnull %a)"];
+	Node0x55ddfaeb0b48[shape=record, label="  %.pr = load i32, i32* %a, align 4, !tbaa !2"];
+	Node0x55ddfaeb1ac0[shape=record, label="  %tobool7 = icmp eq i32 %.pr, 0"];
+	Node0x55ddfae45348[shape=record, label="  br i1 %tobool7, label %while.end, label %while.body"];
+	Node0x55ddfaeb1d38[shape=record, label="  %r.09 = phi i32 [ %add, %while.body ], [ 0, %entry ]"];
+	Node0x55ddfaeb1ea8[shape=record, label="  %tag.08 = phi i32 [ %mul1, %while.body ], [ 1, %entry ]"];
+	Node0x55ddfaeb2018[shape=record, label="  %1 = phi i32 [ %div, %while.body ], [ %.pr, %entry ]"];
+	Node0x55ddfaeb2130[shape=record, label="  %rem = srem i32 %1, 10"];
+	Node0x55ddfaeb21a0[shape=record, label="  %mul = mul nsw i32 %rem, %tag.08"];
+	Node0x55ddfaeb2230[shape=record, label="  %add = add nsw i32 %r.09, %mul"];
+	Node0x55ddfaeb22a0[shape=record, label="  %div = sdiv i32 %1, 10"];
+	Node0x55ddfaeb24b0[shape=record, label="  %mul1 = shl nsw i32 %tag.08, 3"];
+	Node0x55ddfaeb2520[shape=record, label="  %.off = add i32 %1, 9"];
+	Node0x55ddfaeb25b0[shape=record, label="  %2 = icmp ult i32 %.off, 19"];
+	Node0x55ddfae45468[shape=record, label="  br i1 %2, label %while.cond.while.end_crit_edge, label %while.body"];
+	Node0x55ddfaeb2770[shape=record, label="  store i32 %div, i32* %a, align 4, !tbaa !2"];
+	Node0x55ddfaeb1e58[shape=record, label="  br label %while.end"];
+	Node0x55ddfaeb2dd8[shape=record, label="  %r.0.lcssa = phi i32 [ %add, %while.cond.while.end_crit_edge ], [ 0, %entry ]"];
+	Node0x55ddfaeb2f38[shape=record, label="  %call2 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @.str.1, i64 0, i64 0), i32 %r.0.lcssa)"];
+	Node0x55ddfaeb3198[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %0) #3"];
+	Node0x55ddfaeb1c98[shape=record, label="  ret i32 undef"];
+	Node0x55ddfaeafb08 -> Node0x55ddfaeb01c8
+	Node0x55ddfaeb01c8 -> Node0x55ddfaeb0628
+	Node0x55ddfaeb0628 -> Node0x55ddfaeb0a88
+	Node0x55ddfaeb0a88 -> Node0x55ddfaeb0b48
+	Node0x55ddfaeb0b48 -> Node0x55ddfaeb1ac0
+	Node0x55ddfaeb1ac0 -> Node0x55ddfae45348
+	Node0x55ddfae45348 -> Node0x55ddfaeb2dd8
+	Node0x55ddfae45348 -> Node0x55ddfaeb1d38
+	Node0x55ddfaeb1d38 -> Node0x55ddfaeb1ea8
+	Node0x55ddfaeb1ea8 -> Node0x55ddfaeb2018
+	Node0x55ddfaeb2018 -> Node0x55ddfaeb2130
+	Node0x55ddfaeb2130 -> Node0x55ddfaeb21a0
+	Node0x55ddfaeb21a0 -> Node0x55ddfaeb2230
+	Node0x55ddfaeb2230 -> Node0x55ddfaeb22a0
+	Node0x55ddfaeb22a0 -> Node0x55ddfaeb24b0
+	Node0x55ddfaeb24b0 -> Node0x55ddfaeb2520
+	Node0x55ddfaeb2520 -> Node0x55ddfaeb25b0
+	Node0x55ddfaeb25b0 -> Node0x55ddfae45468
+	Node0x55ddfae45468 -> Node0x55ddfaeb2770
+	Node0x55ddfae45468 -> Node0x55ddfaeb1d38
+	Node0x55ddfaeb2770 -> Node0x55ddfaeb1e58
+	Node0x55ddfaeb1e58 -> Node0x55ddfaeb2dd8
+	Node0x55ddfaeb2dd8 -> Node0x55ddfaeb2f38
+	Node0x55ddfaeb2f38 -> Node0x55ddfaeb3198
+	Node0x55ddfaeb3198 -> Node0x55ddfaeb1c98
+edge [color=red]
+	Node0x55ddfaeafb08 -> Node0x55ddfaeb01c8
+	Node0x55ddfaeb01c8 -> Node0x55ddfaeb0628
+	Node0x55ddfaeafb08 -> Node0x55ddfaeb0a88
+	Node0x55ddfaeafb08 -> Node0x55ddfaeb0b48
+	Node0x55ddfaeb0b48 -> Node0x55ddfaeb1ac0
+	Node0x55ddfaeb1ac0 -> Node0x55ddfae45348
+	Node0x55ddfaeb2230 -> Node0x55ddfaeb1d38
+	Node0x55ddfaeb24b0 -> Node0x55ddfaeb1ea8
+	Node0x55ddfaeb22a0 -> Node0x55ddfaeb2018
+	Node0x55ddfaeb0b48 -> Node0x55ddfaeb2018
+	Node0x55ddfaeb2018 -> Node0x55ddfaeb2130
+	Node0x55ddfaeb2130 -> Node0x55ddfaeb21a0
+	Node0x55ddfaeb1ea8 -> Node0x55ddfaeb21a0
+	Node0x55ddfaeb1d38 -> Node0x55ddfaeb2230
+	Node0x55ddfaeb21a0 -> Node0x55ddfaeb2230
+	Node0x55ddfaeb2018 -> Node0x55ddfaeb22a0
+	Node0x55ddfaeb1ea8 -> Node0x55ddfaeb24b0
+	Node0x55ddfaeb2018 -> Node0x55ddfaeb2520
+	Node0x55ddfaeb2520 -> Node0x55ddfaeb25b0
+	Node0x55ddfaeb25b0 -> Node0x55ddfae45468
+	Node0x55ddfaeb22a0 -> Node0x55ddfaeb2770
+	Node0x55ddfaeb2770 -> Node0x55ddfaeafb08
+	Node0x55ddfaeb2230 -> Node0x55ddfaeb2dd8
+	Node0x55ddfaeb2dd8 -> Node0x55ddfaeb2f38
+	Node0x55ddfaeb01c8 -> Node0x55ddfaeb3198
+}

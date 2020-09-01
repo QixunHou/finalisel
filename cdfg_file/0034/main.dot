@@ -1,0 +1,37 @@
+digraph "CDFG for'main' function" {
+	Node0x564ce036e7f8[shape=record, label="  %r = alloca float, align 4"];
+	Node0x564ce036ee88[shape=record, label="  %0 = bitcast float* %r to i8*"];
+	Node0x564ce036f0c8[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %0) #4"];
+	Node0x564ce036f4d8[shape=record, label="  %call = call i32 (i8*, ...) @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str, i64 0, i64 0), float* nonnull %r)"];
+	Node0x564ce036f598[shape=record, label="  %1 = load float, float* %r, align 4, !tbaa !2"];
+	Node0x564ce03704c0[shape=record, label="  %cmp.i = fcmp ult float %1, 0.000000e+00"];
+	Node0x564ce0370530[shape=record, label="  %mul.i = fmul float %1, 0x401921FF20000000"];
+	Node0x564ce03705f8[shape=record, label="  %z.0.i = select i1 %cmp.i, float -1.000000e+00, float %mul.i"];
+	Node0x564ce0370658[shape=record, label="  %conv = fpext float %z.0.i to double"];
+	Node0x564ce0370848[shape=record, label="  %call2 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str, i64 0, i64 0), double %conv)"];
+	Node0x564ce0370a18[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %0) #4"];
+	Node0x564ce0370ad8[shape=record, label="  ret i32 0"];
+	Node0x564ce036e7f8 -> Node0x564ce036ee88
+	Node0x564ce036ee88 -> Node0x564ce036f0c8
+	Node0x564ce036f0c8 -> Node0x564ce036f4d8
+	Node0x564ce036f4d8 -> Node0x564ce036f598
+	Node0x564ce036f598 -> Node0x564ce03704c0
+	Node0x564ce03704c0 -> Node0x564ce0370530
+	Node0x564ce0370530 -> Node0x564ce03705f8
+	Node0x564ce03705f8 -> Node0x564ce0370658
+	Node0x564ce0370658 -> Node0x564ce0370848
+	Node0x564ce0370848 -> Node0x564ce0370a18
+	Node0x564ce0370a18 -> Node0x564ce0370ad8
+edge [color=red]
+	Node0x564ce036e7f8 -> Node0x564ce036ee88
+	Node0x564ce036ee88 -> Node0x564ce036f0c8
+	Node0x564ce036e7f8 -> Node0x564ce036f4d8
+	Node0x564ce036e7f8 -> Node0x564ce036f598
+	Node0x564ce036f598 -> Node0x564ce03704c0
+	Node0x564ce036f598 -> Node0x564ce0370530
+	Node0x564ce03704c0 -> Node0x564ce03705f8
+	Node0x564ce0370530 -> Node0x564ce03705f8
+	Node0x564ce03705f8 -> Node0x564ce0370658
+	Node0x564ce0370658 -> Node0x564ce0370848
+	Node0x564ce036ee88 -> Node0x564ce0370a18
+}

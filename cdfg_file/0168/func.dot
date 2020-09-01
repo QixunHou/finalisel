@@ -1,0 +1,19 @@
+digraph "CDFG for'func' function" {
+	Node0x55c145f1c188[shape=record, label="  %0 = bitcast i32* %a to <4 x i32>*"];
+	Node0x55c145f1c7f8[shape=record, label="  %1 = load <4 x i32>, <4 x i32>* %0, align 4, !tbaa !2"];
+	Node0x55c145f1d740[shape=record, label="  %2 = mul nsw <4 x i32> %1, %1"];
+	Node0x55c145f1d7c8[shape=record, label="  %3 = bitcast i32* %a to <4 x i32>*"];
+	Node0x55c145f1d840[shape=record, label="  store <4 x i32> %2, <4 x i32>* %3, align 4, !tbaa !2"];
+	Node0x55c145f1dea0[shape=record, label="  ret void"];
+	Node0x55c145f1c188 -> Node0x55c145f1c7f8
+	Node0x55c145f1c7f8 -> Node0x55c145f1d740
+	Node0x55c145f1d740 -> Node0x55c145f1d7c8
+	Node0x55c145f1d7c8 -> Node0x55c145f1d840
+	Node0x55c145f1d840 -> Node0x55c145f1dea0
+edge [color=red]
+	Node0x55c145f1c188 -> Node0x55c145f1c7f8
+	Node0x55c145f1c7f8 -> Node0x55c145f1d740
+	Node0x55c145f1c7f8 -> Node0x55c145f1d740
+	Node0x55c145f1d740 -> Node0x55c145f1d840
+	Node0x55c145f1d840 -> Node0x55c145f1d7c8
+}
