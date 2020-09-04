@@ -1,0 +1,32 @@
+digraph "DFG for'main' function" {
+	Node0xb6ea08[shape=record, label="  %1 = alloca i32, align 4"];
+	Node0xb6eab8[shape=record, label="  %2 = alloca i32, align 4"];
+	Node0xb6eb48[shape=record, label="  %3 = bitcast i32* %1 to i8*"];
+	Node0xb6efa8[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %3) #5"];
+	Node0xb6f088[shape=record, label="  %4 = bitcast i32* %2 to i8*"];
+	Node0xb6f1a8[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %4) #5"];
+	Node0xb6f3e0[shape=record, label="  %5 = call i32 (i8*, ...) @__isoc99_scanf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.2, i64 0, i64 0), i32* nonnull %1, i32* nonnull %2)"];
+	Node0xb6f4b0[shape=record, label="  %6 = call i32 @puts(i8* nonnull dereferenceable(1) getelementptr inbounds ([5 x i8], [5 x i8]* @str.3, i64 0, i64 0)) #5"];
+	Node0xb6f6c8[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %4) #5"];
+	Node0xb6f828[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %3) #5"];
+	Node0xb6f8e8[shape=record, label="  ret i32 0"];
+	Node0xb6ea08 -> Node0xb6eab8;
+	Node0xb6eab8 -> Node0xb6eb48;
+	Node0xb6eb48 -> Node0xb6efa8;
+	Node0xb6efa8 -> Node0xb6f088;
+	Node0xb6f088 -> Node0xb6f1a8;
+	Node0xb6f1a8 -> Node0xb6f3e0;
+	Node0xb6f3e0 -> Node0xb6f4b0;
+	Node0xb6f4b0 -> Node0xb6f6c8;
+	Node0xb6f6c8 -> Node0xb6f828;
+	Node0xb6f828 -> Node0xb6f8e8;
+edge [color=red]
+	Node0xb6ea08 -> Node0xb6eb48;
+	Node0xb6eb48 -> Node0xb6efa8;
+	Node0xb6eab8 -> Node0xb6f088;
+	Node0xb6f088 -> Node0xb6f1a8;
+	Node0xb6ea08 -> Node0xb6f3e0;
+	Node0xb6eab8 -> Node0xb6f3e0;
+	Node0xb6f088 -> Node0xb6f6c8;
+	Node0xb6eb48 -> Node0xb6f828;
+}

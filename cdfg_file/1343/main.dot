@@ -1,0 +1,109 @@
+digraph "CDFG for'main' function" {
+	Node0x562e969256f0[shape=record, label="  %call.i = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([25 x i8], [25 x i8]* @.str, i64 0, i64 0)) #2"]
+	Node0x562e96925848[shape=record, label="  br label %for.body.i"]
+	Node0x562e969259c8[shape=record, label="  %n.038.i = phi i32 [ 100, %entry ], [ %inc.i, %for.inc.i ]"]
+	Node0x562e96925a98[shape=record, label="  %div.lhs.trunc.i = trunc i32 %n.038.i to i16"]
+	Node0x562e96926380[shape=record, label="  %div34.i = udiv i16 %div.lhs.trunc.i, 100"]
+	Node0x562e969263f8[shape=record, label="  %div.zext.i = zext i16 %div34.i to i32"]
+	Node0x562e969264a0[shape=record, label="  %div135.i = udiv i16 %div.lhs.trunc.i, 10"]
+	Node0x562e969264f8[shape=record, label="  %div1.zext.i = trunc i16 %div135.i to i8"]
+	Node0x562e969265a0[shape=record, label="  %rem36.i = urem i8 %div1.zext.i, 10"]
+	Node0x562e969267b8[shape=record, label="  %rem.zext.i = zext i8 %rem36.i to i32"]
+	Node0x562e96926890[shape=record, label="  %rem237.i = urem i16 %div.lhs.trunc.i, 10"]
+	Node0x562e969268e8[shape=record, label="  %rem2.zext.i = zext i16 %rem237.i to i32"]
+	Node0x562e96926990[shape=record, label="  %mul.i = mul nuw nsw i32 %div.zext.i, 100"]
+	Node0x562e96926a20[shape=record, label="  %mul3.i = mul nuw nsw i32 %rem.zext.i, 10"]
+	Node0x562e96926ab0[shape=record, label="  %add.i = add nuw nsw i32 %mul.i, %rem2.zext.i"]
+	Node0x562e96926b40[shape=record, label="  %add4.i = add nuw nsw i32 %add.i, %mul3.i"]
+	Node0x562e96926bd0[shape=record, label="  %mul5.i = mul nuw nsw i32 %div.zext.i, %div.zext.i"]
+	Node0x562e96926c60[shape=record, label="  %mul6.i = mul nuw nsw i32 %mul5.i, %div.zext.i"]
+	Node0x562e96926cf0[shape=record, label="  %mul7.i = mul nuw nsw i32 %rem.zext.i, %rem.zext.i"]
+	Node0x562e96926d80[shape=record, label="  %mul8.i = mul nuw nsw i32 %mul7.i, %rem.zext.i"]
+	Node0x562e96926e10[shape=record, label="  %mul10.i = mul nuw nsw i32 %rem2.zext.i, %rem2.zext.i"]
+	Node0x562e969271c0[shape=record, label="  %mul11.i = mul nuw nsw i32 %mul10.i, %rem2.zext.i"]
+	Node0x562e96927250[shape=record, label="  %add9.i = add nuw nsw i32 %mul11.i, %mul6.i"]
+	Node0x562e969272e0[shape=record, label="  %add12.i = add nuw i32 %add9.i, %mul8.i"]
+	Node0x562e96927370[shape=record, label="  %cmp13.i = icmp eq i32 %add4.i, %add12.i"]
+	Node0x562e968b8588[shape=record, label="  br i1 %cmp13.i, label %if.then.i, label %for.inc.i"]
+	Node0x562e96927518[shape=record, label="  %call14.i = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0), i32 %n.038.i) #2"]
+	Node0x562e96927468[shape=record, label="  br label %for.inc.i"]
+	Node0x562e96927640[shape=record, label="  %inc.i = add nuw nsw i32 %n.038.i, 1"]
+	Node0x562e969276b0[shape=record, label="  %exitcond.i = icmp eq i32 %inc.i, 1000"]
+	Node0x562e969277b8[shape=record, label="  br i1 %exitcond.i, label %func.exit, label %for.body.i"]
+	Node0x562e96927850[shape=record, label="  %putchar.i = tail call i32 @putchar(i32 10) #2"]
+	Node0x562e969239e8[shape=record, label="  ret i32 0"]
+	Node0x562e969256f0 -> Node0x562e96925848
+	Node0x562e96925848 -> Node0x562e969259c8
+	Node0x562e969259c8 -> Node0x562e96925a98
+	Node0x562e96925a98 -> Node0x562e96926380
+	Node0x562e96926380 -> Node0x562e969263f8
+	Node0x562e969263f8 -> Node0x562e969264a0
+	Node0x562e969264a0 -> Node0x562e969264f8
+	Node0x562e969264f8 -> Node0x562e969265a0
+	Node0x562e969265a0 -> Node0x562e969267b8
+	Node0x562e969267b8 -> Node0x562e96926890
+	Node0x562e96926890 -> Node0x562e969268e8
+	Node0x562e969268e8 -> Node0x562e96926990
+	Node0x562e96926990 -> Node0x562e96926a20
+	Node0x562e96926a20 -> Node0x562e96926ab0
+	Node0x562e96926ab0 -> Node0x562e96926b40
+	Node0x562e96926b40 -> Node0x562e96926bd0
+	Node0x562e96926bd0 -> Node0x562e96926c60
+	Node0x562e96926c60 -> Node0x562e96926cf0
+	Node0x562e96926cf0 -> Node0x562e96926d80
+	Node0x562e96926d80 -> Node0x562e96926e10
+	Node0x562e96926e10 -> Node0x562e969271c0
+	Node0x562e969271c0 -> Node0x562e96927250
+	Node0x562e96927250 -> Node0x562e969272e0
+	Node0x562e969272e0 -> Node0x562e96927370
+	Node0x562e96927370 -> Node0x562e968b8588
+	Node0x562e968b8588 -> Node0x562e96927518
+	Node0x562e968b8588 -> Node0x562e96927640
+	Node0x562e96927518 -> Node0x562e96927468
+	Node0x562e96927468 -> Node0x562e96927640
+	Node0x562e96927640 -> Node0x562e969276b0
+	Node0x562e969276b0 -> Node0x562e969277b8
+	Node0x562e969277b8 -> Node0x562e96927850
+	Node0x562e969277b8 -> Node0x562e969259c8
+	Node0x562e96927850 -> Node0x562e969239e8
+edge [color=red]
+	Node0x562e96927640 -> Node0x562e969259c8[label="1"]
+	Node0x562e969259c8 -> Node0x562e96925a98[label="2"]
+	Node0x562e96925a98 -> Node0x562e96926380[label="3"]
+	Node0x562e96926380 -> Node0x562e969263f8[label="4"]
+	Node0x562e96925a98 -> Node0x562e969264a0[label="5"]
+	Node0x562e969264a0 -> Node0x562e969264f8[label="6"]
+	Node0x562e969264f8 -> Node0x562e969265a0[label="7"]
+	Node0x562e969265a0 -> Node0x562e969267b8[label="8"]
+	Node0x562e96925a98 -> Node0x562e96926890[label="9"]
+	Node0x562e96926890 -> Node0x562e969268e8[label="10"]
+	Node0x562e969263f8 -> Node0x562e96926990[label="11"]
+	Node0x562e969267b8 -> Node0x562e96926a20[label="12"]
+	Node0x562e96926990 -> Node0x562e96926ab0[label="13"]
+	Node0x562e969268e8 -> Node0x562e96926ab0[label="14"]
+	Node0x562e96926ab0 -> Node0x562e96926b40[label="15"]
+	Node0x562e96926a20 -> Node0x562e96926b40[label="16"]
+	Node0x562e969263f8 -> Node0x562e96926bd0[label="17"]
+	Node0x562e969263f8 -> Node0x562e96926bd0[label="18"]
+	Node0x562e96926bd0 -> Node0x562e96926c60[label="19"]
+	Node0x562e969263f8 -> Node0x562e96926c60[label="20"]
+	Node0x562e969267b8 -> Node0x562e96926cf0[label="21"]
+	Node0x562e969267b8 -> Node0x562e96926cf0[label="22"]
+	Node0x562e96926cf0 -> Node0x562e96926d80[label="23"]
+	Node0x562e969267b8 -> Node0x562e96926d80[label="24"]
+	Node0x562e969268e8 -> Node0x562e96926e10[label="25"]
+	Node0x562e969268e8 -> Node0x562e96926e10[label="26"]
+	Node0x562e96926e10 -> Node0x562e969271c0[label="27"]
+	Node0x562e969268e8 -> Node0x562e969271c0[label="28"]
+	Node0x562e969271c0 -> Node0x562e96927250[label="29"]
+	Node0x562e96926c60 -> Node0x562e96927250[label="30"]
+	Node0x562e96927250 -> Node0x562e969272e0[label="31"]
+	Node0x562e96926d80 -> Node0x562e969272e0[label="32"]
+	Node0x562e96926b40 -> Node0x562e96927370[label="33"]
+	Node0x562e969272e0 -> Node0x562e96927370[label="34"]
+	Node0x562e96927370 -> Node0x562e968b8588[label="35"]
+	Node0x562e969259c8 -> Node0x562e96927518[label="36"]
+	Node0x562e969259c8 -> Node0x562e96927640[label="37"]
+	Node0x562e96927640 -> Node0x562e969276b0[label="38"]
+	Node0x562e969276b0 -> Node0x562e969277b8[label="39"]
+}

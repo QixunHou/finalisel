@@ -1,0 +1,29 @@
+digraph "CDFG for'main' function" {
+	Node0x5581b0155ba8[shape=record, label="  %0 = load %struct._IO_FILE*, %struct._IO_FILE** @stdin, align 8, !tbaa !2"]
+	Node0x5581b0155c80[shape=record, label="  %call.i.i = tail call i32 @_IO_getc(%struct._IO_FILE* %0) #2"]
+	Node0x5581b0155d68[shape=record, label="  %1 = load %struct._IO_FILE*, %struct._IO_FILE** @stdout, align 8, !tbaa !2"]
+	Node0x5581b0155e38[shape=record, label="  %call.i4.i = tail call i32 @_IO_putc(i32 10, %struct._IO_FILE* %1) #2"]
+	Node0x5581b0155f40[shape=record, label="  %sext.i = shl i32 %call.i.i, 24"]
+	Node0x5581b0155fb0[shape=record, label="  %conv2.i = ashr exact i32 %sext.i, 24"]
+	Node0x5581b0156008[shape=record, label="  %2 = load %struct._IO_FILE*, %struct._IO_FILE** @stdout, align 8, !tbaa !2"]
+	Node0x5581b0156108[shape=record, label="  %call.i5.i = tail call i32 @_IO_putc(i32 %conv2.i, %struct._IO_FILE* %2) #2"]
+	Node0x5581b01561f8[shape=record, label="  ret i32 0"]
+	Node0x5581b0155ba8 -> Node0x5581b0155c80
+	Node0x5581b0155c80 -> Node0x5581b0155d68
+	Node0x5581b0155d68 -> Node0x5581b0155e38
+	Node0x5581b0155e38 -> Node0x5581b0155f40
+	Node0x5581b0155f40 -> Node0x5581b0155fb0
+	Node0x5581b0155fb0 -> Node0x5581b0156008
+	Node0x5581b0156008 -> Node0x5581b0156108
+	Node0x5581b0156108 -> Node0x5581b01561f8
+edge [color=red]
+	Node0x5581b0152e88 -> Node0x5581b0155ba8[label="1"]
+	Node0x5581b0155ba8 -> Node0x5581b0155c80[label="2"]
+	Node0x5581b01533f8 -> Node0x5581b0155d68[label="3"]
+	Node0x5581b0155d68 -> Node0x5581b0155e38[label="4"]
+	Node0x5581b0155c80 -> Node0x5581b0155f40[label="5"]
+	Node0x5581b0155f40 -> Node0x5581b0155fb0[label="6"]
+	Node0x5581b01533f8 -> Node0x5581b0156008[label="7"]
+	Node0x5581b0155fb0 -> Node0x5581b0156108[label="8"]
+	Node0x5581b0156008 -> Node0x5581b0156108[label="9"]
+}

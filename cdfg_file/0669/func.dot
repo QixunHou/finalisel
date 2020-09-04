@@ -1,0 +1,18 @@
+digraph "CDFG for'func' function" {
+	Node0x564c7e1ff248[shape=record, label="  %0 = load i32, i32* %x, align 4, !tbaa !2"]
+	Node0x564c7e200158[shape=record, label="  %1 = load i32, i32* %y, align 4, !tbaa !2"]
+	Node0x564c7e200800[shape=record, label="  store i32 %1, i32* %x, align 4, !tbaa !2"]
+	Node0x564c7e200880[shape=record, label="  store i32 %0, i32* %y, align 4, !tbaa !2"]
+	Node0x564c7e2008d0[shape=record, label="  ret void"]
+	Node0x564c7e1ff248 -> Node0x564c7e200158
+	Node0x564c7e200158 -> Node0x564c7e200800
+	Node0x564c7e200800 -> Node0x564c7e200880
+	Node0x564c7e200880 -> Node0x564c7e2008d0
+edge [color=red]
+	Node0x564c7e1ff060 -> Node0x564c7e1ff248[label="1"]
+	Node0x564c7e1ff088 -> Node0x564c7e200158[label="2"]
+	Node0x564c7e200158 -> Node0x564c7e200800[label="3"]
+	Node0x564c7e200800 -> Node0x564c7e1ff060[label="4"]
+	Node0x564c7e1ff248 -> Node0x564c7e200880[label="5"]
+	Node0x564c7e200880 -> Node0x564c7e1ff088[label="6"]
+}

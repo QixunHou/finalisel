@@ -1,0 +1,43 @@
+digraph "CDFG for'search' function" {
+	Node0x557bf3ab8338[shape=record, label="  br label %while.cond"]
+	Node0x557bf3abf608[shape=record, label="  %h.pn = phi %struct.node* [ %h, %entry ], [ %p.0, %while.body ]"]
+	Node0x557bf3abf708[shape=record, label="  %p.0.in = getelementptr inbounds %struct.node, %struct.node* %h.pn, i64 0, i32 2"]
+	Node0x557bf3abf798[shape=record, label="  %p.0 = load %struct.node*, %struct.node** %p.0.in, align 8, !tbaa !2"]
+	Node0x557bf3abf810[shape=record, label="  %cmp = icmp eq %struct.node* %p.0, %h"]
+	Node0x557bf3abf908[shape=record, label="  br i1 %cmp, label %while.end, label %while.body"]
+	Node0x557bf3abf9b0[shape=record, label="  %arraydecay = getelementptr inbounds %struct.node, %struct.node* %p.0, i64 0, i32 0, i64 0"]
+	Node0x557bf3abfb78[shape=record, label="  %call = tail call i32 @strcmp(i8* %arraydecay, i8* %x)"]
+	Node0x557bf3abfc50[shape=record, label="  %cmp1 = icmp eq i32 %call, 0"]
+	Node0x557bf3abff68[shape=record, label="  br i1 %cmp1, label %cleanup, label %while.cond"]
+	Node0x557bf3ac0080[shape=record, label="  %puts = tail call i32 @puts(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @str.13, i64 0, i64 0))"]
+	Node0x557bf3abaf78[shape=record, label="  br label %cleanup"]
+	Node0x557bf3ac0128[shape=record, label="  %p.013 = phi %struct.node* [ %h, %while.end ], [ %p.0, %while.body ]"]
+	Node0x557bf3abfed8[shape=record, label="  ret %struct.node* %p.013"]
+	Node0x557bf3ab8338 -> Node0x557bf3abf608
+	Node0x557bf3abf608 -> Node0x557bf3abf708
+	Node0x557bf3abf708 -> Node0x557bf3abf798
+	Node0x557bf3abf798 -> Node0x557bf3abf810
+	Node0x557bf3abf810 -> Node0x557bf3abf908
+	Node0x557bf3abf908 -> Node0x557bf3ac0080
+	Node0x557bf3abf908 -> Node0x557bf3abf9b0
+	Node0x557bf3abf9b0 -> Node0x557bf3abfb78
+	Node0x557bf3abfb78 -> Node0x557bf3abfc50
+	Node0x557bf3abfc50 -> Node0x557bf3abff68
+	Node0x557bf3abff68 -> Node0x557bf3ac0128
+	Node0x557bf3abff68 -> Node0x557bf3abf608
+	Node0x557bf3ac0080 -> Node0x557bf3abaf78
+	Node0x557bf3abaf78 -> Node0x557bf3ac0128
+	Node0x557bf3ac0128 -> Node0x557bf3abfed8
+edge [color=red]
+	Node0x557bf3abf798 -> Node0x557bf3abf608[label="1"]
+	Node0x557bf3abf608 -> Node0x557bf3abf708[label="2"]
+	Node0x557bf3abf708 -> Node0x557bf3abf798[label="3"]
+	Node0x557bf3abf798 -> Node0x557bf3abf810[label="4"]
+	Node0x557bf3abf810 -> Node0x557bf3abf908[label="5"]
+	Node0x557bf3abf798 -> Node0x557bf3abf9b0[label="6"]
+	Node0x557bf3abf9b0 -> Node0x557bf3abfb78[label="7"]
+	Node0x557bf3abfb78 -> Node0x557bf3abfc50[label="8"]
+	Node0x557bf3abfc50 -> Node0x557bf3abff68[label="9"]
+	Node0x557bf3abf798 -> Node0x557bf3ac0128[label="10"]
+	Node0x557bf3ac0128 -> Node0x557bf3abfed8[label="11"]
+}

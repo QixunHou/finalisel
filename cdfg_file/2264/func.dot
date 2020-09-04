@@ -1,0 +1,26 @@
+digraph "CDFG for'func' function" {
+	Node0x561febdaee40[shape=record, label="  %call = tail call noalias i8* @malloc(i64 16) #3"]
+	Node0x561febdaeda8[shape=record, label="  %0 = bitcast i8* %call to %struct.node*"]
+	Node0x561febdb88d8[shape=record, label="  %data = bitcast i8* %call to i32*"]
+	Node0x561febdb8970[shape=record, label="  store i32 %num, i32* %data, align 8, !tbaa !2"]
+	Node0x561febdb8a08[shape=record, label="  %next = getelementptr inbounds %struct.node, %struct.node* %u, i64 0, i32 1"]
+	Node0x561febdb8a98[shape=record, label="  %1 = bitcast %struct.node** %next to i8**"]
+	Node0x561febdb8b30[shape=record, label="  store i8* %call, i8** %1, align 8, !tbaa !8"]
+	Node0x561febdb8b98[shape=record, label="  ret %struct.node* %0"]
+	Node0x561febdaee40 -> Node0x561febdaeda8
+	Node0x561febdaeda8 -> Node0x561febdb88d8
+	Node0x561febdb88d8 -> Node0x561febdb8970
+	Node0x561febdb8970 -> Node0x561febdb8a08
+	Node0x561febdb8a08 -> Node0x561febdb8a98
+	Node0x561febdb8a98 -> Node0x561febdb8b30
+	Node0x561febdb8b30 -> Node0x561febdb8b98
+edge [color=red]
+	Node0x561febdaee40 -> Node0x561febdaeda8[label="1"]
+	Node0x561febdaee40 -> Node0x561febdb88d8[label="2"]
+	Node0x561febda7938 -> Node0x561febdb8970[label="3"]
+	Node0x561febdb8970 -> Node0x561febdb88d8[label="4"]
+	Node0x561febdb8a08 -> Node0x561febdb8a98[label="5"]
+	Node0x561febdaee40 -> Node0x561febdb8b30[label="6"]
+	Node0x561febdb8b30 -> Node0x561febdb8a98[label="7"]
+	Node0x561febdaeda8 -> Node0x561febdb8b98[label="8"]
+}

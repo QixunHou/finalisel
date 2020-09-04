@@ -1,0 +1,35 @@
+digraph "CDFG for'main' function" {
+	Node0x56061958c818[shape=record, label="  %a = alloca [81 x i8], align 16"]
+	Node0x56061958d588[shape=record, label="  %0 = getelementptr inbounds [81 x i8], [81 x i8]* %a, i64 0, i64 0"]
+	Node0x56061958d9f8[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 81, i8* nonnull %0) #4"]
+	Node0x56061958dbd0[shape=record, label="  %call = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str, i64 0, i64 0))"]
+	Node0x56061958de10[shape=record, label="  %call1 = call i32 (i8*, ...) bitcast (i32 (...)* @gets to i32 (i8*, ...)*)(i8* nonnull %0) #4"]
+	Node0x56061958dfa0[shape=record, label="  %call2 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.1, i64 0, i64 0))"]
+	Node0x56061958e120[shape=record, label="  %call4 = call i32 @puts(i8* nonnull %0)"]
+	Node0x56061958e230[shape=record, label="  %call.i = call i32 (i8*, ...) bitcast (i32 (...)* @strrev to i32 (i8*, ...)*)(i8* nonnull %0) #4"]
+	Node0x56061958e490[shape=record, label="  %putchar = call i32 @putchar(i32 10)"]
+	Node0x56061958e620[shape=record, label="  %call7 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.3, i64 0, i64 0))"]
+	Node0x56061958e710[shape=record, label="  %call9 = call i32 @puts(i8* nonnull %0)"]
+	Node0x56061958e9d8[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 81, i8* nonnull %0) #4"]
+	Node0x56061958ea80[shape=record, label="  ret void"]
+	Node0x56061958c818 -> Node0x56061958d588
+	Node0x56061958d588 -> Node0x56061958d9f8
+	Node0x56061958d9f8 -> Node0x56061958dbd0
+	Node0x56061958dbd0 -> Node0x56061958de10
+	Node0x56061958de10 -> Node0x56061958dfa0
+	Node0x56061958dfa0 -> Node0x56061958e120
+	Node0x56061958e120 -> Node0x56061958e230
+	Node0x56061958e230 -> Node0x56061958e490
+	Node0x56061958e490 -> Node0x56061958e620
+	Node0x56061958e620 -> Node0x56061958e710
+	Node0x56061958e710 -> Node0x56061958e9d8
+	Node0x56061958e9d8 -> Node0x56061958ea80
+edge [color=red]
+	Node0x56061958c818 -> Node0x56061958d588[label="1"]
+	Node0x56061958d588 -> Node0x56061958d9f8[label="2"]
+	Node0x56061958d588 -> Node0x56061958de10[label="3"]
+	Node0x56061958d588 -> Node0x56061958e120[label="4"]
+	Node0x56061958d588 -> Node0x56061958e230[label="5"]
+	Node0x56061958d588 -> Node0x56061958e710[label="6"]
+	Node0x56061958d588 -> Node0x56061958e9d8[label="7"]
+}

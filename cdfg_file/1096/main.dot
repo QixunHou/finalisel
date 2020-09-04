@@ -1,0 +1,62 @@
+digraph "CDFG for'main' function" {
+	Node0x55848ec63838[shape=record, label="  %call = tail call i32 (...) @clrscr() #6"]
+	Node0x55848ec63e10[shape=record, label="  %call1 = tail call i32 @puts(i8* getelementptr inbounds ([79 x i8], [79 x i8]* @.str, i64 0, i64 0))"]
+	Node0x55848ec63fa0[shape=record, label="  %call2 = tail call i32 @puts(i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.1, i64 0, i64 0))"]
+	Node0x55848ec64110[shape=record, label="  %call3 = tail call i32 @puts(i8* getelementptr inbounds ([55 x i8], [55 x i8]* @.str.2, i64 0, i64 0))"]
+	Node0x55848ec64498[shape=record, label="  %call4 = tail call i32 @func(double -2.000000e+00, double 5.000000e+00, double 2.000000e-01, double 0x3EB0C6F7A0B5ED8D, double* getelementptr inbounds ([6 x double], [6 x double]* @main.x, i64 0, i64 0), i32 6)"]
+	Node0x55848ec645a0[shape=record, label="  %call5 = tail call i32 @puts(i8* getelementptr inbounds ([46 x i8], [46 x i8]* @.str.3, i64 0, i64 0))"]
+	Node0x55848ec647b8[shape=record, label="  %call6 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([42 x i8], [42 x i8]* @.str.4, i64 0, i64 0), i32 %call4)"]
+	Node0x55848ec648b0[shape=record, label="  %cmp16 = icmp sgt i32 %call4, 0"]
+	Node0x55848ec64a98[shape=record, label="  br i1 %cmp16, label %for.body.preheader, label %for.end"]
+	Node0x55848ec5dee8[shape=record, label="  %wide.trip.count = zext i32 %call4 to i64"]
+	Node0x55848ec5b1d8[shape=record, label="  br label %for.body"]
+	Node0x55848ec64d68[shape=record, label="  %indvars.iv = phi i64 [ 0, %for.body.preheader ], [ %indvars.iv.next, %for.body ]"]
+	Node0x55848ec64e78[shape=record, label="  %arrayidx = getelementptr inbounds [6 x double], [6 x double]* @main.x, i64 0, i64 %indvars.iv"]
+	Node0x55848ec58258[shape=record, label="  %0 = load double, double* %arrayidx, align 8, !tbaa !2"]
+	Node0x55848ec598f8[shape=record, label="  %1 = trunc i64 %indvars.iv to i32"]
+	Node0x55848ec65000[shape=record, label="  %call7 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.5, i64 0, i64 0), i32 %1, double %0)"]
+	Node0x55848ec65100[shape=record, label="  %indvars.iv.next = add nuw nsw i64 %indvars.iv, 1"]
+	Node0x55848ec65170[shape=record, label="  %exitcond = icmp eq i64 %indvars.iv.next, %wide.trip.count"]
+	Node0x55848ec651f8[shape=record, label="  br i1 %exitcond, label %for.end, label %for.body"]
+	Node0x55848ec65310[shape=record, label="  %puts = tail call i32 @puts(i8* getelementptr inbounds ([27 x i8], [27 x i8]* @str, i64 0, i64 0))"]
+	Node0x55848ec654c8[shape=record, label="  %call9 = tail call i32 (...) @getch() #6"]
+	Node0x55848ec5b368[shape=record, label="  ret i32 0"]
+	Node0x55848ec63838 -> Node0x55848ec63e10
+	Node0x55848ec63e10 -> Node0x55848ec63fa0
+	Node0x55848ec63fa0 -> Node0x55848ec64110
+	Node0x55848ec64110 -> Node0x55848ec64498
+	Node0x55848ec64498 -> Node0x55848ec645a0
+	Node0x55848ec645a0 -> Node0x55848ec647b8
+	Node0x55848ec647b8 -> Node0x55848ec648b0
+	Node0x55848ec648b0 -> Node0x55848ec64a98
+	Node0x55848ec64a98 -> Node0x55848ec5dee8
+	Node0x55848ec64a98 -> Node0x55848ec65310
+	Node0x55848ec5dee8 -> Node0x55848ec5b1d8
+	Node0x55848ec5b1d8 -> Node0x55848ec64d68
+	Node0x55848ec64d68 -> Node0x55848ec64e78
+	Node0x55848ec64e78 -> Node0x55848ec58258
+	Node0x55848ec58258 -> Node0x55848ec598f8
+	Node0x55848ec598f8 -> Node0x55848ec65000
+	Node0x55848ec65000 -> Node0x55848ec65100
+	Node0x55848ec65100 -> Node0x55848ec65170
+	Node0x55848ec65170 -> Node0x55848ec651f8
+	Node0x55848ec651f8 -> Node0x55848ec65310
+	Node0x55848ec651f8 -> Node0x55848ec64d68
+	Node0x55848ec65310 -> Node0x55848ec654c8
+	Node0x55848ec654c8 -> Node0x55848ec5b368
+edge [color=red]
+	Node0x55848ec64498 -> Node0x55848ec647b8[label="1"]
+	Node0x55848ec64498 -> Node0x55848ec648b0[label="2"]
+	Node0x55848ec648b0 -> Node0x55848ec64a98[label="3"]
+	Node0x55848ec64498 -> Node0x55848ec5dee8[label="4"]
+	Node0x55848ec65100 -> Node0x55848ec64d68[label="5"]
+	Node0x55848ec64d68 -> Node0x55848ec64e78[label="6"]
+	Node0x55848ec64e78 -> Node0x55848ec58258[label="7"]
+	Node0x55848ec64d68 -> Node0x55848ec598f8[label="8"]
+	Node0x55848ec598f8 -> Node0x55848ec65000[label="9"]
+	Node0x55848ec58258 -> Node0x55848ec65000[label="10"]
+	Node0x55848ec64d68 -> Node0x55848ec65100[label="11"]
+	Node0x55848ec65100 -> Node0x55848ec65170[label="12"]
+	Node0x55848ec5dee8 -> Node0x55848ec65170[label="13"]
+	Node0x55848ec65170 -> Node0x55848ec651f8[label="14"]
+}

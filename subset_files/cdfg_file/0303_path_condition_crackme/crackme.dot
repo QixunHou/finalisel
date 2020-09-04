@@ -1,0 +1,27 @@
+digraph "DFG for'crackme' function" {
+	Node0x1d9c1e0[shape=record, label="  %3 = add i32 %1, %0"];
+	Node0x1d9c250[shape=record, label="  %4 = or i32 %1, %0"];
+	Node0x1d9c920[shape=record, label="  %5 = shl i32 %4, 1"];
+	Node0x1d9c990[shape=record, label="  %6 = xor i32 %0, %1"];
+	Node0x1d9ca00[shape=record, label="  %7 = sub i32 %5, %6"];
+	Node0x1d9ca70[shape=record, label="  %8 = icmp eq i32 %3, %7"];
+	Node0x1d3d388[shape=record, label="  %9 = select i1 %8, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @str.3, i64 0, i64 0), i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str, i64 0, i64 0)"];
+	Node0x1d9cf10[shape=record, label="  %10 = tail call i32 @puts(i8* nonnull dereferenceable(1) %9)"];
+	Node0x1d9cf60[shape=record, label="  ret void"];
+	Node0x1d9c1e0 -> Node0x1d9c250;
+	Node0x1d9c250 -> Node0x1d9c920;
+	Node0x1d9c920 -> Node0x1d9c990;
+	Node0x1d9c990 -> Node0x1d9ca00;
+	Node0x1d9ca00 -> Node0x1d9ca70;
+	Node0x1d9ca70 -> Node0x1d3d388;
+	Node0x1d3d388 -> Node0x1d9cf10;
+	Node0x1d9cf10 -> Node0x1d9cf60;
+edge [color=red]
+	Node0x1d9c250 -> Node0x1d9c920;
+	Node0x1d9c920 -> Node0x1d9ca00;
+	Node0x1d9c990 -> Node0x1d9ca00;
+	Node0x1d9c1e0 -> Node0x1d9ca70;
+	Node0x1d9ca00 -> Node0x1d9ca70;
+	Node0x1d9ca70 -> Node0x1d3d388;
+	Node0x1d3d388 -> Node0x1d9cf10;
+}

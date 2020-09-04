@@ -1,0 +1,37 @@
+digraph "CDFG for'main' function" {
+	Node0x558653687878[shape=record, label="  %r = alloca float, align 4"]
+	Node0x558653687f08[shape=record, label="  %0 = bitcast float* %r to i8*"]
+	Node0x558653688148[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %0) #4"]
+	Node0x558653688558[shape=record, label="  %call = call i32 (i8*, ...) @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str, i64 0, i64 0), float* nonnull %r)"]
+	Node0x558653688618[shape=record, label="  %1 = load float, float* %r, align 4, !tbaa !2"]
+	Node0x558653689540[shape=record, label="  %cmp.i = fcmp ult float %1, 0.000000e+00"]
+	Node0x5586536895b0[shape=record, label="  %mul.i = fmul float %1, 0x401921FF20000000"]
+	Node0x558653689678[shape=record, label="  %z.0.i = select i1 %cmp.i, float -1.000000e+00, float %mul.i"]
+	Node0x5586536896d8[shape=record, label="  %conv = fpext float %z.0.i to double"]
+	Node0x5586536898c8[shape=record, label="  %call2 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str, i64 0, i64 0), double %conv)"]
+	Node0x558653689a98[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %0) #4"]
+	Node0x558653689b58[shape=record, label="  ret i32 0"]
+	Node0x558653687878 -> Node0x558653687f08
+	Node0x558653687f08 -> Node0x558653688148
+	Node0x558653688148 -> Node0x558653688558
+	Node0x558653688558 -> Node0x558653688618
+	Node0x558653688618 -> Node0x558653689540
+	Node0x558653689540 -> Node0x5586536895b0
+	Node0x5586536895b0 -> Node0x558653689678
+	Node0x558653689678 -> Node0x5586536896d8
+	Node0x5586536896d8 -> Node0x5586536898c8
+	Node0x5586536898c8 -> Node0x558653689a98
+	Node0x558653689a98 -> Node0x558653689b58
+edge [color=red]
+	Node0x558653687878 -> Node0x558653687f08[label="1"]
+	Node0x558653687f08 -> Node0x558653688148[label="2"]
+	Node0x558653687878 -> Node0x558653688558[label="3"]
+	Node0x558653687878 -> Node0x558653688618[label="4"]
+	Node0x558653688618 -> Node0x558653689540[label="5"]
+	Node0x558653688618 -> Node0x5586536895b0[label="6"]
+	Node0x558653689540 -> Node0x558653689678[label="7"]
+	Node0x5586536895b0 -> Node0x558653689678[label="8"]
+	Node0x558653689678 -> Node0x5586536896d8[label="9"]
+	Node0x5586536896d8 -> Node0x5586536898c8[label="10"]
+	Node0x558653687f08 -> Node0x558653689a98[label="11"]
+}

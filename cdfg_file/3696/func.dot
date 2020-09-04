@@ -1,0 +1,37 @@
+digraph "CDFG for'func' function" {
+	Node0x55efb5241380[shape=record, label="  %cmp = icmp eq i32 %i, 0"]
+	Node0x55efb52413f0[shape=record, label="  %cmp1 = icmp eq i32 %n, %i"]
+	Node0x55efb5241480[shape=record, label="  %or.cond = or i1 %cmp, %cmp1"]
+	Node0x55efb51c9c98[shape=record, label="  br i1 %or.cond, label %cleanup, label %if.else"]
+	Node0x55efb5241680[shape=record, label="  %sub = add nsw i32 %n, -1"]
+	Node0x55efb52419e8[shape=record, label="  %call = tail call i32 (i32, i32, ...) bitcast (i32 (...)* @binom to i32 (i32, i32, ...)*)(i32 %sub, i32 %i) #4"]
+	Node0x55efb5241ae0[shape=record, label="  %sub3 = add nsw i32 %i, -1"]
+	Node0x55efb5241ba8[shape=record, label="  %call4 = tail call i32 (i32, i32, ...) bitcast (i32 (...)* @binom to i32 (i32, i32, ...)*)(i32 %sub, i32 %sub3) #4"]
+	Node0x55efb5241ca0[shape=record, label="  %add = add nsw i32 %call4, %call"]
+	Node0x55efb5241eb8[shape=record, label="  br label %cleanup"]
+	Node0x55efb5241f38[shape=record, label="  %retval.0 = phi i32 [ %add, %if.else ], [ 1, %entry ]"]
+	Node0x55efb5240cc8[shape=record, label="  ret i32 %retval.0"]
+	Node0x55efb5241380 -> Node0x55efb52413f0
+	Node0x55efb52413f0 -> Node0x55efb5241480
+	Node0x55efb5241480 -> Node0x55efb51c9c98
+	Node0x55efb51c9c98 -> Node0x55efb5241f38
+	Node0x55efb51c9c98 -> Node0x55efb5241680
+	Node0x55efb5241680 -> Node0x55efb52419e8
+	Node0x55efb52419e8 -> Node0x55efb5241ae0
+	Node0x55efb5241ae0 -> Node0x55efb5241ba8
+	Node0x55efb5241ba8 -> Node0x55efb5241ca0
+	Node0x55efb5241ca0 -> Node0x55efb5241eb8
+	Node0x55efb5241eb8 -> Node0x55efb5241f38
+	Node0x55efb5241f38 -> Node0x55efb5240cc8
+edge [color=red]
+	Node0x55efb5241380 -> Node0x55efb5241480[label="1"]
+	Node0x55efb52413f0 -> Node0x55efb5241480[label="2"]
+	Node0x55efb5241480 -> Node0x55efb51c9c98[label="3"]
+	Node0x55efb5241680 -> Node0x55efb52419e8[label="4"]
+	Node0x55efb5241680 -> Node0x55efb5241ba8[label="5"]
+	Node0x55efb5241ae0 -> Node0x55efb5241ba8[label="6"]
+	Node0x55efb5241ba8 -> Node0x55efb5241ca0[label="7"]
+	Node0x55efb52419e8 -> Node0x55efb5241ca0[label="8"]
+	Node0x55efb5241ca0 -> Node0x55efb5241f38[label="9"]
+	Node0x55efb5241f38 -> Node0x55efb5240cc8[label="10"]
+}

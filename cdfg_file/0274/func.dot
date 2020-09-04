@@ -1,0 +1,43 @@
+digraph "CDFG for'func' function" {
+	Node0x55796e0095a8[shape=record, label="  br label %while.cond"]
+	Node0x55796e009c98[shape=record, label="  %indvars.iv = phi i64 [ %indvars.iv.next, %while.cond ], [ 0, %entry ]"]
+	Node0x55796e009d90[shape=record, label="  %arrayidx = getelementptr inbounds i8, i8* %s1, i64 %indvars.iv"]
+	Node0x55796e009e28[shape=record, label="  %0 = load i8, i8* %arrayidx, align 1, !tbaa !2"]
+	Node0x55796e00ad50[shape=record, label="  %arrayidx2 = getelementptr inbounds i8, i8* %s2, i64 %indvars.iv"]
+	Node0x55796e00ade8[shape=record, label="  %1 = load i8, i8* %arrayidx2, align 1, !tbaa !2"]
+	Node0x55796e00b490[shape=record, label="  %cmp = icmp eq i8 %0, %1"]
+	Node0x55796e00b530[shape=record, label="  %indvars.iv.next = add nuw i64 %indvars.iv, 1"]
+	Node0x55796df93db8[shape=record, label="  br i1 %cmp, label %while.cond, label %while.end"]
+	Node0x55796e0094c8[shape=record, label="  %conv = sext i8 %0 to i32"]
+	Node0x55796e00b5f8[shape=record, label="  %conv3 = sext i8 %1 to i32"]
+	Node0x55796e00b690[shape=record, label="  %sub = sub nsw i32 %conv, %conv3"]
+	Node0x55796e00b8a8[shape=record, label="  ret i32 %sub"]
+	Node0x55796e0095a8 -> Node0x55796e009c98
+	Node0x55796e009c98 -> Node0x55796e009d90
+	Node0x55796e009d90 -> Node0x55796e009e28
+	Node0x55796e009e28 -> Node0x55796e00ad50
+	Node0x55796e00ad50 -> Node0x55796e00ade8
+	Node0x55796e00ade8 -> Node0x55796e00b490
+	Node0x55796e00b490 -> Node0x55796e00b530
+	Node0x55796e00b530 -> Node0x55796df93db8
+	Node0x55796df93db8 -> Node0x55796e009c98
+	Node0x55796df93db8 -> Node0x55796e0094c8
+	Node0x55796e0094c8 -> Node0x55796e00b5f8
+	Node0x55796e00b5f8 -> Node0x55796e00b690
+	Node0x55796e00b690 -> Node0x55796e00b8a8
+edge [color=red]
+	Node0x55796e00b530 -> Node0x55796e009c98[label="1"]
+	Node0x55796e009c98 -> Node0x55796e009d90[label="2"]
+	Node0x55796e009d90 -> Node0x55796e009e28[label="3"]
+	Node0x55796e009c98 -> Node0x55796e00ad50[label="4"]
+	Node0x55796e00ad50 -> Node0x55796e00ade8[label="5"]
+	Node0x55796e009e28 -> Node0x55796e00b490[label="6"]
+	Node0x55796e00ade8 -> Node0x55796e00b490[label="7"]
+	Node0x55796e009c98 -> Node0x55796e00b530[label="8"]
+	Node0x55796e00b490 -> Node0x55796df93db8[label="9"]
+	Node0x55796e009e28 -> Node0x55796e0094c8[label="10"]
+	Node0x55796e00ade8 -> Node0x55796e00b5f8[label="11"]
+	Node0x55796e0094c8 -> Node0x55796e00b690[label="12"]
+	Node0x55796e00b5f8 -> Node0x55796e00b690[label="13"]
+	Node0x55796e00b690 -> Node0x55796e00b8a8[label="14"]
+}

@@ -1,0 +1,43 @@
+digraph "CDFG for'print' function" {
+	Node0x55bbff00b698[shape=record, label="  %rlink = getelementptr inbounds %struct.node, %struct.node* %h, i64 0, i32 2"]
+	Node0x55bbff00b608[shape=record, label="  %0 = load %struct.node*, %struct.node** %rlink, align 8, !tbaa !2"]
+	Node0x55bbff00b7e0[shape=record, label="  %puts = tail call i32 @puts(i8* getelementptr inbounds ([25 x i8], [25 x i8]* @str.14, i64 0, i64 0))"]
+	Node0x55bbff00b8b0[shape=record, label="  %cmp8 = icmp eq %struct.node* %0, %h"]
+	Node0x55bbff00bb18[shape=record, label="  br i1 %cmp8, label %while.end, label %while.body"]
+	Node0x55bbff00bbd8[shape=record, label="  %p.09 = phi %struct.node* [ %1, %while.body ], [ %0, %entry ]"]
+	Node0x55bbff00bcf0[shape=record, label="  %arraydecay = getelementptr inbounds %struct.node, %struct.node* %p.09, i64 0, i32 0, i64 0"]
+	Node0x55bbff00be58[shape=record, label="  %call1 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @.str.5, i64 0, i64 0), i8* %arraydecay)"]
+	Node0x55bbff00bf48[shape=record, label="  %rlink2 = getelementptr inbounds %struct.node, %struct.node* %p.09, i64 0, i32 2"]
+	Node0x55bbff00ba88[shape=record, label="  %1 = load %struct.node*, %struct.node** %rlink2, align 8, !tbaa !2"]
+	Node0x55bbff00c010[shape=record, label="  %cmp = icmp eq %struct.node* %1, %h"]
+	Node0x55bbff00c098[shape=record, label="  br i1 %cmp, label %while.end, label %while.body"]
+	Node0x55bbff00c1f0[shape=record, label="  %putchar = tail call i32 @putchar(i32 10)"]
+	Node0x55bbff00bb90[shape=record, label="  ret void"]
+	Node0x55bbff00b698 -> Node0x55bbff00b608
+	Node0x55bbff00b608 -> Node0x55bbff00b7e0
+	Node0x55bbff00b7e0 -> Node0x55bbff00b8b0
+	Node0x55bbff00b8b0 -> Node0x55bbff00bb18
+	Node0x55bbff00bb18 -> Node0x55bbff00c1f0
+	Node0x55bbff00bb18 -> Node0x55bbff00bbd8
+	Node0x55bbff00bbd8 -> Node0x55bbff00bcf0
+	Node0x55bbff00bcf0 -> Node0x55bbff00be58
+	Node0x55bbff00be58 -> Node0x55bbff00bf48
+	Node0x55bbff00bf48 -> Node0x55bbff00ba88
+	Node0x55bbff00ba88 -> Node0x55bbff00c010
+	Node0x55bbff00c010 -> Node0x55bbff00c098
+	Node0x55bbff00c098 -> Node0x55bbff00c1f0
+	Node0x55bbff00c098 -> Node0x55bbff00bbd8
+	Node0x55bbff00c1f0 -> Node0x55bbff00bb90
+edge [color=red]
+	Node0x55bbff00b698 -> Node0x55bbff00b608[label="1"]
+	Node0x55bbff00b608 -> Node0x55bbff00b8b0[label="2"]
+	Node0x55bbff00b8b0 -> Node0x55bbff00bb18[label="3"]
+	Node0x55bbff00ba88 -> Node0x55bbff00bbd8[label="4"]
+	Node0x55bbff00b608 -> Node0x55bbff00bbd8[label="5"]
+	Node0x55bbff00bbd8 -> Node0x55bbff00bcf0[label="6"]
+	Node0x55bbff00bcf0 -> Node0x55bbff00be58[label="7"]
+	Node0x55bbff00bbd8 -> Node0x55bbff00bf48[label="8"]
+	Node0x55bbff00bf48 -> Node0x55bbff00ba88[label="9"]
+	Node0x55bbff00ba88 -> Node0x55bbff00c010[label="10"]
+	Node0x55bbff00c010 -> Node0x55bbff00c098[label="11"]
+}

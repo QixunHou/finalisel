@@ -1,0 +1,22 @@
+digraph "CDFG for'main' function" {
+	Node0x56553fa734a8[shape=record, label="  br label %if.then.i"]
+	Node0x56553fa73528[shape=record, label="  %i.015.i = phi i64 [ 1, %entry ], [ %inc.i, %if.then.i ]"]
+	Node0x56553fa73648[shape=record, label="  %call.i = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str, i64 0, i64 0), i64 %i.015.i) #2"]
+	Node0x56553fa73740[shape=record, label="  %inc.i = add nuw nsw i64 %i.015.i, 1"]
+	Node0x56553fa737b0[shape=record, label="  %exitcond.i = icmp eq i64 %inc.i, 100000"]
+	Node0x56553fa08348[shape=record, label="  br i1 %exitcond.i, label %func.exit, label %if.then.i"]
+	Node0x56553fa72108[shape=record, label="  ret i32 0"]
+	Node0x56553fa734a8 -> Node0x56553fa73528
+	Node0x56553fa73528 -> Node0x56553fa73648
+	Node0x56553fa73648 -> Node0x56553fa73740
+	Node0x56553fa73740 -> Node0x56553fa737b0
+	Node0x56553fa737b0 -> Node0x56553fa08348
+	Node0x56553fa08348 -> Node0x56553fa72108
+	Node0x56553fa08348 -> Node0x56553fa73528
+edge [color=red]
+	Node0x56553fa73740 -> Node0x56553fa73528[label="1"]
+	Node0x56553fa73528 -> Node0x56553fa73648[label="2"]
+	Node0x56553fa73528 -> Node0x56553fa73740[label="3"]
+	Node0x56553fa73740 -> Node0x56553fa737b0[label="4"]
+	Node0x56553fa737b0 -> Node0x56553fa08348[label="5"]
+}

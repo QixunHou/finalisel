@@ -1,0 +1,57 @@
+digraph "CDFG for'func' function" {
+	Node0x56200bebcf70[shape=record, label="  %puts = tail call i32 @puts(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @str, i64 0, i64 0))"]
+	Node0x56200bebd100[shape=record, label="  %puts20 = tail call i32 @puts(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @str.10, i64 0, i64 0))"]
+	Node0x56200bebd270[shape=record, label="  %puts21 = tail call i32 @puts(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @str.8, i64 0, i64 0))"]
+	Node0x56200bebd3e0[shape=record, label="  %puts22 = tail call i32 @puts(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.9, i64 0, i64 0))"]
+	Node0x56200bebd4d0[shape=record, label="  %puts23 = tail call i32 @puts(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @str.10, i64 0, i64 0))"]
+	Node0x56200bebd680[shape=record, label="  %putchar = tail call i32 @putchar(i32 10)"]
+	Node0x56200bebd7a0[shape=record, label="  %cmp29 = icmp sgt i32 %n, 0"]
+	Node0x56200be52228[shape=record, label="  br i1 %cmp29, label %for.body10.preheader, label %for.cond.cleanup"]
+	Node0x56200bebda60[shape=record, label="  ret void"]
+	Node0x56200bebdb58[shape=record, label="  %j.030 = phi i32 [ %dec, %for.cond.cleanup9 ], [ %n, %entry ]"]
+	Node0x56200bebde00[shape=record, label="  %putchar24 = tail call i32 @putchar(i32 32)"]
+	Node0x56200bebdfc8[shape=record, label="  br label %for.body10"]
+	Node0x56200bebe070[shape=record, label="  %putchar25 = tail call i32 @putchar(i32 10)"]
+	Node0x56200bebe170[shape=record, label="  %dec = add nsw i32 %j.030, -1"]
+	Node0x56200bebe1e0[shape=record, label="  %cmp = icmp sgt i32 %dec, 0"]
+	Node0x56200be52348[shape=record, label="  br i1 %cmp, label %for.body10.preheader, label %for.cond.cleanup"]
+	Node0x56200bebe258[shape=record, label="  %i.028 = phi i32 [ %inc, %for.body10 ], [ 0, %for.body10.preheader ]"]
+	Node0x56200bebe360[shape=record, label="  %putchar26 = tail call i32 @putchar(i32 42)"]
+	Node0x56200bebe460[shape=record, label="  %inc = add nuw nsw i32 %i.028, 1"]
+	Node0x56200bebe4d0[shape=record, label="  %exitcond = icmp eq i32 %inc, %j.030"]
+	Node0x56200be52468[shape=record, label="  br i1 %exitcond, label %for.cond.cleanup9, label %for.body10"]
+	Node0x56200bebcf70 -> Node0x56200bebd100
+	Node0x56200bebd100 -> Node0x56200bebd270
+	Node0x56200bebd270 -> Node0x56200bebd3e0
+	Node0x56200bebd3e0 -> Node0x56200bebd4d0
+	Node0x56200bebd4d0 -> Node0x56200bebd680
+	Node0x56200bebd680 -> Node0x56200bebd7a0
+	Node0x56200bebd7a0 -> Node0x56200be52228
+	Node0x56200be52228 -> Node0x56200bebdb58
+	Node0x56200be52228 -> Node0x56200bebda60
+	Node0x56200bebdb58 -> Node0x56200bebde00
+	Node0x56200bebde00 -> Node0x56200bebdfc8
+	Node0x56200bebdfc8 -> Node0x56200bebe258
+	Node0x56200bebe070 -> Node0x56200bebe170
+	Node0x56200bebe170 -> Node0x56200bebe1e0
+	Node0x56200bebe1e0 -> Node0x56200be52348
+	Node0x56200be52348 -> Node0x56200bebdb58
+	Node0x56200be52348 -> Node0x56200bebda60
+	Node0x56200bebe258 -> Node0x56200bebe360
+	Node0x56200bebe360 -> Node0x56200bebe460
+	Node0x56200bebe460 -> Node0x56200bebe4d0
+	Node0x56200bebe4d0 -> Node0x56200be52468
+	Node0x56200be52468 -> Node0x56200bebe070
+	Node0x56200be52468 -> Node0x56200bebe258
+edge [color=red]
+	Node0x56200bebd7a0 -> Node0x56200be52228[label="1"]
+	Node0x56200bebe170 -> Node0x56200bebdb58[label="2"]
+	Node0x56200bebdb58 -> Node0x56200bebe170[label="3"]
+	Node0x56200bebe170 -> Node0x56200bebe1e0[label="4"]
+	Node0x56200bebe1e0 -> Node0x56200be52348[label="5"]
+	Node0x56200bebe460 -> Node0x56200bebe258[label="6"]
+	Node0x56200bebe258 -> Node0x56200bebe460[label="7"]
+	Node0x56200bebe460 -> Node0x56200bebe4d0[label="8"]
+	Node0x56200bebdb58 -> Node0x56200bebe4d0[label="9"]
+	Node0x56200bebe4d0 -> Node0x56200be52468[label="10"]
+}

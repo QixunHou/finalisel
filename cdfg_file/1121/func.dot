@@ -1,0 +1,40 @@
+digraph "CDFG for'func' function" {
+	Node0x5611ec51ad70[shape=record, label="  %cmp39 = icmp eq i32 %a, 0"]
+	Node0x5611ec4a5c98[shape=record, label="  br i1 %cmp39, label %for.cond.cleanup, label %for.cond3.preheader.lr.ph"]
+	Node0x5611ec51b000[shape=record, label="  %div = sdiv i32 %a, 100"]
+	Node0x5611ec51b090[shape=record, label="  %a.off = add i32 %a, 99"]
+	Node0x5611ec51b150[shape=record, label="  %0 = icmp ugt i32 %a.off, 198"]
+	Node0x5611ec4a5db8[shape=record, label="  br i1 %0, label %for.cond3.preheader.us.preheader, label %for.cond.cleanup"]
+	Node0x5611ec51b300[shape=record, label="  %1 = icmp ugt i32 %div, 1"]
+	Node0x5611ec4b1228[shape=record, label="  %umax = select i1 %1, i32 %div, i32 1"]
+	Node0x5611ec51b390[shape=record, label="  %2 = mul i32 %umax, %a"]
+	Node0x5611ec51b400[shape=record, label="  %3 = mul i32 %2, 100"]
+	Node0x5611ec51af28[shape=record, label="  br label %for.cond.cleanup"]
+	Node0x5611ec51b478[shape=record, label="  %cnt.0.lcssa = phi i32 [ 0, %entry ], [ %3, %for.cond3.preheader.us.preheader ], [ 0, %for.cond3.preheader.lr.ph ]"]
+	Node0x5611ec51a6b8[shape=record, label="  ret i32 %cnt.0.lcssa"]
+	Node0x5611ec51ad70 -> Node0x5611ec4a5c98
+	Node0x5611ec4a5c98 -> Node0x5611ec51b478
+	Node0x5611ec4a5c98 -> Node0x5611ec51b000
+	Node0x5611ec51b000 -> Node0x5611ec51b090
+	Node0x5611ec51b090 -> Node0x5611ec51b150
+	Node0x5611ec51b150 -> Node0x5611ec4a5db8
+	Node0x5611ec4a5db8 -> Node0x5611ec51b300
+	Node0x5611ec4a5db8 -> Node0x5611ec51b478
+	Node0x5611ec51b300 -> Node0x5611ec4b1228
+	Node0x5611ec4b1228 -> Node0x5611ec51b390
+	Node0x5611ec51b390 -> Node0x5611ec51b400
+	Node0x5611ec51b400 -> Node0x5611ec51af28
+	Node0x5611ec51af28 -> Node0x5611ec51b478
+	Node0x5611ec51b478 -> Node0x5611ec51a6b8
+edge [color=red]
+	Node0x5611ec51ad70 -> Node0x5611ec4a5c98[label="1"]
+	Node0x5611ec51b090 -> Node0x5611ec51b150[label="2"]
+	Node0x5611ec51b150 -> Node0x5611ec4a5db8[label="3"]
+	Node0x5611ec51b000 -> Node0x5611ec51b300[label="4"]
+	Node0x5611ec51b300 -> Node0x5611ec4b1228[label="5"]
+	Node0x5611ec51b000 -> Node0x5611ec4b1228[label="6"]
+	Node0x5611ec4b1228 -> Node0x5611ec51b390[label="7"]
+	Node0x5611ec51b390 -> Node0x5611ec51b400[label="8"]
+	Node0x5611ec51b400 -> Node0x5611ec51b478[label="9"]
+	Node0x5611ec51b478 -> Node0x5611ec51a6b8[label="10"]
+}

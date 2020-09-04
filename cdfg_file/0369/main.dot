@@ -1,0 +1,44 @@
+digraph "CDFG for'main' function" {
+	Node0x55fce6d7e728[shape=record, label="  %a = alloca i32, align 4"]
+	Node0x55fce6d7ede8[shape=record, label="  %b = alloca i32, align 4"]
+	Node0x55fce6d7ee68[shape=record, label="  %0 = bitcast i32* %a to i8*"]
+	Node0x55fce6d7f2c8[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %0) #4"]
+	Node0x55fce6d7f3c0[shape=record, label="  store i32 10, i32* %a, align 4, !tbaa !2"]
+	Node0x55fce6d7fa38[shape=record, label="  %1 = bitcast i32* %b to i8*"]
+	Node0x55fce6d7fb68[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %1) #4"]
+	Node0x55fce6d7fc40[shape=record, label="  store i32 8, i32* %b, align 4, !tbaa !2"]
+	Node0x55fce6d7fcc0[shape=record, label="  %cmp.i = icmp ugt i32* %a, %b"]
+	Node0x55fce6d13468[shape=record, label="  %2 = select i1 %cmp.i, i32 10, i32 8"]
+	Node0x55fce6d80098[shape=record, label="  %call1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str, i64 0, i64 0), i32 %2)"]
+	Node0x55fce6d80368[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %1) #4"]
+	Node0x55fce6d804c8[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %0) #4"]
+	Node0x55fce6d80570[shape=record, label="  ret void"]
+	Node0x55fce6d7e728 -> Node0x55fce6d7ede8
+	Node0x55fce6d7ede8 -> Node0x55fce6d7ee68
+	Node0x55fce6d7ee68 -> Node0x55fce6d7f2c8
+	Node0x55fce6d7f2c8 -> Node0x55fce6d7f3c0
+	Node0x55fce6d7f3c0 -> Node0x55fce6d7fa38
+	Node0x55fce6d7fa38 -> Node0x55fce6d7fb68
+	Node0x55fce6d7fb68 -> Node0x55fce6d7fc40
+	Node0x55fce6d7fc40 -> Node0x55fce6d7fcc0
+	Node0x55fce6d7fcc0 -> Node0x55fce6d13468
+	Node0x55fce6d13468 -> Node0x55fce6d80098
+	Node0x55fce6d80098 -> Node0x55fce6d80368
+	Node0x55fce6d80368 -> Node0x55fce6d804c8
+	Node0x55fce6d804c8 -> Node0x55fce6d80570
+edge [color=red]
+	Node0x55fce6d7e728 -> Node0x55fce6d7ee68[label="1"]
+	Node0x55fce6d7ee68 -> Node0x55fce6d7f2c8[label="2"]
+	Node0x55fce6d7eed0 -> Node0x55fce6d7f3c0[label="3"]
+	Node0x55fce6d7f3c0 -> Node0x55fce6d7e728[label="4"]
+	Node0x55fce6d7ede8 -> Node0x55fce6d7fa38[label="5"]
+	Node0x55fce6d7fa38 -> Node0x55fce6d7fb68[label="6"]
+	Node0x55fce6d7fa80 -> Node0x55fce6d7fc40[label="7"]
+	Node0x55fce6d7fc40 -> Node0x55fce6d7ede8[label="8"]
+	Node0x55fce6d7e728 -> Node0x55fce6d7fcc0[label="9"]
+	Node0x55fce6d7ede8 -> Node0x55fce6d7fcc0[label="10"]
+	Node0x55fce6d7fcc0 -> Node0x55fce6d13468[label="11"]
+	Node0x55fce6d13468 -> Node0x55fce6d80098[label="12"]
+	Node0x55fce6d7fa38 -> Node0x55fce6d80368[label="13"]
+	Node0x55fce6d7ee68 -> Node0x55fce6d804c8[label="14"]
+}

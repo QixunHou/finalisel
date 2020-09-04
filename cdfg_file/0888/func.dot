@@ -1,0 +1,24 @@
+digraph "CDFG for'func' function" {
+	Node0x55835b118ec0[shape=record, label="  %cmp = icmp eq i32 %n, 1"]
+	Node0x55835b0a2c98[shape=record, label="  br i1 %cmp, label %return, label %if.else"]
+	Node0x55835b1190a0[shape=record, label="  %sub = add nsw i32 %n, -1"]
+	Node0x55835b119400[shape=record, label="  %call = tail call i32 (i32, ...) bitcast (i32 (...)* @factorial to i32 (i32, ...)*)(i32 %sub) #4"]
+	Node0x55835b1194f0[shape=record, label="  %mul = mul nsw i32 %call, %n"]
+	Node0x55835b119568[shape=record, label="  br label %return"]
+	Node0x55835b1195b8[shape=record, label="  %retval.0 = phi i32 [ %mul, %if.else ], [ 1, %entry ]"]
+	Node0x55835b118808[shape=record, label="  ret i32 %retval.0"]
+	Node0x55835b118ec0 -> Node0x55835b0a2c98
+	Node0x55835b0a2c98 -> Node0x55835b1195b8
+	Node0x55835b0a2c98 -> Node0x55835b1190a0
+	Node0x55835b1190a0 -> Node0x55835b119400
+	Node0x55835b119400 -> Node0x55835b1194f0
+	Node0x55835b1194f0 -> Node0x55835b119568
+	Node0x55835b119568 -> Node0x55835b1195b8
+	Node0x55835b1195b8 -> Node0x55835b118808
+edge [color=red]
+	Node0x55835b118ec0 -> Node0x55835b0a2c98[label="1"]
+	Node0x55835b1190a0 -> Node0x55835b119400[label="2"]
+	Node0x55835b119400 -> Node0x55835b1194f0[label="3"]
+	Node0x55835b1194f0 -> Node0x55835b1195b8[label="4"]
+	Node0x55835b1195b8 -> Node0x55835b118808[label="5"]
+}

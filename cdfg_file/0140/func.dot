@@ -1,0 +1,50 @@
+digraph "CDFG for'func' function" {
+	Node0x55bdb375f670[shape=record, label="  %temp.010 = srem i32 %num, 10"]
+	Node0x55bdb375f740[shape=record, label="  %cmp11 = icmp ne i32 %temp.010, 5"]
+	Node0x55bdb375f7b0[shape=record, label="  %cmp112 = icmp sgt i32 %num, 10"]
+	Node0x55bdb375f840[shape=record, label="  %0 = and i1 %cmp112, %cmp11"]
+	Node0x55bdb36e8c98[shape=record, label="  br i1 %0, label %while.body, label %while.end"]
+	Node0x55bdb375fa58[shape=record, label="  %num.addr.013 = phi i32 [ %div9, %while.body ], [ %num, %entry ]"]
+	Node0x55bdb375fb50[shape=record, label="  %div9 = udiv i32 %num.addr.013, 10"]
+	Node0x55bdb375fbc0[shape=record, label="  %temp.0 = urem i32 %div9, 10"]
+	Node0x55bdb375fc50[shape=record, label="  %cmp = icmp ne i32 %temp.0, 5"]
+	Node0x55bdb375fce0[shape=record, label="  %cmp1 = icmp ugt i32 %num.addr.013, 109"]
+	Node0x55bdb375fd70[shape=record, label="  %1 = and i1 %cmp1, %cmp"]
+	Node0x55bdb36e8db8[shape=record, label="  br i1 %1, label %while.body, label %while.end"]
+	Node0x55bdb375fdd8[shape=record, label="  %cmp.lcssa = phi i1 [ %cmp11, %entry ], [ %cmp, %while.body ]"]
+	Node0x55bdb37600a0[shape=record, label="  %not.cmp = xor i1 %cmp.lcssa, true"]
+	Node0x55bdb375f9b8[shape=record, label="  ret i1 %not.cmp"]
+	Node0x55bdb375f670 -> Node0x55bdb375f740
+	Node0x55bdb375f740 -> Node0x55bdb375f7b0
+	Node0x55bdb375f7b0 -> Node0x55bdb375f840
+	Node0x55bdb375f840 -> Node0x55bdb36e8c98
+	Node0x55bdb36e8c98 -> Node0x55bdb375fa58
+	Node0x55bdb36e8c98 -> Node0x55bdb375fdd8
+	Node0x55bdb375fa58 -> Node0x55bdb375fb50
+	Node0x55bdb375fb50 -> Node0x55bdb375fbc0
+	Node0x55bdb375fbc0 -> Node0x55bdb375fc50
+	Node0x55bdb375fc50 -> Node0x55bdb375fce0
+	Node0x55bdb375fce0 -> Node0x55bdb375fd70
+	Node0x55bdb375fd70 -> Node0x55bdb36e8db8
+	Node0x55bdb36e8db8 -> Node0x55bdb375fa58
+	Node0x55bdb36e8db8 -> Node0x55bdb375fdd8
+	Node0x55bdb375fdd8 -> Node0x55bdb37600a0
+	Node0x55bdb37600a0 -> Node0x55bdb375f9b8
+edge [color=red]
+	Node0x55bdb375f670 -> Node0x55bdb375f740[label="1"]
+	Node0x55bdb375f7b0 -> Node0x55bdb375f840[label="2"]
+	Node0x55bdb375f740 -> Node0x55bdb375f840[label="3"]
+	Node0x55bdb375f840 -> Node0x55bdb36e8c98[label="4"]
+	Node0x55bdb375fb50 -> Node0x55bdb375fa58[label="5"]
+	Node0x55bdb375fa58 -> Node0x55bdb375fb50[label="6"]
+	Node0x55bdb375fb50 -> Node0x55bdb375fbc0[label="7"]
+	Node0x55bdb375fbc0 -> Node0x55bdb375fc50[label="8"]
+	Node0x55bdb375fa58 -> Node0x55bdb375fce0[label="9"]
+	Node0x55bdb375fce0 -> Node0x55bdb375fd70[label="10"]
+	Node0x55bdb375fc50 -> Node0x55bdb375fd70[label="11"]
+	Node0x55bdb375fd70 -> Node0x55bdb36e8db8[label="12"]
+	Node0x55bdb375f740 -> Node0x55bdb375fdd8[label="13"]
+	Node0x55bdb375fc50 -> Node0x55bdb375fdd8[label="14"]
+	Node0x55bdb375fdd8 -> Node0x55bdb37600a0[label="15"]
+	Node0x55bdb37600a0 -> Node0x55bdb375f9b8[label="16"]
+}

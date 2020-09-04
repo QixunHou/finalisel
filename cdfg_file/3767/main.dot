@@ -1,0 +1,24 @@
+digraph "CDFG for'main' function" {
+	Node0x5574036cf168[shape=record, label="  %p = alloca [8 x i32], align 16"]
+	Node0x5574036cefe8[shape=record, label="  %0 = bitcast [8 x i32]* %p to i8*"]
+	Node0x5574036e6958[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 32, i8* nonnull %0) #6"]
+	Node0x5574036e6d58[shape=record, label="  call void @llvm.memcpy.p0i8.p0i8.i64(i8* nonnull align 16 %0, i8* align 16 bitcast ([8 x i32]* @__const.main.p to i8*), i64 32, i1 false)"]
+	Node0x5574036e6e48[shape=record, label="  %arraydecay = getelementptr inbounds [8 x i32], [8 x i32]* %p, i64 0, i64 0"]
+	Node0x5574036e6f90[shape=record, label="  %call = call i32 @func(i32* nonnull %arraydecay, i32 8, i32 4)"]
+	Node0x5574036e70e8[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 32, i8* nonnull %0) #6"]
+	Node0x5574036e7190[shape=record, label="  ret void"]
+	Node0x5574036cf168 -> Node0x5574036cefe8
+	Node0x5574036cefe8 -> Node0x5574036e6958
+	Node0x5574036e6958 -> Node0x5574036e6d58
+	Node0x5574036e6d58 -> Node0x5574036e6e48
+	Node0x5574036e6e48 -> Node0x5574036e6f90
+	Node0x5574036e6f90 -> Node0x5574036e70e8
+	Node0x5574036e70e8 -> Node0x5574036e7190
+edge [color=red]
+	Node0x5574036cf168 -> Node0x5574036cefe8[label="1"]
+	Node0x5574036cefe8 -> Node0x5574036e6958[label="2"]
+	Node0x5574036cefe8 -> Node0x5574036e6d58[label="3"]
+	Node0x5574036cf168 -> Node0x5574036e6e48[label="4"]
+	Node0x5574036e6e48 -> Node0x5574036e6f90[label="5"]
+	Node0x5574036cefe8 -> Node0x5574036e70e8[label="6"]
+}

@@ -1,0 +1,29 @@
+digraph "CDFG for'func' function" {
+	Node0x55f7ce381b00[shape=record, label="  %0 = add i32 %a, -1"]
+	Node0x55f7ce381448[shape=record, label="  %1 = zext i32 %a to i33"]
+	Node0x55f7ce381f88[shape=record, label="  %2 = zext i32 %0 to i33"]
+	Node0x55f7ce382030[shape=record, label="  %3 = mul i33 %1, %2"]
+	Node0x55f7ce3820d0[shape=record, label="  %4 = lshr i33 %3, 1"]
+	Node0x55f7ce382178[shape=record, label="  %5 = trunc i33 %4 to i32"]
+	Node0x55f7ce3821f0[shape=record, label="  %6 = mul i32 %0, %a"]
+	Node0x55f7ce382260[shape=record, label="  %7 = sub i32 %6, %5"]
+	Node0x55f7ce3822b8[shape=record, label="  ret i32 %7"]
+	Node0x55f7ce381b00 -> Node0x55f7ce381448
+	Node0x55f7ce381448 -> Node0x55f7ce381f88
+	Node0x55f7ce381f88 -> Node0x55f7ce382030
+	Node0x55f7ce382030 -> Node0x55f7ce3820d0
+	Node0x55f7ce3820d0 -> Node0x55f7ce382178
+	Node0x55f7ce382178 -> Node0x55f7ce3821f0
+	Node0x55f7ce3821f0 -> Node0x55f7ce382260
+	Node0x55f7ce382260 -> Node0x55f7ce3822b8
+edge [color=red]
+	Node0x55f7ce381b00 -> Node0x55f7ce381f88[label="1"]
+	Node0x55f7ce381448 -> Node0x55f7ce382030[label="2"]
+	Node0x55f7ce381f88 -> Node0x55f7ce382030[label="3"]
+	Node0x55f7ce382030 -> Node0x55f7ce3820d0[label="4"]
+	Node0x55f7ce3820d0 -> Node0x55f7ce382178[label="5"]
+	Node0x55f7ce381b00 -> Node0x55f7ce3821f0[label="6"]
+	Node0x55f7ce3821f0 -> Node0x55f7ce382260[label="7"]
+	Node0x55f7ce382178 -> Node0x55f7ce382260[label="8"]
+	Node0x55f7ce382260 -> Node0x55f7ce3822b8[label="9"]
+}

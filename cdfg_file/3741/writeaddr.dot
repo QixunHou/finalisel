@@ -1,0 +1,30 @@
+digraph "CDFG for'writeaddr' function" {
+	Node0x556858e06f78[shape=record, label="  %name = getelementptr inbounds %struct.addr, %struct.addr* %dpt, i64 0, i32 0"]
+	Node0x556858e027a8[shape=record, label="  %0 = load i8*, i8** %name, align 8, !tbaa !2"]
+	Node0x556858e070d8[shape=record, label="  %call = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.5, i64 0, i64 0), i8* %0)"]
+	Node0x556858e071c8[shape=record, label="  %address = getelementptr inbounds %struct.addr, %struct.addr* %dpt, i64 0, i32 1"]
+	Node0x556858e047a8[shape=record, label="  %1 = load i8*, i8** %address, align 8, !tbaa !7"]
+	Node0x556858e07328[shape=record, label="  %call1 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.6, i64 0, i64 0), i8* %1)"]
+	Node0x556858e07430[shape=record, label="  %arraydecay = getelementptr inbounds %struct.addr, %struct.addr* %dpt, i64 0, i32 2, i64 0"]
+	Node0x556858e07598[shape=record, label="  %call2 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.7, i64 0, i64 0), i8* nonnull %arraydecay)"]
+	Node0x556858e076a0[shape=record, label="  %arraydecay3 = getelementptr inbounds %struct.addr, %struct.addr* %dpt, i64 0, i32 3, i64 0"]
+	Node0x556858e07808[shape=record, label="  %call4 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @.str.8, i64 0, i64 0), i8* nonnull %arraydecay3)"]
+	Node0x556858e00e28[shape=record, label="  ret i32 undef"]
+	Node0x556858e06f78 -> Node0x556858e027a8
+	Node0x556858e027a8 -> Node0x556858e070d8
+	Node0x556858e070d8 -> Node0x556858e071c8
+	Node0x556858e071c8 -> Node0x556858e047a8
+	Node0x556858e047a8 -> Node0x556858e07328
+	Node0x556858e07328 -> Node0x556858e07430
+	Node0x556858e07430 -> Node0x556858e07598
+	Node0x556858e07598 -> Node0x556858e076a0
+	Node0x556858e076a0 -> Node0x556858e07808
+	Node0x556858e07808 -> Node0x556858e00e28
+edge [color=red]
+	Node0x556858e06f78 -> Node0x556858e027a8[label="1"]
+	Node0x556858e027a8 -> Node0x556858e070d8[label="2"]
+	Node0x556858e071c8 -> Node0x556858e047a8[label="3"]
+	Node0x556858e047a8 -> Node0x556858e07328[label="4"]
+	Node0x556858e07430 -> Node0x556858e07598[label="5"]
+	Node0x556858e076a0 -> Node0x556858e07808[label="6"]
+}

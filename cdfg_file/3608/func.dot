@@ -1,0 +1,16 @@
+digraph "CDFG for'func' function" {
+	Node0x5638f6f7fb10[shape=record, label="  %0 = mul i32 %b, -7"]
+	Node0x5638f6f7fbb0[shape=record, label="  %add = add i32 %a, 10"]
+	Node0x5638f6f7fc40[shape=record, label="  %add1 = add i32 %add, %b"]
+	Node0x5638f6f7fcd0[shape=record, label="  %sub = add i32 %add1, %0"]
+	Node0x5638f6f7f458[shape=record, label="  ret i32 %sub"]
+	Node0x5638f6f7fb10 -> Node0x5638f6f7fbb0
+	Node0x5638f6f7fbb0 -> Node0x5638f6f7fc40
+	Node0x5638f6f7fc40 -> Node0x5638f6f7fcd0
+	Node0x5638f6f7fcd0 -> Node0x5638f6f7f458
+edge [color=red]
+	Node0x5638f6f7fbb0 -> Node0x5638f6f7fc40[label="1"]
+	Node0x5638f6f7fc40 -> Node0x5638f6f7fcd0[label="2"]
+	Node0x5638f6f7fb10 -> Node0x5638f6f7fcd0[label="3"]
+	Node0x5638f6f7fcd0 -> Node0x5638f6f7f458[label="4"]
+}

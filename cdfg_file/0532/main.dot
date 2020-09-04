@@ -1,0 +1,18 @@
+digraph "CDFG for'main' function" {
+	Node0x55c41e6398e0[shape=record, label="  store i32 3, i32* @a, align 4, !tbaa !2"]
+	Node0x55c41e639960[shape=record, label="  store i32 4, i32* @b, align 4, !tbaa !2"]
+	Node0x55c41e6399e0[shape=record, label="  store i32 7, i32* @c, align 4, !tbaa !2"]
+	Node0x55c41e639a78[shape=record, label="  %call.i = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @.str, i64 0, i64 0), i32 7) #2"]
+	Node0x55c41e639868[shape=record, label="  ret i32 0"]
+	Node0x55c41e6398e0 -> Node0x55c41e639960
+	Node0x55c41e639960 -> Node0x55c41e6399e0
+	Node0x55c41e6399e0 -> Node0x55c41e639a78
+	Node0x55c41e639a78 -> Node0x55c41e639868
+edge [color=red]
+	Node0x55c41e6378c0 -> Node0x55c41e6398e0[label="1"]
+	Node0x55c41e6398e0 -> Node0x55c41e6357a8[label="2"]
+	Node0x55c41e638820 -> Node0x55c41e639960[label="3"]
+	Node0x55c41e639960 -> Node0x55c41e636d48[label="4"]
+	Node0x55c41e638ee0 -> Node0x55c41e6399e0[label="5"]
+	Node0x55c41e6399e0 -> Node0x55c41e636de8[label="6"]
+}

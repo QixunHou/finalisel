@@ -1,0 +1,45 @@
+digraph "CDFG for'func' function" {
+	Node0x56480a696900[shape=record, label="  %cmp9 = icmp sgt i32 %n, 0"]
+	Node0x56480a620c98[shape=record, label="  br i1 %cmp9, label %for.body.preheader, label %for.cond.cleanup"]
+	Node0x56480a696b70[shape=record, label="  %0 = shl i32 %n, 1"]
+	Node0x56480a696c10[shape=record, label="  %1 = add i32 %n, -1"]
+	Node0x56480a696248[shape=record, label="  %2 = zext i32 %1 to i33"]
+	Node0x56480a697110[shape=record, label="  %3 = add i32 %n, -2"]
+	Node0x56480a697168[shape=record, label="  %4 = zext i32 %3 to i33"]
+	Node0x56480a697230[shape=record, label="  %5 = mul i33 %2, %4"]
+	Node0x56480a6972a0[shape=record, label="  %6 = lshr i33 %5, 1"]
+	Node0x56480a6972f8[shape=record, label="  %7 = trunc i33 %6 to i32"]
+	Node0x56480a697370[shape=record, label="  %8 = add i32 %0, %7"]
+	Node0x56480a6973e0[shape=record, label="  %9 = add i32 %8, -1"]
+	Node0x56480a697498[shape=record, label="  br label %for.cond.cleanup"]
+	Node0x56480a6971b8[shape=record, label="  %result.0.lcssa = phi i32 [ 0, %entry ], [ %9, %for.body.preheader ]"]
+	Node0x56480a696aa8[shape=record, label="  ret i32 %result.0.lcssa"]
+	Node0x56480a696900 -> Node0x56480a620c98
+	Node0x56480a620c98 -> Node0x56480a696b70
+	Node0x56480a620c98 -> Node0x56480a6971b8
+	Node0x56480a696b70 -> Node0x56480a696c10
+	Node0x56480a696c10 -> Node0x56480a696248
+	Node0x56480a696248 -> Node0x56480a697110
+	Node0x56480a697110 -> Node0x56480a697168
+	Node0x56480a697168 -> Node0x56480a697230
+	Node0x56480a697230 -> Node0x56480a6972a0
+	Node0x56480a6972a0 -> Node0x56480a6972f8
+	Node0x56480a6972f8 -> Node0x56480a697370
+	Node0x56480a697370 -> Node0x56480a6973e0
+	Node0x56480a6973e0 -> Node0x56480a697498
+	Node0x56480a697498 -> Node0x56480a6971b8
+	Node0x56480a6971b8 -> Node0x56480a696aa8
+edge [color=red]
+	Node0x56480a696900 -> Node0x56480a620c98[label="1"]
+	Node0x56480a696c10 -> Node0x56480a696248[label="2"]
+	Node0x56480a697110 -> Node0x56480a697168[label="3"]
+	Node0x56480a696248 -> Node0x56480a697230[label="4"]
+	Node0x56480a697168 -> Node0x56480a697230[label="5"]
+	Node0x56480a697230 -> Node0x56480a6972a0[label="6"]
+	Node0x56480a6972a0 -> Node0x56480a6972f8[label="7"]
+	Node0x56480a696b70 -> Node0x56480a697370[label="8"]
+	Node0x56480a6972f8 -> Node0x56480a697370[label="9"]
+	Node0x56480a697370 -> Node0x56480a6973e0[label="10"]
+	Node0x56480a6973e0 -> Node0x56480a6971b8[label="11"]
+	Node0x56480a6971b8 -> Node0x56480a696aa8[label="12"]
+}

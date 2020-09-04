@@ -1,0 +1,38 @@
+digraph "CDFG for'Push' function" {
+	Node0x55e7314f2078[shape=record, label="  %top.i = getelementptr inbounds %struct.SeqStack, %struct.SeqStack* %S, i64 0, i32 1"]
+	Node0x55e7314f1fe8[shape=record, label="  %0 = load i32, i32* %top.i, align 4, !tbaa !2"]
+	Node0x55e7314f2120[shape=record, label="  %cmp.i = icmp eq i32 %0, 99"]
+	Node0x55e731482468[shape=record, label="  br i1 %cmp.i, label %if.then, label %if.end"]
+	Node0x55e7314f2630[shape=record, label="  %call1 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @.str, i64 0, i64 0))"]
+	Node0x55e7314f2880[shape=record, label="  tail call void @exit(i32 1) #7"]
+	Node0x55e7314f2940[shape=record, label="  unreachable"]
+	Node0x55e7314f29b0[shape=record, label="  %inc = add nsw i32 %0, 1"]
+	Node0x55e7314f2a20[shape=record, label="  store i32 %inc, i32* %top.i, align 4, !tbaa !2"]
+	Node0x55e7314f22d8[shape=record, label="  %idxprom = sext i32 %inc to i64"]
+	Node0x55e7314f2b20[shape=record, label="  %arrayidx = getelementptr inbounds %struct.SeqStack, %struct.SeqStack* %S, i64 0, i32 0, i64 %idxprom"]
+	Node0x55e7314f2bd0[shape=record, label="  store i32 %x, i32* %arrayidx, align 4, !tbaa !7"]
+	Node0x55e7314f2d50[shape=record, label="  ret void"]
+	Node0x55e7314f2078 -> Node0x55e7314f1fe8
+	Node0x55e7314f1fe8 -> Node0x55e7314f2120
+	Node0x55e7314f2120 -> Node0x55e731482468
+	Node0x55e731482468 -> Node0x55e7314f2630
+	Node0x55e731482468 -> Node0x55e7314f29b0
+	Node0x55e7314f2630 -> Node0x55e7314f2880
+	Node0x55e7314f2880 -> Node0x55e7314f2940
+	Node0x55e7314f29b0 -> Node0x55e7314f2a20
+	Node0x55e7314f2a20 -> Node0x55e7314f22d8
+	Node0x55e7314f22d8 -> Node0x55e7314f2b20
+	Node0x55e7314f2b20 -> Node0x55e7314f2bd0
+	Node0x55e7314f2bd0 -> Node0x55e7314f2d50
+edge [color=red]
+	Node0x55e7314f2078 -> Node0x55e7314f1fe8[label="1"]
+	Node0x55e7314f1fe8 -> Node0x55e7314f2120[label="2"]
+	Node0x55e7314f2120 -> Node0x55e731482468[label="3"]
+	Node0x55e7314f1fe8 -> Node0x55e7314f29b0[label="4"]
+	Node0x55e7314f29b0 -> Node0x55e7314f2a20[label="5"]
+	Node0x55e7314f2a20 -> Node0x55e7314f2078[label="6"]
+	Node0x55e7314f29b0 -> Node0x55e7314f22d8[label="7"]
+	Node0x55e7314f22d8 -> Node0x55e7314f2b20[label="8"]
+	Node0x55e7314f1e28 -> Node0x55e7314f2bd0[label="9"]
+	Node0x55e7314f2bd0 -> Node0x55e7314f2b20[label="10"]
+}

@@ -1,0 +1,43 @@
+digraph "CDFG for'search' function" {
+	Node0x561cab649338[shape=record, label="  br label %while.cond"]
+	Node0x561cab650608[shape=record, label="  %h.pn = phi %struct.node* [ %h, %entry ], [ %p.0, %while.body ]"]
+	Node0x561cab650708[shape=record, label="  %p.0.in = getelementptr inbounds %struct.node, %struct.node* %h.pn, i64 0, i32 2"]
+	Node0x561cab650798[shape=record, label="  %p.0 = load %struct.node*, %struct.node** %p.0.in, align 8, !tbaa !2"]
+	Node0x561cab650810[shape=record, label="  %cmp = icmp eq %struct.node* %p.0, %h"]
+	Node0x561cab650908[shape=record, label="  br i1 %cmp, label %while.end, label %while.body"]
+	Node0x561cab6509b0[shape=record, label="  %arraydecay = getelementptr inbounds %struct.node, %struct.node* %p.0, i64 0, i32 0, i64 0"]
+	Node0x561cab650b78[shape=record, label="  %call = tail call i32 @strcmp(i8* %arraydecay, i8* %x)"]
+	Node0x561cab650c50[shape=record, label="  %cmp1 = icmp eq i32 %call, 0"]
+	Node0x561cab650f68[shape=record, label="  br i1 %cmp1, label %cleanup, label %while.cond"]
+	Node0x561cab651080[shape=record, label="  %puts = tail call i32 @puts(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @str.13, i64 0, i64 0))"]
+	Node0x561cab64bf78[shape=record, label="  br label %cleanup"]
+	Node0x561cab651128[shape=record, label="  %p.013 = phi %struct.node* [ %h, %while.end ], [ %p.0, %while.body ]"]
+	Node0x561cab650ed8[shape=record, label="  ret %struct.node* %p.013"]
+	Node0x561cab649338 -> Node0x561cab650608
+	Node0x561cab650608 -> Node0x561cab650708
+	Node0x561cab650708 -> Node0x561cab650798
+	Node0x561cab650798 -> Node0x561cab650810
+	Node0x561cab650810 -> Node0x561cab650908
+	Node0x561cab650908 -> Node0x561cab651080
+	Node0x561cab650908 -> Node0x561cab6509b0
+	Node0x561cab6509b0 -> Node0x561cab650b78
+	Node0x561cab650b78 -> Node0x561cab650c50
+	Node0x561cab650c50 -> Node0x561cab650f68
+	Node0x561cab650f68 -> Node0x561cab651128
+	Node0x561cab650f68 -> Node0x561cab650608
+	Node0x561cab651080 -> Node0x561cab64bf78
+	Node0x561cab64bf78 -> Node0x561cab651128
+	Node0x561cab651128 -> Node0x561cab650ed8
+edge [color=red]
+	Node0x561cab650798 -> Node0x561cab650608[label="1"]
+	Node0x561cab650608 -> Node0x561cab650708[label="2"]
+	Node0x561cab650708 -> Node0x561cab650798[label="3"]
+	Node0x561cab650798 -> Node0x561cab650810[label="4"]
+	Node0x561cab650810 -> Node0x561cab650908[label="5"]
+	Node0x561cab650798 -> Node0x561cab6509b0[label="6"]
+	Node0x561cab6509b0 -> Node0x561cab650b78[label="7"]
+	Node0x561cab650b78 -> Node0x561cab650c50[label="8"]
+	Node0x561cab650c50 -> Node0x561cab650f68[label="9"]
+	Node0x561cab650798 -> Node0x561cab651128[label="10"]
+	Node0x561cab651128 -> Node0x561cab650ed8[label="11"]
+}

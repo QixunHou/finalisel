@@ -1,0 +1,18 @@
+digraph "CDFG for'func' function" {
+	Node0x5621e16b8c98[shape=record, label="  %0 = load i64, i64* @func.f, align 8, !tbaa !2"]
+	Node0x5621e16b9ba8[shape=record, label="  %conv = sext i32 %n to i64"]
+	Node0x5621e16b9c40[shape=record, label="  %mul = mul nsw i64 %0, %conv"]
+	Node0x5621e16b9cd0[shape=record, label="  store i64 %mul, i64* @func.f, align 8, !tbaa !2"]
+	Node0x5621e16ba348[shape=record, label="  ret i64 %mul"]
+	Node0x5621e16b8c98 -> Node0x5621e16b9ba8
+	Node0x5621e16b9ba8 -> Node0x5621e16b9c40
+	Node0x5621e16b9c40 -> Node0x5621e16b9cd0
+	Node0x5621e16b9cd0 -> Node0x5621e16ba348
+edge [color=red]
+	Node0x5621e16b6c88 -> Node0x5621e16b8c98[label="1"]
+	Node0x5621e16b8c98 -> Node0x5621e16b9c40[label="2"]
+	Node0x5621e16b9ba8 -> Node0x5621e16b9c40[label="3"]
+	Node0x5621e16b9c40 -> Node0x5621e16b9cd0[label="4"]
+	Node0x5621e16b9cd0 -> Node0x5621e16b6c88[label="5"]
+	Node0x5621e16b9c40 -> Node0x5621e16ba348[label="6"]
+}

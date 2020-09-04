@@ -1,0 +1,31 @@
+digraph "CDFG for'Top' function" {
+	Node0x55e7314f4e18[shape=record, label="  %top.i = getelementptr inbounds %struct.SeqStack, %struct.SeqStack* %S, i64 0, i32 1"]
+	Node0x55e7314f4d88[shape=record, label="  %0 = load i32, i32* %top.i, align 4, !tbaa !2"]
+	Node0x55e7314f4ec0[shape=record, label="  %cmp.i = icmp eq i32 %0, -1"]
+	Node0x55e7314f5108[shape=record, label="  br i1 %cmp.i, label %if.then, label %if.end"]
+	Node0x55e7314f51a0[shape=record, label="  %call1 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.1, i64 0, i64 0))"]
+	Node0x55e7314f52b0[shape=record, label="  tail call void @exit(i32 1) #7"]
+	Node0x55e7314f5350[shape=record, label="  unreachable"]
+	Node0x55e7314f5078[shape=record, label="  %idxprom = sext i32 %0 to i64"]
+	Node0x55e7314f53f0[shape=record, label="  %arrayidx = getelementptr inbounds %struct.SeqStack, %struct.SeqStack* %S, i64 0, i32 0, i64 %idxprom"]
+	Node0x55e7314f4fa8[shape=record, label="  %1 = load i32, i32* %arrayidx, align 4, !tbaa !7"]
+	Node0x55e7314f54a8[shape=record, label="  ret i32 %1"]
+	Node0x55e7314f4e18 -> Node0x55e7314f4d88
+	Node0x55e7314f4d88 -> Node0x55e7314f4ec0
+	Node0x55e7314f4ec0 -> Node0x55e7314f5108
+	Node0x55e7314f5108 -> Node0x55e7314f51a0
+	Node0x55e7314f5108 -> Node0x55e7314f5078
+	Node0x55e7314f51a0 -> Node0x55e7314f52b0
+	Node0x55e7314f52b0 -> Node0x55e7314f5350
+	Node0x55e7314f5078 -> Node0x55e7314f53f0
+	Node0x55e7314f53f0 -> Node0x55e7314f4fa8
+	Node0x55e7314f4fa8 -> Node0x55e7314f54a8
+edge [color=red]
+	Node0x55e7314f4e18 -> Node0x55e7314f4d88[label="1"]
+	Node0x55e7314f4d88 -> Node0x55e7314f4ec0[label="2"]
+	Node0x55e7314f4ec0 -> Node0x55e7314f5108[label="3"]
+	Node0x55e7314f4d88 -> Node0x55e7314f5078[label="4"]
+	Node0x55e7314f5078 -> Node0x55e7314f53f0[label="5"]
+	Node0x55e7314f53f0 -> Node0x55e7314f4fa8[label="6"]
+	Node0x55e7314f4fa8 -> Node0x55e7314f54a8[label="7"]
+}

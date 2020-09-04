@@ -1,0 +1,65 @@
+digraph "CDFG for'print_matrix' function" {
+	Node0x56155b3e6050[shape=record, label="  %cmp18 = icmp sgt i32 %n, 0"]
+	Node0x56155b3e6218[shape=record, label="  br i1 %cmp18, label %for.cond1.preheader.us.preheader, label %for.end7"]
+	Node0x56155b3de278[shape=record, label="  %0 = sext i32 %n to i64"]
+	Node0x56155b3de8d8[shape=record, label="  %wide.trip.count = zext i32 %n to i64"]
+	Node0x56155b3c0748[shape=record, label="  br label %for.cond1.preheader.us"]
+	Node0x56155b3e64a8[shape=record, label="  %indvars.iv22 = phi i64 [ 0, %for.cond1.preheader.us.preheader ], [ %indvars.iv.next23, %for.cond1.for.end_crit_edge.us ]"]
+	Node0x56155b3e6570[shape=record, label="  %1 = mul nsw i64 %indvars.iv22, %0"]
+	Node0x56155b3bdd88[shape=record, label="  br label %for.body3.us"]
+	Node0x56155b3e6688[shape=record, label="  %indvars.iv = phi i64 [ 0, %for.cond1.preheader.us ], [ %indvars.iv.next, %for.body3.us ]"]
+	Node0x56155b3e6780[shape=record, label="  %2 = add nsw i64 %indvars.iv, %1"]
+	Node0x56155b3e6820[shape=record, label="  %arrayidx.us = getelementptr inbounds double, double* %a, i64 %2"]
+	Node0x56155b3c2368[shape=record, label="  %3 = load double, double* %arrayidx.us, align 8, !tbaa !2"]
+	Node0x56155b3e5ef8[shape=record, label="  %call.us = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.1, i64 0, i64 0), double %3)"]
+	Node0x56155b3e7080[shape=record, label="  %indvars.iv.next = add nuw nsw i64 %indvars.iv, 1"]
+	Node0x56155b3e70f0[shape=record, label="  %exitcond = icmp eq i64 %indvars.iv.next, %wide.trip.count"]
+	Node0x56155b3e71a8[shape=record, label="  br i1 %exitcond, label %for.cond1.for.end_crit_edge.us, label %for.body3.us"]
+	Node0x56155b3e72e0[shape=record, label="  %putchar.us = tail call i32 @putchar(i32 10)"]
+	Node0x56155b3e7410[shape=record, label="  %indvars.iv.next23 = add nuw nsw i64 %indvars.iv22, 1"]
+	Node0x56155b3e74b0[shape=record, label="  %exitcond26 = icmp eq i64 %indvars.iv.next23, %indvars.iv.next"]
+	Node0x56155b3e7568[shape=record, label="  br i1 %exitcond26, label %for.end7, label %for.cond1.preheader.us"]
+	Node0x56155b3c8738[shape=record, label="  ret i32 undef"]
+	Node0x56155b3e6050 -> Node0x56155b3e6218
+	Node0x56155b3e6218 -> Node0x56155b3de278
+	Node0x56155b3e6218 -> Node0x56155b3c8738
+	Node0x56155b3de278 -> Node0x56155b3de8d8
+	Node0x56155b3de8d8 -> Node0x56155b3c0748
+	Node0x56155b3c0748 -> Node0x56155b3e64a8
+	Node0x56155b3e64a8 -> Node0x56155b3e6570
+	Node0x56155b3e6570 -> Node0x56155b3bdd88
+	Node0x56155b3bdd88 -> Node0x56155b3e6688
+	Node0x56155b3e6688 -> Node0x56155b3e6780
+	Node0x56155b3e6780 -> Node0x56155b3e6820
+	Node0x56155b3e6820 -> Node0x56155b3c2368
+	Node0x56155b3c2368 -> Node0x56155b3e5ef8
+	Node0x56155b3e5ef8 -> Node0x56155b3e7080
+	Node0x56155b3e7080 -> Node0x56155b3e70f0
+	Node0x56155b3e70f0 -> Node0x56155b3e71a8
+	Node0x56155b3e71a8 -> Node0x56155b3e72e0
+	Node0x56155b3e71a8 -> Node0x56155b3e6688
+	Node0x56155b3e72e0 -> Node0x56155b3e7410
+	Node0x56155b3e7410 -> Node0x56155b3e74b0
+	Node0x56155b3e74b0 -> Node0x56155b3e7568
+	Node0x56155b3e7568 -> Node0x56155b3c8738
+	Node0x56155b3e7568 -> Node0x56155b3e64a8
+edge [color=red]
+	Node0x56155b3e6050 -> Node0x56155b3e6218[label="1"]
+	Node0x56155b3e7410 -> Node0x56155b3e64a8[label="2"]
+	Node0x56155b3e64a8 -> Node0x56155b3e6570[label="3"]
+	Node0x56155b3de278 -> Node0x56155b3e6570[label="4"]
+	Node0x56155b3e7080 -> Node0x56155b3e6688[label="5"]
+	Node0x56155b3e6688 -> Node0x56155b3e6780[label="6"]
+	Node0x56155b3e6570 -> Node0x56155b3e6780[label="7"]
+	Node0x56155b3e6780 -> Node0x56155b3e6820[label="8"]
+	Node0x56155b3e6820 -> Node0x56155b3c2368[label="9"]
+	Node0x56155b3c2368 -> Node0x56155b3e5ef8[label="10"]
+	Node0x56155b3e6688 -> Node0x56155b3e7080[label="11"]
+	Node0x56155b3e7080 -> Node0x56155b3e70f0[label="12"]
+	Node0x56155b3de8d8 -> Node0x56155b3e70f0[label="13"]
+	Node0x56155b3e70f0 -> Node0x56155b3e71a8[label="14"]
+	Node0x56155b3e64a8 -> Node0x56155b3e7410[label="15"]
+	Node0x56155b3e7410 -> Node0x56155b3e74b0[label="16"]
+	Node0x56155b3e7080 -> Node0x56155b3e74b0[label="17"]
+	Node0x56155b3e74b0 -> Node0x56155b3e7568[label="18"]
+}

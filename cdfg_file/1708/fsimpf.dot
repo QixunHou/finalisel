@@ -1,0 +1,19 @@
+digraph "CDFG for'fsimpf' function" {
+	Node0x5555c43cb230[shape=record, label="  %add = fadd double %x, 1.000000e+00"]
+	Node0x5555c43cb310[shape=record, label="  %call = tail call double @log(double %add) #4"]
+	Node0x5555c43cb400[shape=record, label="  %mul = fmul double %x, %x"]
+	Node0x5555c43cb4b0[shape=record, label="  %add1 = fadd double %mul, 1.000000e+00"]
+	Node0x5555c43cb520[shape=record, label="  %div = fdiv double %call, %add1"]
+	Node0x5555c43cb598[shape=record, label="  ret double %div"]
+	Node0x5555c43cb230 -> Node0x5555c43cb310
+	Node0x5555c43cb310 -> Node0x5555c43cb400
+	Node0x5555c43cb400 -> Node0x5555c43cb4b0
+	Node0x5555c43cb4b0 -> Node0x5555c43cb520
+	Node0x5555c43cb520 -> Node0x5555c43cb598
+edge [color=red]
+	Node0x5555c43cb230 -> Node0x5555c43cb310[label="1"]
+	Node0x5555c43cb400 -> Node0x5555c43cb4b0[label="2"]
+	Node0x5555c43cb310 -> Node0x5555c43cb520[label="3"]
+	Node0x5555c43cb4b0 -> Node0x5555c43cb520[label="4"]
+	Node0x5555c43cb520 -> Node0x5555c43cb598[label="5"]
+}

@@ -1,0 +1,44 @@
+digraph "CDFG for'func' function" {
+	Node0x55eb6e5bd5d8[shape=record, label="  %r = alloca double, align 8"]
+	Node0x55eb6e5bdc98[shape=record, label="  %0 = bitcast double* %r to i8*"]
+	Node0x55eb6e5be0f8[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 8, i8* nonnull %0) #3"]
+	Node0x55eb6e5bec40[shape=record, label="  store double 1.000000e+00, double* %r, align 8, !tbaa !2"]
+	Node0x55eb6e5bfed8[shape=record, label="  %call = call i32 (i8*, ...) @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str, i64 0, i64 0), double* nonnull %r)"]
+	Node0x55eb6e5bff98[shape=record, label="  %1 = load double, double* %r, align 8, !tbaa !2"]
+	Node0x55eb6e5c0680[shape=record, label="  %mul = fmul double %1, 6.283200e+00"]
+	Node0x55eb6e5c07b8[shape=record, label="  %call1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str, i64 0, i64 0), double %mul)"]
+	Node0x55eb6e5c0898[shape=record, label="  %2 = load double, double* %r, align 8, !tbaa !2"]
+	Node0x55eb6e5c0980[shape=record, label="  %mul2 = fmul double %2, 3.141600e+00"]
+	Node0x55eb6e5c09f0[shape=record, label="  %mul3 = fmul double %2, %mul2"]
+	Node0x55eb6e5c0ab8[shape=record, label="  %call4 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str, i64 0, i64 0), double %mul3)"]
+	Node0x55eb6e5c0cf8[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 8, i8* nonnull %0) #3"]
+	Node0x55eb6e5c0db8[shape=record, label="  ret i32 0"]
+	Node0x55eb6e5bd5d8 -> Node0x55eb6e5bdc98
+	Node0x55eb6e5bdc98 -> Node0x55eb6e5be0f8
+	Node0x55eb6e5be0f8 -> Node0x55eb6e5bec40
+	Node0x55eb6e5bec40 -> Node0x55eb6e5bfed8
+	Node0x55eb6e5bfed8 -> Node0x55eb6e5bff98
+	Node0x55eb6e5bff98 -> Node0x55eb6e5c0680
+	Node0x55eb6e5c0680 -> Node0x55eb6e5c07b8
+	Node0x55eb6e5c07b8 -> Node0x55eb6e5c0898
+	Node0x55eb6e5c0898 -> Node0x55eb6e5c0980
+	Node0x55eb6e5c0980 -> Node0x55eb6e5c09f0
+	Node0x55eb6e5c09f0 -> Node0x55eb6e5c0ab8
+	Node0x55eb6e5c0ab8 -> Node0x55eb6e5c0cf8
+	Node0x55eb6e5c0cf8 -> Node0x55eb6e5c0db8
+edge [color=red]
+	Node0x55eb6e5bd5d8 -> Node0x55eb6e5bdc98[label="1"]
+	Node0x55eb6e5bdc98 -> Node0x55eb6e5be0f8[label="2"]
+	Node0x55eb6e5bebd0 -> Node0x55eb6e5bec40[label="3"]
+	Node0x55eb6e5bec40 -> Node0x55eb6e5bd5d8[label="4"]
+	Node0x55eb6e5bd5d8 -> Node0x55eb6e5bfed8[label="5"]
+	Node0x55eb6e5bd5d8 -> Node0x55eb6e5bff98[label="6"]
+	Node0x55eb6e5bff98 -> Node0x55eb6e5c0680[label="7"]
+	Node0x55eb6e5c0680 -> Node0x55eb6e5c07b8[label="8"]
+	Node0x55eb6e5bd5d8 -> Node0x55eb6e5c0898[label="9"]
+	Node0x55eb6e5c0898 -> Node0x55eb6e5c0980[label="10"]
+	Node0x55eb6e5c0898 -> Node0x55eb6e5c09f0[label="11"]
+	Node0x55eb6e5c0980 -> Node0x55eb6e5c09f0[label="12"]
+	Node0x55eb6e5c09f0 -> Node0x55eb6e5c0ab8[label="13"]
+	Node0x55eb6e5bdc98 -> Node0x55eb6e5c0cf8[label="14"]
+}

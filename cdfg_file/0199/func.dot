@@ -1,0 +1,31 @@
+digraph "CDFG for'func' function" {
+	Node0x55fd0b3f15b0[shape=record, label="  %add = add nsw i32 %b, %a"]
+	Node0x55fd0b3f1640[shape=record, label="  %cmp = icmp sgt i32 %add, %c"]
+	Node0x55fd0b3f16d0[shape=record, label="  %add1 = add nsw i32 %c, %a"]
+	Node0x55fd0b3f1760[shape=record, label="  %cmp2 = icmp sgt i32 %add1, %b"]
+	Node0x55fd0b3f17f0[shape=record, label="  %or.cond = and i1 %cmp, %cmp2"]
+	Node0x55fd0b3f1880[shape=record, label="  %add4 = add nsw i32 %c, %b"]
+	Node0x55fd0b3f1910[shape=record, label="  %cmp5 = icmp sgt i32 %add4, %a"]
+	Node0x55fd0b3f19a0[shape=record, label="  %or.cond12 = and i1 %cmp5, %or.cond"]
+	Node0x55fd0b3f1538[shape=record, label="  %retval.0 = zext i1 %or.cond12 to i32"]
+	Node0x55fd0b3f1bc8[shape=record, label="  ret i32 %retval.0"]
+	Node0x55fd0b3f15b0 -> Node0x55fd0b3f1640
+	Node0x55fd0b3f1640 -> Node0x55fd0b3f16d0
+	Node0x55fd0b3f16d0 -> Node0x55fd0b3f1760
+	Node0x55fd0b3f1760 -> Node0x55fd0b3f17f0
+	Node0x55fd0b3f17f0 -> Node0x55fd0b3f1880
+	Node0x55fd0b3f1880 -> Node0x55fd0b3f1910
+	Node0x55fd0b3f1910 -> Node0x55fd0b3f19a0
+	Node0x55fd0b3f19a0 -> Node0x55fd0b3f1538
+	Node0x55fd0b3f1538 -> Node0x55fd0b3f1bc8
+edge [color=red]
+	Node0x55fd0b3f15b0 -> Node0x55fd0b3f1640[label="1"]
+	Node0x55fd0b3f16d0 -> Node0x55fd0b3f1760[label="2"]
+	Node0x55fd0b3f1640 -> Node0x55fd0b3f17f0[label="3"]
+	Node0x55fd0b3f1760 -> Node0x55fd0b3f17f0[label="4"]
+	Node0x55fd0b3f1880 -> Node0x55fd0b3f1910[label="5"]
+	Node0x55fd0b3f1910 -> Node0x55fd0b3f19a0[label="6"]
+	Node0x55fd0b3f17f0 -> Node0x55fd0b3f19a0[label="7"]
+	Node0x55fd0b3f19a0 -> Node0x55fd0b3f1538[label="8"]
+	Node0x55fd0b3f1538 -> Node0x55fd0b3f1bc8[label="9"]
+}

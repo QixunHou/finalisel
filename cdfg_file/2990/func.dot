@@ -1,0 +1,39 @@
+digraph "CDFG for'func' function" {
+	Node0x55b6517fa1c0[shape=record, label="  %cmp4 = icmp slt i32 %n, 2"]
+	Node0x55b651783c98[shape=record, label="  br i1 %cmp4, label %if.end, label %if.else.preheader"]
+	Node0x55b6517fa338[shape=record, label="  %0 = sext i32 %n to i64"]
+	Node0x55b6517fa4b8[shape=record, label="  br label %if.else"]
+	Node0x55b6517fa508[shape=record, label="  %indvars.iv = phi i64 [ %0, %if.else.preheader ], [ %indvars.iv.next, %if.else ]"]
+	Node0x55b6517fa6e8[shape=record, label="  %accumulator.tr5 = phi i64 [ 1, %if.else.preheader ], [ %mul, %if.else ]"]
+	Node0x55b6517fa7e0[shape=record, label="  %indvars.iv.next = add nsw i64 %indvars.iv, -1"]
+	Node0x55b6517fa850[shape=record, label="  %mul = mul nsw i64 %accumulator.tr5, %indvars.iv"]
+	Node0x55b6517fa8c0[shape=record, label="  %cmp = icmp slt i64 %indvars.iv, 3"]
+	Node0x55b651783db8[shape=record, label="  br i1 %cmp, label %if.end, label %if.else"]
+	Node0x55b6517fa928[shape=record, label="  %accumulator.tr.lcssa = phi i64 [ 1, %entry ], [ %mul, %if.else ]"]
+	Node0x55b6517f9b08[shape=record, label="  ret i64 %accumulator.tr.lcssa"]
+	Node0x55b6517fa1c0 -> Node0x55b651783c98
+	Node0x55b651783c98 -> Node0x55b6517fa928
+	Node0x55b651783c98 -> Node0x55b6517fa338
+	Node0x55b6517fa338 -> Node0x55b6517fa4b8
+	Node0x55b6517fa4b8 -> Node0x55b6517fa508
+	Node0x55b6517fa508 -> Node0x55b6517fa6e8
+	Node0x55b6517fa6e8 -> Node0x55b6517fa7e0
+	Node0x55b6517fa7e0 -> Node0x55b6517fa850
+	Node0x55b6517fa850 -> Node0x55b6517fa8c0
+	Node0x55b6517fa8c0 -> Node0x55b651783db8
+	Node0x55b651783db8 -> Node0x55b6517fa928
+	Node0x55b651783db8 -> Node0x55b6517fa508
+	Node0x55b6517fa928 -> Node0x55b6517f9b08
+edge [color=red]
+	Node0x55b6517fa1c0 -> Node0x55b651783c98[label="1"]
+	Node0x55b6517fa338 -> Node0x55b6517fa508[label="2"]
+	Node0x55b6517fa7e0 -> Node0x55b6517fa508[label="3"]
+	Node0x55b6517fa850 -> Node0x55b6517fa6e8[label="4"]
+	Node0x55b6517fa508 -> Node0x55b6517fa7e0[label="5"]
+	Node0x55b6517fa6e8 -> Node0x55b6517fa850[label="6"]
+	Node0x55b6517fa508 -> Node0x55b6517fa850[label="7"]
+	Node0x55b6517fa508 -> Node0x55b6517fa8c0[label="8"]
+	Node0x55b6517fa8c0 -> Node0x55b651783db8[label="9"]
+	Node0x55b6517fa850 -> Node0x55b6517fa928[label="10"]
+	Node0x55b6517fa928 -> Node0x55b6517f9b08[label="11"]
+}

@@ -1,0 +1,37 @@
+digraph "CDFG for'func' function" {
+	Node0x5568be31d170[shape=record, label="  %add = add nsw i32 %b, %a"]
+	Node0x5568be31d1e0[shape=record, label="  %sub = sub nsw i32 %a, %b"]
+	Node0x5568be31d8b0[shape=record, label="  %conv2 = shl i32 %add, 24"]
+	Node0x5568be31d970[shape=record, label="  %sext = add i32 %conv2, 805306368"]
+	Node0x5568be31da00[shape=record, label="  %conv6 = ashr exact i32 %sext, 24"]
+	Node0x5568be31ddb8[shape=record, label="  %call = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @.str, i64 0, i64 0), i32 %conv6)"]
+	Node0x5568be31deb0[shape=record, label="  %conv5 = shl i32 %sub, 24"]
+	Node0x5568be31df40[shape=record, label="  %sext16 = sub i32 805306368, %conv5"]
+	Node0x5568be31dfd0[shape=record, label="  %conv7 = ashr exact i32 %sext16, 24"]
+	Node0x5568be31e098[shape=record, label="  %call8 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @.str, i64 0, i64 0), i32 %conv7)"]
+	Node0x5568be31e310[shape=record, label="  %mul = mul nsw i32 %add, %sub"]
+	Node0x5568be31e388[shape=record, label="  ret i32 %mul"]
+	Node0x5568be31d170 -> Node0x5568be31d1e0
+	Node0x5568be31d1e0 -> Node0x5568be31d8b0
+	Node0x5568be31d8b0 -> Node0x5568be31d970
+	Node0x5568be31d970 -> Node0x5568be31da00
+	Node0x5568be31da00 -> Node0x5568be31ddb8
+	Node0x5568be31ddb8 -> Node0x5568be31deb0
+	Node0x5568be31deb0 -> Node0x5568be31df40
+	Node0x5568be31df40 -> Node0x5568be31dfd0
+	Node0x5568be31dfd0 -> Node0x5568be31e098
+	Node0x5568be31e098 -> Node0x5568be31e310
+	Node0x5568be31e310 -> Node0x5568be31e388
+edge [color=red]
+	Node0x5568be31d170 -> Node0x5568be31d8b0[label="1"]
+	Node0x5568be31d8b0 -> Node0x5568be31d970[label="2"]
+	Node0x5568be31d970 -> Node0x5568be31da00[label="3"]
+	Node0x5568be31da00 -> Node0x5568be31ddb8[label="4"]
+	Node0x5568be31d1e0 -> Node0x5568be31deb0[label="5"]
+	Node0x5568be31deb0 -> Node0x5568be31df40[label="6"]
+	Node0x5568be31df40 -> Node0x5568be31dfd0[label="7"]
+	Node0x5568be31dfd0 -> Node0x5568be31e098[label="8"]
+	Node0x5568be31d170 -> Node0x5568be31e310[label="9"]
+	Node0x5568be31d1e0 -> Node0x5568be31e310[label="10"]
+	Node0x5568be31e310 -> Node0x5568be31e388[label="11"]
+}

@@ -1,0 +1,10 @@
+digraph "CDFG for'func' function" {
+	Node0x55a01d0bd6f0[shape=record, label="  %cmp = icmp sgt i32 %x, %y"]
+	Node0x55a01d047c98[shape=record, label="  %x.y = select i1 %cmp, i32 %x, i32 %y"]
+	Node0x55a01d0bd678[shape=record, label="  ret i32 %x.y"]
+	Node0x55a01d0bd6f0 -> Node0x55a01d047c98
+	Node0x55a01d047c98 -> Node0x55a01d0bd678
+edge [color=red]
+	Node0x55a01d0bd6f0 -> Node0x55a01d047c98[label="1"]
+	Node0x55a01d047c98 -> Node0x55a01d0bd678[label="2"]
+}

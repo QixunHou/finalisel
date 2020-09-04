@@ -1,0 +1,46 @@
+digraph "DFG for'crackme' function" {
+	Node0x11e7940[shape=record, label="  %3 = xor i32 %1, -1"];
+	Node0x11e79b0[shape=record, label="  %4 = or i32 %3, %0"];
+	Node0x11e7a70[shape=record, label="  %5 = sub i32 0, %4"];
+	Node0x11e7ae0[shape=record, label="  %6 = or i32 %1, %0"];
+	Node0x11e7b50[shape=record, label="  %7 = xor i32 %1, %0"];
+	Node0x11e7bc0[shape=record, label="  %8 = and i32 %3, %0"];
+	Node0x11e7c60[shape=record, label="  %9 = shl i32 %8, 1"];
+	Node0x11e7cd0[shape=record, label="  %10 = sub i32 1, %1"];
+	Node0x11e7d40[shape=record, label="  %11 = add i32 %10, %6"];
+	Node0x11e7db0[shape=record, label="  %12 = add i32 %11, %7"];
+	Node0x11e7e20[shape=record, label="  %13 = sub i32 %12, %9"];
+	Node0x11e7e90[shape=record, label="  %14 = icmp eq i32 %13, %5"];
+	Node0x1188388[shape=record, label="  %15 = select i1 %14, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @str.3, i64 0, i64 0), i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str, i64 0, i64 0)"];
+	Node0x11e8330[shape=record, label="  %16 = tail call i32 @puts(i8* nonnull dereferenceable(1) %15)"];
+	Node0x11e8380[shape=record, label="  ret void"];
+	Node0x11e7940 -> Node0x11e79b0;
+	Node0x11e79b0 -> Node0x11e7a70;
+	Node0x11e7a70 -> Node0x11e7ae0;
+	Node0x11e7ae0 -> Node0x11e7b50;
+	Node0x11e7b50 -> Node0x11e7bc0;
+	Node0x11e7bc0 -> Node0x11e7c60;
+	Node0x11e7c60 -> Node0x11e7cd0;
+	Node0x11e7cd0 -> Node0x11e7d40;
+	Node0x11e7d40 -> Node0x11e7db0;
+	Node0x11e7db0 -> Node0x11e7e20;
+	Node0x11e7e20 -> Node0x11e7e90;
+	Node0x11e7e90 -> Node0x1188388;
+	Node0x1188388 -> Node0x11e8330;
+	Node0x11e8330 -> Node0x11e8380;
+edge [color=red]
+	Node0x11e7940 -> Node0x11e79b0;
+	Node0x11e79b0 -> Node0x11e7a70;
+	Node0x11e7940 -> Node0x11e7bc0;
+	Node0x11e7bc0 -> Node0x11e7c60;
+	Node0x11e7cd0 -> Node0x11e7d40;
+	Node0x11e7ae0 -> Node0x11e7d40;
+	Node0x11e7d40 -> Node0x11e7db0;
+	Node0x11e7b50 -> Node0x11e7db0;
+	Node0x11e7db0 -> Node0x11e7e20;
+	Node0x11e7c60 -> Node0x11e7e20;
+	Node0x11e7e20 -> Node0x11e7e90;
+	Node0x11e7a70 -> Node0x11e7e90;
+	Node0x11e7e90 -> Node0x1188388;
+	Node0x1188388 -> Node0x11e8330;
+}

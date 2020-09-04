@@ -1,0 +1,24 @@
+digraph "CDFG for'func' function" {
+	Node0x56363223ca38[shape=record, label="  br label %while.cond"]
+	Node0x56363223cab8[shape=record, label="  %b.addr.0 = phi i32 [ %b, %entry ], [ %rem, %while.cond ]"]
+	Node0x56363223cb88[shape=record, label="  %a.addr.0 = phi i32 [ %a, %entry ], [ %b.addr.0, %while.cond ]"]
+	Node0x56363223cc80[shape=record, label="  %rem = srem i32 %a.addr.0, %b.addr.0"]
+	Node0x56363223d300[shape=record, label="  %tobool = icmp eq i32 %rem, 0"]
+	Node0x5636321c6c98[shape=record, label="  br i1 %tobool, label %while.end, label %while.cond"]
+	Node0x56363223c958[shape=record, label="  ret i32 %b.addr.0"]
+	Node0x56363223ca38 -> Node0x56363223cab8
+	Node0x56363223cab8 -> Node0x56363223cb88
+	Node0x56363223cb88 -> Node0x56363223cc80
+	Node0x56363223cc80 -> Node0x56363223d300
+	Node0x56363223d300 -> Node0x5636321c6c98
+	Node0x5636321c6c98 -> Node0x56363223c958
+	Node0x5636321c6c98 -> Node0x56363223cab8
+edge [color=red]
+	Node0x56363223cc80 -> Node0x56363223cab8[label="1"]
+	Node0x56363223cab8 -> Node0x56363223cb88[label="2"]
+	Node0x56363223cb88 -> Node0x56363223cc80[label="3"]
+	Node0x56363223cab8 -> Node0x56363223cc80[label="4"]
+	Node0x56363223cc80 -> Node0x56363223d300[label="5"]
+	Node0x56363223d300 -> Node0x5636321c6c98[label="6"]
+	Node0x56363223cab8 -> Node0x56363223c958[label="7"]
+}

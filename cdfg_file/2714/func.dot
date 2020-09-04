@@ -1,0 +1,19 @@
+digraph "CDFG for'func' function" {
+	Node0x557ab90f13a8[shape=record, label="  %num = alloca i32, align 4"]
+	Node0x557ab90f1a48[shape=record, label="  %0 = bitcast i32* %num to i8*"]
+	Node0x557ab90f1ea8[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %0) #3"]
+	Node0x557ab90f22c0[shape=record, label="  %puts = tail call i32 @puts(i8* getelementptr inbounds ([26 x i8], [26 x i8]* @str, i64 0, i64 0))"]
+	Node0x557ab90f2528[shape=record, label="  %call2 = call i32 (i8*, ...) @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str.1, i64 0, i64 0), i32* nonnull %num)"]
+	Node0x557ab90f2758[shape=record, label="  call void @llvm.trap()"]
+	Node0x557ab90f2800[shape=record, label="  unreachable"]
+	Node0x557ab90f13a8 -> Node0x557ab90f1a48
+	Node0x557ab90f1a48 -> Node0x557ab90f1ea8
+	Node0x557ab90f1ea8 -> Node0x557ab90f22c0
+	Node0x557ab90f22c0 -> Node0x557ab90f2528
+	Node0x557ab90f2528 -> Node0x557ab90f2758
+	Node0x557ab90f2758 -> Node0x557ab90f2800
+edge [color=red]
+	Node0x557ab90f13a8 -> Node0x557ab90f1a48[label="1"]
+	Node0x557ab90f1a48 -> Node0x557ab90f1ea8[label="2"]
+	Node0x557ab90f13a8 -> Node0x557ab90f2528[label="3"]
+}

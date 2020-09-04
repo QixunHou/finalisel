@@ -1,0 +1,50 @@
+digraph "CDFG for'func' function" {
+	Node0x564bd395b698[shape=record, label="  %conv = sext i32 %a to i64"]
+	Node0x564bd395bd50[shape=record, label="  %cmp19 = icmp eq i32 %a, 0"]
+	Node0x564bd38e6c98[shape=record, label="  br i1 %cmp19, label %for.cond.cleanup, label %for.body"]
+	Node0x564bd395bff8[shape=record, label="  %cnt.0.lcssa = phi i32 [ 0, %entry ], [ %cnt.1, %for.body ]"]
+	Node0x564bd395c0d8[shape=record, label="  ret i32 %cnt.0.lcssa"]
+	Node0x564bd395c178[shape=record, label="  %i.022 = phi i64 [ %inc4, %for.body ], [ 0, %entry ]"]
+	Node0x564bd395c238[shape=record, label="  %cnt.021 = phi i32 [ %cnt.1, %for.body ], [ 0, %entry ]"]
+	Node0x564bd395c3d8[shape=record, label="  %b.020 = phi i32 [ %b.1, %for.body ], [ 64, %entry ]"]
+	Node0x564bd395c4f0[shape=record, label="  %cmp2 = icmp sgt i32 %b.020, 1"]
+	Node0x564bd395c568[shape=record, label="  %div18 = zext i1 %cmp2 to i32"]
+	Node0x564bd395c600[shape=record, label="  %b.1 = lshr i32 %b.020, %div18"]
+	Node0x564bd395c810[shape=record, label="  %cnt.1 = add nuw nsw i32 %cnt.021, %div18"]
+	Node0x564bd395c880[shape=record, label="  %inc4 = add nuw i64 %i.022, 1"]
+	Node0x564bd395c8f0[shape=record, label="  %cmp = icmp ult i64 %inc4, %conv"]
+	Node0x564bd38e6db8[shape=record, label="  br i1 %cmp, label %for.body, label %for.cond.cleanup"]
+	Node0x564bd395b698 -> Node0x564bd395bd50
+	Node0x564bd395bd50 -> Node0x564bd38e6c98
+	Node0x564bd38e6c98 -> Node0x564bd395bff8
+	Node0x564bd38e6c98 -> Node0x564bd395c178
+	Node0x564bd395bff8 -> Node0x564bd395c0d8
+	Node0x564bd395c178 -> Node0x564bd395c238
+	Node0x564bd395c238 -> Node0x564bd395c3d8
+	Node0x564bd395c3d8 -> Node0x564bd395c4f0
+	Node0x564bd395c4f0 -> Node0x564bd395c568
+	Node0x564bd395c568 -> Node0x564bd395c600
+	Node0x564bd395c600 -> Node0x564bd395c810
+	Node0x564bd395c810 -> Node0x564bd395c880
+	Node0x564bd395c880 -> Node0x564bd395c8f0
+	Node0x564bd395c8f0 -> Node0x564bd38e6db8
+	Node0x564bd38e6db8 -> Node0x564bd395c178
+	Node0x564bd38e6db8 -> Node0x564bd395bff8
+edge [color=red]
+	Node0x564bd395bd50 -> Node0x564bd38e6c98[label="1"]
+	Node0x564bd395c810 -> Node0x564bd395bff8[label="2"]
+	Node0x564bd395bff8 -> Node0x564bd395c0d8[label="3"]
+	Node0x564bd395c880 -> Node0x564bd395c178[label="4"]
+	Node0x564bd395c810 -> Node0x564bd395c238[label="5"]
+	Node0x564bd395c600 -> Node0x564bd395c3d8[label="6"]
+	Node0x564bd395c3d8 -> Node0x564bd395c4f0[label="7"]
+	Node0x564bd395c4f0 -> Node0x564bd395c568[label="8"]
+	Node0x564bd395c3d8 -> Node0x564bd395c600[label="9"]
+	Node0x564bd395c568 -> Node0x564bd395c600[label="10"]
+	Node0x564bd395c238 -> Node0x564bd395c810[label="11"]
+	Node0x564bd395c568 -> Node0x564bd395c810[label="12"]
+	Node0x564bd395c178 -> Node0x564bd395c880[label="13"]
+	Node0x564bd395c880 -> Node0x564bd395c8f0[label="14"]
+	Node0x564bd395b698 -> Node0x564bd395c8f0[label="15"]
+	Node0x564bd395c8f0 -> Node0x564bd38e6db8[label="16"]
+}

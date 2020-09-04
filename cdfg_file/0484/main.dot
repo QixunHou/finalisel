@@ -1,0 +1,62 @@
+digraph "CDFG for'main' function" {
+	Node0x55bde4423598[shape=record, label="  %0 = load i64, i64* @func.f, align 8, !tbaa !2"]
+	Node0x55bde4423a00[shape=record, label="  %call1 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str, i64 0, i64 0), i32 1, i64 %0)"]
+	Node0x55bde4423ad8[shape=record, label="  %1 = load i64, i64* @func.f, align 8, !tbaa !2"]
+	Node0x55bde4423b70[shape=record, label="  %mul.i.1 = shl nsw i64 %1, 1"]
+	Node0x55bde4423be0[shape=record, label="  store i64 %mul.i.1, i64* @func.f, align 8, !tbaa !2"]
+	Node0x55bde4423ce0[shape=record, label="  %call1.1 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str, i64 0, i64 0), i32 2, i64 %mul.i.1)"]
+	Node0x55bde4423d98[shape=record, label="  %2 = load i64, i64* @func.f, align 8, !tbaa !2"]
+	Node0x55bde4423e70[shape=record, label="  %mul.i.2 = mul nsw i64 %2, 3"]
+	Node0x55bde4423ee0[shape=record, label="  store i64 %mul.i.2, i64* @func.f, align 8, !tbaa !2"]
+	Node0x55bde4423fe0[shape=record, label="  %call1.2 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str, i64 0, i64 0), i32 3, i64 %mul.i.2)"]
+	Node0x55bde4424098[shape=record, label="  %3 = load i64, i64* @func.f, align 8, !tbaa !2"]
+	Node0x55bde4424140[shape=record, label="  %mul.i.3 = shl nsw i64 %3, 2"]
+	Node0x55bde44241d0[shape=record, label="  store i64 %mul.i.3, i64* @func.f, align 8, !tbaa !2"]
+	Node0x55bde44242d0[shape=record, label="  %call1.3 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str, i64 0, i64 0), i32 4, i64 %mul.i.3)"]
+	Node0x55bde4424388[shape=record, label="  %4 = load i64, i64* @func.f, align 8, !tbaa !2"]
+	Node0x55bde4424450[shape=record, label="  %mul.i.4 = mul nsw i64 %4, 5"]
+	Node0x55bde44244e0[shape=record, label="  store i64 %mul.i.4, i64* @func.f, align 8, !tbaa !2"]
+	Node0x55bde44245e0[shape=record, label="  %call1.4 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str, i64 0, i64 0), i32 5, i64 %mul.i.4)"]
+	Node0x55bde44246c8[shape=record, label="  ret i32 0"]
+	Node0x55bde4423598 -> Node0x55bde4423a00
+	Node0x55bde4423a00 -> Node0x55bde4423ad8
+	Node0x55bde4423ad8 -> Node0x55bde4423b70
+	Node0x55bde4423b70 -> Node0x55bde4423be0
+	Node0x55bde4423be0 -> Node0x55bde4423ce0
+	Node0x55bde4423ce0 -> Node0x55bde4423d98
+	Node0x55bde4423d98 -> Node0x55bde4423e70
+	Node0x55bde4423e70 -> Node0x55bde4423ee0
+	Node0x55bde4423ee0 -> Node0x55bde4423fe0
+	Node0x55bde4423fe0 -> Node0x55bde4424098
+	Node0x55bde4424098 -> Node0x55bde4424140
+	Node0x55bde4424140 -> Node0x55bde44241d0
+	Node0x55bde44241d0 -> Node0x55bde44242d0
+	Node0x55bde44242d0 -> Node0x55bde4424388
+	Node0x55bde4424388 -> Node0x55bde4424450
+	Node0x55bde4424450 -> Node0x55bde44244e0
+	Node0x55bde44244e0 -> Node0x55bde44245e0
+	Node0x55bde44245e0 -> Node0x55bde44246c8
+edge [color=red]
+	Node0x55bde441fc88 -> Node0x55bde4423598[label="1"]
+	Node0x55bde4423598 -> Node0x55bde4423a00[label="2"]
+	Node0x55bde441fc88 -> Node0x55bde4423ad8[label="3"]
+	Node0x55bde4423ad8 -> Node0x55bde4423b70[label="4"]
+	Node0x55bde4423b70 -> Node0x55bde4423be0[label="5"]
+	Node0x55bde4423be0 -> Node0x55bde441fc88[label="6"]
+	Node0x55bde4423b70 -> Node0x55bde4423ce0[label="7"]
+	Node0x55bde441fc88 -> Node0x55bde4423d98[label="8"]
+	Node0x55bde4423d98 -> Node0x55bde4423e70[label="9"]
+	Node0x55bde4423e70 -> Node0x55bde4423ee0[label="10"]
+	Node0x55bde4423ee0 -> Node0x55bde441fc88[label="11"]
+	Node0x55bde4423e70 -> Node0x55bde4423fe0[label="12"]
+	Node0x55bde441fc88 -> Node0x55bde4424098[label="13"]
+	Node0x55bde4424098 -> Node0x55bde4424140[label="14"]
+	Node0x55bde4424140 -> Node0x55bde44241d0[label="15"]
+	Node0x55bde44241d0 -> Node0x55bde441fc88[label="16"]
+	Node0x55bde4424140 -> Node0x55bde44242d0[label="17"]
+	Node0x55bde441fc88 -> Node0x55bde4424388[label="18"]
+	Node0x55bde4424388 -> Node0x55bde4424450[label="19"]
+	Node0x55bde4424450 -> Node0x55bde44244e0[label="20"]
+	Node0x55bde44244e0 -> Node0x55bde441fc88[label="21"]
+	Node0x55bde4424450 -> Node0x55bde44245e0[label="22"]
+}

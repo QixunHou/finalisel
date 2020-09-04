@@ -1,0 +1,34 @@
+digraph "CDFG for'func' function" {
+	Node0x555ae3d19fd0[shape=record, label="  %tobool = icmp eq i32 %a, 0"]
+	Node0x555ae3ca3c98[shape=record, label="  br i1 %tobool, label %if.end, label %if.then"]
+	Node0x555ae3d1a1b0[shape=record, label="  %div = sdiv i32 %a, 16"]
+	Node0x555ae3d1a500[shape=record, label="  %call = tail call i32 (i32, ...) bitcast (i32 (...)* @fun to i32 (i32, ...)*)(i32 %div) #4"]
+	Node0x555ae3d1a5f0[shape=record, label="  %rem = srem i32 %a, 16"]
+	Node0x555ae3d1a668[shape=record, label="  %idxprom = sext i32 %rem to i64"]
+	Node0x555ae3d1a748[shape=record, label="  %arrayidx = getelementptr inbounds [17 x i8], [17 x i8]* @arr, i64 0, i64 %idxprom"]
+	Node0x555ae3d1a7e8[shape=record, label="  %0 = load i8, i8* %arrayidx, align 1, !tbaa !2"]
+	Node0x555ae3d1b718[shape=record, label="  %conv = sext i8 %0 to i32"]
+	Node0x555ae3d1b860[shape=record, label="  %putchar = tail call i32 @putchar(i32 %conv)"]
+	Node0x555ae3d1b938[shape=record, label="  br label %if.end"]
+	Node0x555ae3d1b980[shape=record, label="  ret void"]
+	Node0x555ae3d19fd0 -> Node0x555ae3ca3c98
+	Node0x555ae3ca3c98 -> Node0x555ae3d1b980
+	Node0x555ae3ca3c98 -> Node0x555ae3d1a1b0
+	Node0x555ae3d1a1b0 -> Node0x555ae3d1a500
+	Node0x555ae3d1a500 -> Node0x555ae3d1a5f0
+	Node0x555ae3d1a5f0 -> Node0x555ae3d1a668
+	Node0x555ae3d1a668 -> Node0x555ae3d1a748
+	Node0x555ae3d1a748 -> Node0x555ae3d1a7e8
+	Node0x555ae3d1a7e8 -> Node0x555ae3d1b718
+	Node0x555ae3d1b718 -> Node0x555ae3d1b860
+	Node0x555ae3d1b860 -> Node0x555ae3d1b938
+	Node0x555ae3d1b938 -> Node0x555ae3d1b980
+edge [color=red]
+	Node0x555ae3d19fd0 -> Node0x555ae3ca3c98[label="1"]
+	Node0x555ae3d1a1b0 -> Node0x555ae3d1a500[label="2"]
+	Node0x555ae3d1a5f0 -> Node0x555ae3d1a668[label="3"]
+	Node0x555ae3d1a668 -> Node0x555ae3d1a748[label="4"]
+	Node0x555ae3d1a748 -> Node0x555ae3d1a7e8[label="5"]
+	Node0x555ae3d1a7e8 -> Node0x555ae3d1b718[label="6"]
+	Node0x555ae3d1b718 -> Node0x555ae3d1b860[label="7"]
+}

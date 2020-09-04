@@ -1,0 +1,16 @@
+digraph "CDFG for'func' function" {
+	Node0x564185a310f0[shape=record, label="  %cmp = fcmp ult float %x, 0.000000e+00"]
+	Node0x564185a31160[shape=record, label="  %mul = fmul float %x, 0x400921FF20000000"]
+	Node0x564185a311f0[shape=record, label="  %mul2 = fmul float %mul, %x"]
+	Node0x5641859bac98[shape=record, label="  %z.0 = select i1 %cmp, float -1.000000e+00, float %mul2"]
+	Node0x564185a31038[shape=record, label="  ret float %z.0"]
+	Node0x564185a310f0 -> Node0x564185a31160
+	Node0x564185a31160 -> Node0x564185a311f0
+	Node0x564185a311f0 -> Node0x5641859bac98
+	Node0x5641859bac98 -> Node0x564185a31038
+edge [color=red]
+	Node0x564185a31160 -> Node0x564185a311f0[label="1"]
+	Node0x564185a310f0 -> Node0x5641859bac98[label="2"]
+	Node0x564185a311f0 -> Node0x5641859bac98[label="3"]
+	Node0x5641859bac98 -> Node0x564185a31038[label="4"]
+}

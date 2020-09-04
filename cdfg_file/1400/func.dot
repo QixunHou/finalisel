@@ -1,0 +1,32 @@
+digraph "CDFG for'func' function" {
+	Node0x55c6ae6996a0[shape=record, label="  %call = tail call noalias i8* @malloc(i64 176) #3"]
+	Node0x55c6ae699778[shape=record, label="  %0 = bitcast %struct.Node** %head to i8**"]
+	Node0x55c6ae699810[shape=record, label="  store i8* %call, i8** %0, align 8, !tbaa !2"]
+	Node0x55c6ae69ab70[shape=record, label="  %cmp = icmp eq i8* %call, null"]
+	Node0x55c6ae62e228[shape=record, label="  br i1 %cmp, label %if.then, label %if.end"]
+	Node0x55c6ae69ae40[shape=record, label="  tail call void @exit(i32 1) #4"]
+	Node0x55c6ae69af00[shape=record, label="  unreachable"]
+	Node0x55c6ae69afa0[shape=record, label="  %next = getelementptr inbounds i8, i8* %call, i64 168"]
+	Node0x55c6ae69ad28[shape=record, label="  %1 = bitcast i8* %next to %struct.Node**"]
+	Node0x55c6ae69b040[shape=record, label="  store %struct.Node* null, %struct.Node** %1, align 8, !tbaa !6"]
+	Node0x55c6ae69b130[shape=record, label="  ret void"]
+	Node0x55c6ae6996a0 -> Node0x55c6ae699778
+	Node0x55c6ae699778 -> Node0x55c6ae699810
+	Node0x55c6ae699810 -> Node0x55c6ae69ab70
+	Node0x55c6ae69ab70 -> Node0x55c6ae62e228
+	Node0x55c6ae62e228 -> Node0x55c6ae69ae40
+	Node0x55c6ae62e228 -> Node0x55c6ae69afa0
+	Node0x55c6ae69ae40 -> Node0x55c6ae69af00
+	Node0x55c6ae69afa0 -> Node0x55c6ae69ad28
+	Node0x55c6ae69ad28 -> Node0x55c6ae69b040
+	Node0x55c6ae69b040 -> Node0x55c6ae69b130
+edge [color=red]
+	Node0x55c6ae6996a0 -> Node0x55c6ae699810[label="1"]
+	Node0x55c6ae699810 -> Node0x55c6ae699778[label="2"]
+	Node0x55c6ae6996a0 -> Node0x55c6ae69ab70[label="3"]
+	Node0x55c6ae69ab70 -> Node0x55c6ae62e228[label="4"]
+	Node0x55c6ae6996a0 -> Node0x55c6ae69afa0[label="5"]
+	Node0x55c6ae69afa0 -> Node0x55c6ae69ad28[label="6"]
+	Node0x55c6ae6997c0 -> Node0x55c6ae69b040[label="7"]
+	Node0x55c6ae69b040 -> Node0x55c6ae69ad28[label="8"]
+}

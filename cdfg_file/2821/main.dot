@@ -1,0 +1,37 @@
+digraph "CDFG for'main' function" {
+	Node0x56046ffeb878[shape=record, label="  %r = alloca float, align 4"]
+	Node0x56046ffebf08[shape=record, label="  %0 = bitcast float* %r to i8*"]
+	Node0x56046ffec148[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %0) #4"]
+	Node0x56046ffec558[shape=record, label="  %call = call i32 (i8*, ...) @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str, i64 0, i64 0), float* nonnull %r)"]
+	Node0x56046ffec618[shape=record, label="  %1 = load float, float* %r, align 4, !tbaa !2"]
+	Node0x56046ffed540[shape=record, label="  %cmp.i = fcmp ult float %1, 0.000000e+00"]
+	Node0x56046ffed5b0[shape=record, label="  %mul.i = fmul float %1, 0x401921FF20000000"]
+	Node0x56046ffed678[shape=record, label="  %z.0.i = select i1 %cmp.i, float -1.000000e+00, float %mul.i"]
+	Node0x56046ffed6d8[shape=record, label="  %conv = fpext float %z.0.i to double"]
+	Node0x56046ffed8c8[shape=record, label="  %call2 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str, i64 0, i64 0), double %conv)"]
+	Node0x56046ffeda98[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %0) #4"]
+	Node0x56046ffedb58[shape=record, label="  ret i32 0"]
+	Node0x56046ffeb878 -> Node0x56046ffebf08
+	Node0x56046ffebf08 -> Node0x56046ffec148
+	Node0x56046ffec148 -> Node0x56046ffec558
+	Node0x56046ffec558 -> Node0x56046ffec618
+	Node0x56046ffec618 -> Node0x56046ffed540
+	Node0x56046ffed540 -> Node0x56046ffed5b0
+	Node0x56046ffed5b0 -> Node0x56046ffed678
+	Node0x56046ffed678 -> Node0x56046ffed6d8
+	Node0x56046ffed6d8 -> Node0x56046ffed8c8
+	Node0x56046ffed8c8 -> Node0x56046ffeda98
+	Node0x56046ffeda98 -> Node0x56046ffedb58
+edge [color=red]
+	Node0x56046ffeb878 -> Node0x56046ffebf08[label="1"]
+	Node0x56046ffebf08 -> Node0x56046ffec148[label="2"]
+	Node0x56046ffeb878 -> Node0x56046ffec558[label="3"]
+	Node0x56046ffeb878 -> Node0x56046ffec618[label="4"]
+	Node0x56046ffec618 -> Node0x56046ffed540[label="5"]
+	Node0x56046ffec618 -> Node0x56046ffed5b0[label="6"]
+	Node0x56046ffed540 -> Node0x56046ffed678[label="7"]
+	Node0x56046ffed5b0 -> Node0x56046ffed678[label="8"]
+	Node0x56046ffed678 -> Node0x56046ffed6d8[label="9"]
+	Node0x56046ffed6d8 -> Node0x56046ffed8c8[label="10"]
+	Node0x56046ffebf08 -> Node0x56046ffeda98[label="11"]
+}

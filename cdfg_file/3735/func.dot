@@ -1,0 +1,210 @@
+digraph "CDFG for'func' function" {
+	Node0x55d2571258b8[shape=record, label="  br label %for.cond1.preheader"]
+	Node0x55d257126058[shape=record, label="  %n.074 = phi i32 [ 0, %entry ], [ %n.4, %for.inc35 ]"]
+	Node0x55d2571261c8[shape=record, label="  %x.072 = phi i32 [ 0, %entry ], [ %inc36, %for.inc35 ]"]
+	Node0x55d257126378[shape=record, label="  br label %for.body3"]
+	Node0x55d257126448[shape=record, label="  %n.171 = phi i32 [ %n.074, %for.cond1.preheader ], [ %n.4, %for.inc32 ]"]
+	Node0x55d2571265b8[shape=record, label="  %y.068 = phi i32 [ 0, %for.cond1.preheader ], [ %inc33, %for.inc32 ]"]
+	Node0x55d2571266a0[shape=record, label="  %cmp4 = icmp eq i32 %x.072, %y.068"]
+	Node0x55d2570adc98[shape=record, label="  br i1 %cmp4, label %for.inc32, label %for.body7"]
+	Node0x55d2571268e8[shape=record, label="  %n.267 = phi i32 [ %n.3, %for.inc28 ], [ %n.171, %for.body3 ]"]
+	Node0x55d257126bf8[shape=record, label="  %z.064 = phi i32 [ %inc29, %for.inc28 ], [ 0, %for.body3 ]"]
+	Node0x55d257126ce0[shape=record, label="  %cmp8 = icmp eq i32 %z.064, %x.072"]
+	Node0x55d257126d70[shape=record, label="  %cmp9 = icmp eq i32 %z.064, %y.068"]
+	Node0x55d257126e00[shape=record, label="  %or.cond = or i1 %cmp8, %cmp9"]
+	Node0x55d2570addb8[shape=record, label="  br i1 %or.cond, label %for.inc28, label %sw.epilog"]
+	Node0x55d257126fa0[shape=record, label="  %add = add nsw i32 %n.267, 1"]
+	Node0x55d257127358[shape=record, label="  %call = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([7 x i8], [7 x i8]* @.str, i64 0, i64 0), i32 %add)"]
+	Node0x55d257127cc8[shape=record, label="  switch i32 %x.072, label %sw.epilog.1 [
+    i32 0, label %sw.bb16
+    i32 1, label %sw.bb18
+    i32 2, label %sw.bb20
+    i32 3, label %sw.bb22
+    i32 4, label %sw.bb24
+  ]"]
+	Node0x55d257127fa8[shape=record, label="  %call17 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.2, i64 0, i64 0))"]
+	Node0x55d257127588[shape=record, label="  br label %sw.epilog.1"]
+	Node0x55d257128138[shape=record, label="  %call19 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([7 x i8], [7 x i8]* @.str.3, i64 0, i64 0))"]
+	Node0x55d257127658[shape=record, label="  br label %sw.epilog.1"]
+	Node0x55d2571282c8[shape=record, label="  %call21 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([7 x i8], [7 x i8]* @.str.4, i64 0, i64 0))"]
+	Node0x55d257127758[shape=record, label="  br label %sw.epilog.1"]
+	Node0x55d257128458[shape=record, label="  %call23 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.5, i64 0, i64 0))"]
+	Node0x55d257127b78[shape=record, label="  br label %sw.epilog.1"]
+	Node0x55d2571285e8[shape=record, label="  %call25 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.6, i64 0, i64 0))"]
+	Node0x55d257127c78[shape=record, label="  br label %sw.epilog.1"]
+	Node0x55d257129388[shape=record, label="  %n.3 = phi i32 [ %n.267, %for.body7 ], [ %add, %sw.bb16.2 ], [ %add, %sw.bb18.2 ], [ %add, %sw.bb20.2 ], [ %add, %sw.bb22.2 ], [ %add, %sw.bb24.2 ], [ %add, %sw.epilog.2 ]"]
+	Node0x55d2571294f0[shape=record, label="  %inc29 = add nuw nsw i32 %z.064, 1"]
+	Node0x55d257129560[shape=record, label="  %exitcond = icmp eq i32 %inc29, 5"]
+	Node0x55d2570b9348[shape=record, label="  br i1 %exitcond, label %for.inc32, label %for.body7"]
+	Node0x55d2571295a8[shape=record, label="  %n.4 = phi i32 [ %n.171, %for.body3 ], [ %n.3, %for.inc28 ]"]
+	Node0x55d257129670[shape=record, label="  %inc33 = add nuw nsw i32 %y.068, 1"]
+	Node0x55d2571296e0[shape=record, label="  %exitcond75 = icmp eq i32 %inc33, 5"]
+	Node0x55d2570b9468[shape=record, label="  br i1 %exitcond75, label %for.inc35, label %for.body3"]
+	Node0x55d257129750[shape=record, label="  %inc36 = add nuw nsw i32 %x.072, 1"]
+	Node0x55d2571297c0[shape=record, label="  %exitcond76 = icmp eq i32 %inc36, 5"]
+	Node0x55d2570b9588[shape=record, label="  br i1 %exitcond76, label %for.end37, label %for.cond1.preheader"]
+	Node0x55d257129998[shape=record, label="  %call38 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([40 x i8], [40 x i8]* @.str.7, i64 0, i64 0), i32 %n.4)"]
+	Node0x55d257129ba0[shape=record, label="  %call39 = tail call i32 @puts(i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.8, i64 0, i64 0))"]
+	Node0x55d257129ee8[shape=record, label="  %call40 = tail call i32 (...) @getch() #3"]
+	Node0x55d25712a5d0[shape=record, label="  ret void"]
+	Node0x55d25712a898[shape=record, label="  switch i32 %y.068, label %sw.epilog.2 [
+    i32 0, label %sw.bb16.1
+    i32 1, label %sw.bb18.1
+    i32 2, label %sw.bb20.1
+    i32 3, label %sw.bb22.1
+    i32 4, label %sw.bb24.1
+  ]"]
+	Node0x55d25712aa78[shape=record, label="  %call25.1 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.6, i64 0, i64 0))"]
+	Node0x55d257126ba8[shape=record, label="  br label %sw.epilog.2"]
+	Node0x55d25712ab98[shape=record, label="  %call23.1 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.5, i64 0, i64 0))"]
+	Node0x55d257126318[shape=record, label="  br label %sw.epilog.2"]
+	Node0x55d25712acb8[shape=record, label="  %call21.1 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([7 x i8], [7 x i8]* @.str.4, i64 0, i64 0))"]
+	Node0x55d257125788[shape=record, label="  br label %sw.epilog.2"]
+	Node0x55d25712add8[shape=record, label="  %call19.1 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([7 x i8], [7 x i8]* @.str.3, i64 0, i64 0))"]
+	Node0x55d257126568[shape=record, label="  br label %sw.epilog.2"]
+	Node0x55d25712aef8[shape=record, label="  %call17.1 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.2, i64 0, i64 0))"]
+	Node0x55d2571274b8[shape=record, label="  br label %sw.epilog.2"]
+	Node0x55d25712afd8[shape=record, label="  switch i32 %z.064, label %for.inc28 [
+    i32 0, label %sw.bb16.2
+    i32 1, label %sw.bb18.2
+    i32 2, label %sw.bb20.2
+    i32 3, label %sw.bb22.2
+    i32 4, label %sw.bb24.2
+  ]"]
+	Node0x55d25712b198[shape=record, label="  %call25.2 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.6, i64 0, i64 0))"]
+	Node0x55d257129258[shape=record, label="  br label %for.inc28"]
+	Node0x55d25712b2b8[shape=record, label="  %call23.2 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.5, i64 0, i64 0))"]
+	Node0x55d257129178[shape=record, label="  br label %for.inc28"]
+	Node0x55d25712b3d8[shape=record, label="  %call21.2 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([7 x i8], [7 x i8]* @.str.4, i64 0, i64 0))"]
+	Node0x55d257129098[shape=record, label="  br label %for.inc28"]
+	Node0x55d25712b4f8[shape=record, label="  %call19.2 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([7 x i8], [7 x i8]* @.str.3, i64 0, i64 0))"]
+	Node0x55d257128fb8[shape=record, label="  br label %for.inc28"]
+	Node0x55d25712b618[shape=record, label="  %call17.2 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.2, i64 0, i64 0))"]
+	Node0x55d257126898[shape=record, label="  br label %for.inc28"]
+	Node0x55d2571258b8 -> Node0x55d257126058
+	Node0x55d257126058 -> Node0x55d2571261c8
+	Node0x55d2571261c8 -> Node0x55d257126378
+	Node0x55d257126378 -> Node0x55d257126448
+	Node0x55d257126448 -> Node0x55d2571265b8
+	Node0x55d2571265b8 -> Node0x55d2571266a0
+	Node0x55d2571266a0 -> Node0x55d2570adc98
+	Node0x55d2570adc98 -> Node0x55d2571295a8
+	Node0x55d2570adc98 -> Node0x55d2571268e8
+	Node0x55d2571268e8 -> Node0x55d257126bf8
+	Node0x55d257126bf8 -> Node0x55d257126ce0
+	Node0x55d257126ce0 -> Node0x55d257126d70
+	Node0x55d257126d70 -> Node0x55d257126e00
+	Node0x55d257126e00 -> Node0x55d2570addb8
+	Node0x55d2570addb8 -> Node0x55d257129388
+	Node0x55d2570addb8 -> Node0x55d257126fa0
+	Node0x55d257126fa0 -> Node0x55d257127358
+	Node0x55d257127358 -> Node0x55d257127cc8
+	Node0x55d257127cc8 -> Node0x55d25712a898
+	Node0x55d257127cc8 -> Node0x55d257127fa8
+	Node0x55d257127cc8 -> Node0x55d257128138
+	Node0x55d257127cc8 -> Node0x55d2571282c8
+	Node0x55d257127cc8 -> Node0x55d257128458
+	Node0x55d257127cc8 -> Node0x55d2571285e8
+	Node0x55d257127fa8 -> Node0x55d257127588
+	Node0x55d257127588 -> Node0x55d25712a898
+	Node0x55d257128138 -> Node0x55d257127658
+	Node0x55d257127658 -> Node0x55d25712a898
+	Node0x55d2571282c8 -> Node0x55d257127758
+	Node0x55d257127758 -> Node0x55d25712a898
+	Node0x55d257128458 -> Node0x55d257127b78
+	Node0x55d257127b78 -> Node0x55d25712a898
+	Node0x55d2571285e8 -> Node0x55d257127c78
+	Node0x55d257127c78 -> Node0x55d25712a898
+	Node0x55d257129388 -> Node0x55d2571294f0
+	Node0x55d2571294f0 -> Node0x55d257129560
+	Node0x55d257129560 -> Node0x55d2570b9348
+	Node0x55d2570b9348 -> Node0x55d2571295a8
+	Node0x55d2570b9348 -> Node0x55d2571268e8
+	Node0x55d2571295a8 -> Node0x55d257129670
+	Node0x55d257129670 -> Node0x55d2571296e0
+	Node0x55d2571296e0 -> Node0x55d2570b9468
+	Node0x55d2570b9468 -> Node0x55d257129750
+	Node0x55d2570b9468 -> Node0x55d257126448
+	Node0x55d257129750 -> Node0x55d2571297c0
+	Node0x55d2571297c0 -> Node0x55d2570b9588
+	Node0x55d2570b9588 -> Node0x55d257129998
+	Node0x55d2570b9588 -> Node0x55d257126058
+	Node0x55d257129998 -> Node0x55d257129ba0
+	Node0x55d257129ba0 -> Node0x55d257129ee8
+	Node0x55d257129ee8 -> Node0x55d25712a5d0
+	Node0x55d25712a898 -> Node0x55d25712afd8
+	Node0x55d25712a898 -> Node0x55d25712aef8
+	Node0x55d25712a898 -> Node0x55d25712add8
+	Node0x55d25712a898 -> Node0x55d25712acb8
+	Node0x55d25712a898 -> Node0x55d25712ab98
+	Node0x55d25712a898 -> Node0x55d25712aa78
+	Node0x55d25712aa78 -> Node0x55d257126ba8
+	Node0x55d257126ba8 -> Node0x55d25712afd8
+	Node0x55d25712ab98 -> Node0x55d257126318
+	Node0x55d257126318 -> Node0x55d25712afd8
+	Node0x55d25712acb8 -> Node0x55d257125788
+	Node0x55d257125788 -> Node0x55d25712afd8
+	Node0x55d25712add8 -> Node0x55d257126568
+	Node0x55d257126568 -> Node0x55d25712afd8
+	Node0x55d25712aef8 -> Node0x55d2571274b8
+	Node0x55d2571274b8 -> Node0x55d25712afd8
+	Node0x55d25712afd8 -> Node0x55d257129388
+	Node0x55d25712afd8 -> Node0x55d25712b618
+	Node0x55d25712afd8 -> Node0x55d25712b4f8
+	Node0x55d25712afd8 -> Node0x55d25712b3d8
+	Node0x55d25712afd8 -> Node0x55d25712b2b8
+	Node0x55d25712afd8 -> Node0x55d25712b198
+	Node0x55d25712b198 -> Node0x55d257129258
+	Node0x55d257129258 -> Node0x55d257129388
+	Node0x55d25712b2b8 -> Node0x55d257129178
+	Node0x55d257129178 -> Node0x55d257129388
+	Node0x55d25712b3d8 -> Node0x55d257129098
+	Node0x55d257129098 -> Node0x55d257129388
+	Node0x55d25712b4f8 -> Node0x55d257128fb8
+	Node0x55d257128fb8 -> Node0x55d257129388
+	Node0x55d25712b618 -> Node0x55d257126898
+	Node0x55d257126898 -> Node0x55d257129388
+edge [color=red]
+	Node0x55d2571295a8 -> Node0x55d257126058[label="1"]
+	Node0x55d257129750 -> Node0x55d2571261c8[label="2"]
+	Node0x55d257126058 -> Node0x55d257126448[label="3"]
+	Node0x55d2571295a8 -> Node0x55d257126448[label="4"]
+	Node0x55d257129670 -> Node0x55d2571265b8[label="5"]
+	Node0x55d2571261c8 -> Node0x55d2571266a0[label="6"]
+	Node0x55d2571265b8 -> Node0x55d2571266a0[label="7"]
+	Node0x55d2571266a0 -> Node0x55d2570adc98[label="8"]
+	Node0x55d257129388 -> Node0x55d2571268e8[label="9"]
+	Node0x55d257126448 -> Node0x55d2571268e8[label="10"]
+	Node0x55d2571294f0 -> Node0x55d257126bf8[label="11"]
+	Node0x55d257126bf8 -> Node0x55d257126ce0[label="12"]
+	Node0x55d2571261c8 -> Node0x55d257126ce0[label="13"]
+	Node0x55d257126bf8 -> Node0x55d257126d70[label="14"]
+	Node0x55d2571265b8 -> Node0x55d257126d70[label="15"]
+	Node0x55d257126ce0 -> Node0x55d257126e00[label="16"]
+	Node0x55d257126d70 -> Node0x55d257126e00[label="17"]
+	Node0x55d257126e00 -> Node0x55d2570addb8[label="18"]
+	Node0x55d2571268e8 -> Node0x55d257126fa0[label="19"]
+	Node0x55d257126fa0 -> Node0x55d257127358[label="20"]
+	Node0x55d2571261c8 -> Node0x55d257127cc8[label="21"]
+	Node0x55d2571268e8 -> Node0x55d257129388[label="22"]
+	Node0x55d257126fa0 -> Node0x55d257129388[label="23"]
+	Node0x55d257126fa0 -> Node0x55d257129388[label="24"]
+	Node0x55d257126fa0 -> Node0x55d257129388[label="25"]
+	Node0x55d257126fa0 -> Node0x55d257129388[label="26"]
+	Node0x55d257126fa0 -> Node0x55d257129388[label="27"]
+	Node0x55d257126fa0 -> Node0x55d257129388[label="28"]
+	Node0x55d257126bf8 -> Node0x55d2571294f0[label="29"]
+	Node0x55d2571294f0 -> Node0x55d257129560[label="30"]
+	Node0x55d257129560 -> Node0x55d2570b9348[label="31"]
+	Node0x55d257126448 -> Node0x55d2571295a8[label="32"]
+	Node0x55d257129388 -> Node0x55d2571295a8[label="33"]
+	Node0x55d2571265b8 -> Node0x55d257129670[label="34"]
+	Node0x55d257129670 -> Node0x55d2571296e0[label="35"]
+	Node0x55d2571296e0 -> Node0x55d2570b9468[label="36"]
+	Node0x55d2571261c8 -> Node0x55d257129750[label="37"]
+	Node0x55d257129750 -> Node0x55d2571297c0[label="38"]
+	Node0x55d2571297c0 -> Node0x55d2570b9588[label="39"]
+	Node0x55d2571295a8 -> Node0x55d257129998[label="40"]
+	Node0x55d2571265b8 -> Node0x55d25712a898[label="41"]
+	Node0x55d257126bf8 -> Node0x55d25712afd8[label="42"]
+}

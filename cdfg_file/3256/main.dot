@@ -1,0 +1,20 @@
+digraph "CDFG for'main' function" {
+	Node0x55e910595e68[shape=record, label="  %expr = alloca [100 x i8], align 16"]
+	Node0x55e91059a1e8[shape=record, label="  %0 = getelementptr inbounds [100 x i8], [100 x i8]* %expr, i64 0, i64 0"]
+	Node0x55e91059a368[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 100, i8* nonnull %0) #7"]
+	Node0x55e91059a4d8[shape=record, label="  %call = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([63 x i8], [63 x i8]* @.str.4, i64 0, i64 0), i32 100)"]
+	Node0x55e91059a5f0[shape=record, label="  call void @func(i8* nonnull %0)"]
+	Node0x55e91059a748[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 100, i8* nonnull %0) #7"]
+	Node0x55e91059a7f0[shape=record, label="  ret void"]
+	Node0x55e910595e68 -> Node0x55e91059a1e8
+	Node0x55e91059a1e8 -> Node0x55e91059a368
+	Node0x55e91059a368 -> Node0x55e91059a4d8
+	Node0x55e91059a4d8 -> Node0x55e91059a5f0
+	Node0x55e91059a5f0 -> Node0x55e91059a748
+	Node0x55e91059a748 -> Node0x55e91059a7f0
+edge [color=red]
+	Node0x55e910595e68 -> Node0x55e91059a1e8[label="1"]
+	Node0x55e91059a1e8 -> Node0x55e91059a368[label="2"]
+	Node0x55e91059a1e8 -> Node0x55e91059a5f0[label="3"]
+	Node0x55e91059a1e8 -> Node0x55e91059a748[label="4"]
+}

@@ -1,0 +1,41 @@
+digraph "CDFG for'main' function" {
+	Node0x56420719f908[shape=record, label="  %r = alloca float, align 4"]
+	Node0x56420719ff98[shape=record, label="  %0 = bitcast float* %r to i8*"]
+	Node0x5642071a01d8[shape=record, label="  call void @llvm.lifetime.start.p0i8(i64 4, i8* nonnull %0) #4"]
+	Node0x5642071a05e8[shape=record, label="  %call = call i32 (i8*, ...) @__isoc99_scanf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str, i64 0, i64 0), float* nonnull %r)"]
+	Node0x5642071a06a8[shape=record, label="  %1 = load float, float* %r, align 4, !tbaa !2"]
+	Node0x5642071a15d0[shape=record, label="  %cmp.i = fcmp ult float %1, 0.000000e+00"]
+	Node0x5642071a1640[shape=record, label="  %mul.i = fmul float %1, 0x400921FF20000000"]
+	Node0x5642071a16d0[shape=record, label="  %mul2.i = fmul float %1, %mul.i"]
+	Node0x5642071a1798[shape=record, label="  %z.0.i = select i1 %cmp.i, float -1.000000e+00, float %mul2.i"]
+	Node0x5642071a17f8[shape=record, label="  %conv = fpext float %z.0.i to double"]
+	Node0x5642071a19e8[shape=record, label="  %call2 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str, i64 0, i64 0), double %conv)"]
+	Node0x5642071a1bb8[shape=record, label="  call void @llvm.lifetime.end.p0i8(i64 4, i8* nonnull %0) #4"]
+	Node0x5642071a1c78[shape=record, label="  ret i32 0"]
+	Node0x56420719f908 -> Node0x56420719ff98
+	Node0x56420719ff98 -> Node0x5642071a01d8
+	Node0x5642071a01d8 -> Node0x5642071a05e8
+	Node0x5642071a05e8 -> Node0x5642071a06a8
+	Node0x5642071a06a8 -> Node0x5642071a15d0
+	Node0x5642071a15d0 -> Node0x5642071a1640
+	Node0x5642071a1640 -> Node0x5642071a16d0
+	Node0x5642071a16d0 -> Node0x5642071a1798
+	Node0x5642071a1798 -> Node0x5642071a17f8
+	Node0x5642071a17f8 -> Node0x5642071a19e8
+	Node0x5642071a19e8 -> Node0x5642071a1bb8
+	Node0x5642071a1bb8 -> Node0x5642071a1c78
+edge [color=red]
+	Node0x56420719f908 -> Node0x56420719ff98[label="1"]
+	Node0x56420719ff98 -> Node0x5642071a01d8[label="2"]
+	Node0x56420719f908 -> Node0x5642071a05e8[label="3"]
+	Node0x56420719f908 -> Node0x5642071a06a8[label="4"]
+	Node0x5642071a06a8 -> Node0x5642071a15d0[label="5"]
+	Node0x5642071a06a8 -> Node0x5642071a1640[label="6"]
+	Node0x5642071a06a8 -> Node0x5642071a16d0[label="7"]
+	Node0x5642071a1640 -> Node0x5642071a16d0[label="8"]
+	Node0x5642071a15d0 -> Node0x5642071a1798[label="9"]
+	Node0x5642071a16d0 -> Node0x5642071a1798[label="10"]
+	Node0x5642071a1798 -> Node0x5642071a17f8[label="11"]
+	Node0x5642071a17f8 -> Node0x5642071a19e8[label="12"]
+	Node0x56420719ff98 -> Node0x5642071a1bb8[label="13"]
+}

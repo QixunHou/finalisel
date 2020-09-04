@@ -1,0 +1,38 @@
+digraph "CDFG for'func' function" {
+	Node0x564390096ec0[shape=record, label="  %cmp6 = icmp eq i32 %a, 0"]
+	Node0x564390021c98[shape=record, label="  br i1 %cmp6, label %while.end, label %while.body"]
+	Node0x5643900970b8[shape=record, label="  %b.08 = phi i32 [ %add, %while.body ], [ 0, %entry ]"]
+	Node0x564390097228[shape=record, label="  %a.addr.07 = phi i32 [ %sub, %while.body ], [ %a, %entry ]"]
+	Node0x564390097350[shape=record, label="  %dec = add nsw i32 %a.addr.07, -1"]
+	Node0x5643900973e0[shape=record, label="  %add = add nsw i32 %dec, %b.08"]
+	Node0x564390097450[shape=record, label="  %sub = add nsw i32 %a.addr.07, -3"]
+	Node0x5643900974c0[shape=record, label="  %cmp = icmp eq i32 %sub, %add"]
+	Node0x564390021db8[shape=record, label="  br i1 %cmp, label %while.end, label %while.body"]
+	Node0x564390097528[shape=record, label="  %b.0.lcssa = phi i32 [ 0, %entry ], [ %add, %while.body ]"]
+	Node0x564390096808[shape=record, label="  ret i32 %b.0.lcssa"]
+	Node0x564390096ec0 -> Node0x564390021c98
+	Node0x564390021c98 -> Node0x564390097528
+	Node0x564390021c98 -> Node0x5643900970b8
+	Node0x5643900970b8 -> Node0x564390097228
+	Node0x564390097228 -> Node0x564390097350
+	Node0x564390097350 -> Node0x5643900973e0
+	Node0x5643900973e0 -> Node0x564390097450
+	Node0x564390097450 -> Node0x5643900974c0
+	Node0x5643900974c0 -> Node0x564390021db8
+	Node0x564390021db8 -> Node0x564390097528
+	Node0x564390021db8 -> Node0x5643900970b8
+	Node0x564390097528 -> Node0x564390096808
+edge [color=red]
+	Node0x564390096ec0 -> Node0x564390021c98[label="1"]
+	Node0x5643900973e0 -> Node0x5643900970b8[label="2"]
+	Node0x564390097450 -> Node0x564390097228[label="3"]
+	Node0x564390097228 -> Node0x564390097350[label="4"]
+	Node0x564390097350 -> Node0x5643900973e0[label="5"]
+	Node0x5643900970b8 -> Node0x5643900973e0[label="6"]
+	Node0x564390097228 -> Node0x564390097450[label="7"]
+	Node0x564390097450 -> Node0x5643900974c0[label="8"]
+	Node0x5643900973e0 -> Node0x5643900974c0[label="9"]
+	Node0x5643900974c0 -> Node0x564390021db8[label="10"]
+	Node0x5643900973e0 -> Node0x564390097528[label="11"]
+	Node0x564390097528 -> Node0x564390096808[label="12"]
+}

@@ -1,0 +1,65 @@
+digraph "CDFG for'print_matrix' function" {
+	Node0x55cae0a03050[shape=record, label="  %cmp18 = icmp sgt i32 %n, 0"]
+	Node0x55cae0a03218[shape=record, label="  br i1 %cmp18, label %for.cond1.preheader.us.preheader, label %for.end7"]
+	Node0x55cae09fb278[shape=record, label="  %0 = sext i32 %n to i64"]
+	Node0x55cae09fb8d8[shape=record, label="  %wide.trip.count = zext i32 %n to i64"]
+	Node0x55cae09dd748[shape=record, label="  br label %for.cond1.preheader.us"]
+	Node0x55cae0a034a8[shape=record, label="  %indvars.iv22 = phi i64 [ 0, %for.cond1.preheader.us.preheader ], [ %indvars.iv.next23, %for.cond1.for.end_crit_edge.us ]"]
+	Node0x55cae0a03570[shape=record, label="  %1 = mul nsw i64 %indvars.iv22, %0"]
+	Node0x55cae09dad88[shape=record, label="  br label %for.body3.us"]
+	Node0x55cae0a03688[shape=record, label="  %indvars.iv = phi i64 [ 0, %for.cond1.preheader.us ], [ %indvars.iv.next, %for.body3.us ]"]
+	Node0x55cae0a03780[shape=record, label="  %2 = add nsw i64 %indvars.iv, %1"]
+	Node0x55cae0a03820[shape=record, label="  %arrayidx.us = getelementptr inbounds double, double* %a, i64 %2"]
+	Node0x55cae09df368[shape=record, label="  %3 = load double, double* %arrayidx.us, align 8, !tbaa !2"]
+	Node0x55cae0a02ef8[shape=record, label="  %call.us = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.1, i64 0, i64 0), double %3)"]
+	Node0x55cae0a04080[shape=record, label="  %indvars.iv.next = add nuw nsw i64 %indvars.iv, 1"]
+	Node0x55cae0a040f0[shape=record, label="  %exitcond = icmp eq i64 %indvars.iv.next, %wide.trip.count"]
+	Node0x55cae0a041a8[shape=record, label="  br i1 %exitcond, label %for.cond1.for.end_crit_edge.us, label %for.body3.us"]
+	Node0x55cae0a042e0[shape=record, label="  %putchar.us = tail call i32 @putchar(i32 10)"]
+	Node0x55cae0a04410[shape=record, label="  %indvars.iv.next23 = add nuw nsw i64 %indvars.iv22, 1"]
+	Node0x55cae0a044b0[shape=record, label="  %exitcond26 = icmp eq i64 %indvars.iv.next23, %indvars.iv.next"]
+	Node0x55cae0a04568[shape=record, label="  br i1 %exitcond26, label %for.end7, label %for.cond1.preheader.us"]
+	Node0x55cae09e5738[shape=record, label="  ret i32 undef"]
+	Node0x55cae0a03050 -> Node0x55cae0a03218
+	Node0x55cae0a03218 -> Node0x55cae09fb278
+	Node0x55cae0a03218 -> Node0x55cae09e5738
+	Node0x55cae09fb278 -> Node0x55cae09fb8d8
+	Node0x55cae09fb8d8 -> Node0x55cae09dd748
+	Node0x55cae09dd748 -> Node0x55cae0a034a8
+	Node0x55cae0a034a8 -> Node0x55cae0a03570
+	Node0x55cae0a03570 -> Node0x55cae09dad88
+	Node0x55cae09dad88 -> Node0x55cae0a03688
+	Node0x55cae0a03688 -> Node0x55cae0a03780
+	Node0x55cae0a03780 -> Node0x55cae0a03820
+	Node0x55cae0a03820 -> Node0x55cae09df368
+	Node0x55cae09df368 -> Node0x55cae0a02ef8
+	Node0x55cae0a02ef8 -> Node0x55cae0a04080
+	Node0x55cae0a04080 -> Node0x55cae0a040f0
+	Node0x55cae0a040f0 -> Node0x55cae0a041a8
+	Node0x55cae0a041a8 -> Node0x55cae0a042e0
+	Node0x55cae0a041a8 -> Node0x55cae0a03688
+	Node0x55cae0a042e0 -> Node0x55cae0a04410
+	Node0x55cae0a04410 -> Node0x55cae0a044b0
+	Node0x55cae0a044b0 -> Node0x55cae0a04568
+	Node0x55cae0a04568 -> Node0x55cae09e5738
+	Node0x55cae0a04568 -> Node0x55cae0a034a8
+edge [color=red]
+	Node0x55cae0a03050 -> Node0x55cae0a03218[label="1"]
+	Node0x55cae0a04410 -> Node0x55cae0a034a8[label="2"]
+	Node0x55cae0a034a8 -> Node0x55cae0a03570[label="3"]
+	Node0x55cae09fb278 -> Node0x55cae0a03570[label="4"]
+	Node0x55cae0a04080 -> Node0x55cae0a03688[label="5"]
+	Node0x55cae0a03688 -> Node0x55cae0a03780[label="6"]
+	Node0x55cae0a03570 -> Node0x55cae0a03780[label="7"]
+	Node0x55cae0a03780 -> Node0x55cae0a03820[label="8"]
+	Node0x55cae0a03820 -> Node0x55cae09df368[label="9"]
+	Node0x55cae09df368 -> Node0x55cae0a02ef8[label="10"]
+	Node0x55cae0a03688 -> Node0x55cae0a04080[label="11"]
+	Node0x55cae0a04080 -> Node0x55cae0a040f0[label="12"]
+	Node0x55cae09fb8d8 -> Node0x55cae0a040f0[label="13"]
+	Node0x55cae0a040f0 -> Node0x55cae0a041a8[label="14"]
+	Node0x55cae0a034a8 -> Node0x55cae0a04410[label="15"]
+	Node0x55cae0a04410 -> Node0x55cae0a044b0[label="16"]
+	Node0x55cae0a04080 -> Node0x55cae0a044b0[label="17"]
+	Node0x55cae0a044b0 -> Node0x55cae0a04568[label="18"]
+}

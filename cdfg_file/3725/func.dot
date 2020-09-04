@@ -1,0 +1,38 @@
+digraph "CDFG for'func' function" {
+	Node0x563511522220[shape=record, label="  %0 = srem i32 %a, 10"]
+	Node0x5635115222b0[shape=record, label="  %mul = sub i32 %a, %0"]
+	Node0x563511522370[shape=record, label="  %mul1 = mul nsw i32 %0, 1000"]
+	Node0x563511522400[shape=record, label="  %add = add nsw i32 %mul, %mul1"]
+	Node0x563511522490[shape=record, label="  %div2 = sdiv i32 %b, 10"]
+	Node0x563511522550[shape=record, label="  %mul3 = mul nsw i32 %div2, 100"]
+	Node0x5635115225e0[shape=record, label="  %rem5 = srem i32 %b, 10"]
+	Node0x563511522670[shape=record, label="  %add4 = add i32 %add, %rem5"]
+	Node0x563511522700[shape=record, label="  %add6 = add i32 %add4, %mul3"]
+	Node0x563511521b98[shape=record, label="  %conv = sext i32 %add6 to i64"]
+	Node0x563511522950[shape=record, label="  store i64 %conv, i64* %c, align 8, !tbaa !2"]
+	Node0x563511523850[shape=record, label="  ret void"]
+	Node0x563511522220 -> Node0x5635115222b0
+	Node0x5635115222b0 -> Node0x563511522370
+	Node0x563511522370 -> Node0x563511522400
+	Node0x563511522400 -> Node0x563511522490
+	Node0x563511522490 -> Node0x563511522550
+	Node0x563511522550 -> Node0x5635115225e0
+	Node0x5635115225e0 -> Node0x563511522670
+	Node0x563511522670 -> Node0x563511522700
+	Node0x563511522700 -> Node0x563511521b98
+	Node0x563511521b98 -> Node0x563511522950
+	Node0x563511522950 -> Node0x563511523850
+edge [color=red]
+	Node0x563511522220 -> Node0x5635115222b0[label="1"]
+	Node0x563511522220 -> Node0x563511522370[label="2"]
+	Node0x5635115222b0 -> Node0x563511522400[label="3"]
+	Node0x563511522370 -> Node0x563511522400[label="4"]
+	Node0x563511522490 -> Node0x563511522550[label="5"]
+	Node0x563511522400 -> Node0x563511522670[label="6"]
+	Node0x5635115225e0 -> Node0x563511522670[label="7"]
+	Node0x563511522670 -> Node0x563511522700[label="8"]
+	Node0x563511522550 -> Node0x563511522700[label="9"]
+	Node0x563511522700 -> Node0x563511521b98[label="10"]
+	Node0x563511521b98 -> Node0x563511522950[label="11"]
+	Node0x563511522950 -> Node0x5635115219c0[label="12"]
+}

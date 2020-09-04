@@ -1,0 +1,36 @@
+digraph "CDFG for'func' function" {
+	Node0x555f67a2a670[shape=record, label="  %cmp6 = icmp sgt i32 %m, 2"]
+	Node0x555f679b2c98[shape=record, label="  br i1 %cmp6, label %for.body, label %cleanup"]
+	Node0x555f67a2a960[shape=record, label="  %cmp = icmp slt i32 %inc, %m"]
+	Node0x555f679b2db8[shape=record, label="  br i1 %cmp, label %for.body, label %cleanup"]
+	Node0x555f67a2a9c8[shape=record, label="  %i.07 = phi i32 [ %inc, %for.cond ], [ 2, %entry ]"]
+	Node0x555f67a2aab0[shape=record, label="  %rem = srem i32 %m, %i.07"]
+	Node0x555f67a2ab70[shape=record, label="  %cmp1 = icmp eq i32 %rem, 0"]
+	Node0x555f67a2ac30[shape=record, label="  %inc = add nuw nsw i32 %i.07, 1"]
+	Node0x555f679be228[shape=record, label="  br i1 %cmp1, label %cleanup, label %for.cond"]
+	Node0x555f67a2ac78[shape=record, label="  %retval.0 = phi i32 [ 1, %entry ], [ 1, %for.cond ], [ 0, %for.body ]"]
+	Node0x555f67a2a7b8[shape=record, label="  ret i32 %retval.0"]
+	Node0x555f67a2a670 -> Node0x555f679b2c98
+	Node0x555f679b2c98 -> Node0x555f67a2a9c8
+	Node0x555f679b2c98 -> Node0x555f67a2ac78
+	Node0x555f67a2a960 -> Node0x555f679b2db8
+	Node0x555f679b2db8 -> Node0x555f67a2a9c8
+	Node0x555f679b2db8 -> Node0x555f67a2ac78
+	Node0x555f67a2a9c8 -> Node0x555f67a2aab0
+	Node0x555f67a2aab0 -> Node0x555f67a2ab70
+	Node0x555f67a2ab70 -> Node0x555f67a2ac30
+	Node0x555f67a2ac30 -> Node0x555f679be228
+	Node0x555f679be228 -> Node0x555f67a2ac78
+	Node0x555f679be228 -> Node0x555f67a2a960
+	Node0x555f67a2ac78 -> Node0x555f67a2a7b8
+edge [color=red]
+	Node0x555f67a2a670 -> Node0x555f679b2c98[label="1"]
+	Node0x555f67a2ac30 -> Node0x555f67a2a960[label="2"]
+	Node0x555f67a2a960 -> Node0x555f679b2db8[label="3"]
+	Node0x555f67a2ac30 -> Node0x555f67a2a9c8[label="4"]
+	Node0x555f67a2a9c8 -> Node0x555f67a2aab0[label="5"]
+	Node0x555f67a2aab0 -> Node0x555f67a2ab70[label="6"]
+	Node0x555f67a2a9c8 -> Node0x555f67a2ac30[label="7"]
+	Node0x555f67a2ab70 -> Node0x555f679be228[label="8"]
+	Node0x555f67a2ac78 -> Node0x555f67a2a7b8[label="9"]
+}
