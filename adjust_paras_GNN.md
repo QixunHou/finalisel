@@ -51,3 +51,19 @@ In Seq7,I split the dataset into 9:1 ratio as train and test.
 2. `iters_per_epoch` is we use `batchsize` samples in one train which contain the forward and backward propagation.
 3. `epoch` is the amount of train that we use whole samples to train.
 
+---
+
+###### Final
+We chose the configuration as
+`batch_size` : 128
+`iters_per_epoch`: 30
+`epochs`: 50
+`lr`:0.4
+`number_layers`:3
+`num_mlp_layers`:2
+`final_dropout`:0.4
+
+U can tb the result lies in `runs/Sep08-17-12-27_cdfg_result`.and the svg and jpg pictures r stored at `resPics` which r `My_cdfg_result.svg` & `My_cdfg_result.jpg`
+
+Final lead the acc of test at **78.50%**,and train at **78.47%**.
+
